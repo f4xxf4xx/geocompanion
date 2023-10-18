@@ -3,9 +3,13 @@ import "./App.css";
 import Solver from "./components/solver";
 import characters from "./data/characters.json";
 import SmallClueTile from "./components/clue-tile";
-import countries from "./data/countries_mapping.json";
-import Flag from "./components/flags";
 import { Link } from "react-router-dom";
+import {
+  allAlphabets,
+  allColors,
+  allPatterns,
+  allRegions,
+} from "./data/dataHelper";
 
 const ClueSection = ({ name, children }) => {
   return (
@@ -17,39 +21,19 @@ const ClueSection = ({ name, children }) => {
 };
 
 function App() {
-  const [clues, setClues] = useState([]);
+  const [selectedClues, setSelectedClues] = useState([]);
 
   const toggleClue = (clue) => {
-    if (clues.filter((c) => c.value === clue.value).length > 0) {
-      setClues((clues) => clues.filter((c) => c.value !== clue.value));
+    if (selectedClues.filter((c) => c.value === clue.value).length > 0) {
+      setSelectedClues((clues) => clues.filter((c) => c.value !== clue.value));
       return;
     }
-    setClues((clues) => [...clues, clue]);
+    setSelectedClues((clues) => [...clues, clue]);
   };
 
   const resetClues = () => {
     setClues([]);
   };
-
-  const regions = Object.keys(countries)
-    .reduce((acc, country) => {
-      return [...new Set([...acc, ...countries[country].regions])];
-    }, [])
-    .sort();
-
-  const alphabets = Object.keys(countries)
-    .reduce((acc, country) => {
-      return [...new Set([...acc, ...countries[country].alphabets])];
-    }, [])
-    .sort();
-
-  const colors = Object.keys(countries).reduce((acc, country) => {
-    return [...new Set([...acc, ...countries[country].flag.colors])];
-  }, []);
-
-  const patterns = Object.keys(countries).reduce((acc, country) => {
-    return [...new Set([...acc, ...countries[country].flag.patterns])];
-  }, []);
 
   const renderClueTile = (value, type) => {
     return (
@@ -57,7 +41,7 @@ function App() {
         value={value}
         type={type}
         onPress={toggleClue}
-        clues={clues}
+        clues={selectedClues}
       />
     );
   };
@@ -70,7 +54,7 @@ function App() {
       </header>
       <div>
         <ClueSection name="Region">
-          {regions.map((region) => renderClueTile(region, "region"))}
+          {allRegions.map((region) => renderClueTile(region, "region"))}
         </ClueSection>
         <ClueSection name="Driving">
           {renderClueTile("left", "driving")}
@@ -83,7 +67,9 @@ function App() {
           {renderClueTile("yellow-yellow", "lines")}
         </ClueSection>
         <ClueSection name="Alphabets">
-          {alphabets.map((alphabet) => renderClueTile(alphabet, "alphabets"))}
+          {allAlphabets.map((alphabet) =>
+            renderClueTile(alphabet, "alphabets")
+          )}
         </ClueSection>
         <ClueSection name="Characters">
           {Object.keys(characters).map((character) =>
@@ -92,12 +78,12 @@ function App() {
         </ClueSection>
 
         <ClueSection name="Flag color">
-          {colors.map((color) => renderClueTile(color, "color"))}
+          {allColors.map((color) => renderClueTile(color, "color"))}
         </ClueSection>
         <ClueSection name="Flag patterns">
-          {patterns.map((pattern) => renderClueTile(pattern, "pattern"))}
+          {allPatterns.map((pattern) => renderClueTile(pattern, "pattern"))}
         </ClueSection>
-        <Solver resetClues={resetClues} clues={clues} />
+        <Solver resetClues={resetClues} clues={selectedClues} />
       </div>
     </div>
   );

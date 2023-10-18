@@ -2,9 +2,11 @@ import codeMapping from "../data/code_mapping.json";
 
 const ClueTile = ({ value, onPress, type, clues }) => {
   let displayedName = value;
+
   if (type === "lines") {
     displayedName = codeMapping["lines"][value];
   }
+
   return (
     <button
       key={value}
