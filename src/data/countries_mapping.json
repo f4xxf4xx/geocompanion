@@ -1,0 +1,1224 @@
+{
+  "af": {
+    "name": "Afghanistan",
+    "regions": ["middle-east"],
+    "alphabets": ["arabic"],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": [],
+    "extra_languages": []
+  },
+  "al": {
+    "name": "Albania",
+    "regions": ["balkan", "europe"],
+    "alphabets": ["latin"],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-white", "white-yellow"],
+    "extra_languages": []
+  },
+  "dz": {
+    "name": "Algeria",
+    "regions": ["maghreb"],
+    "alphabets": ["arabic", "latin"],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": [],
+    "extra_languages": []
+  },
+  "ad": {
+    "name": "Andorra",
+    "regions": ["europe"],
+    "alphabets": ["latin"],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-white"],
+    "extra_languages": []
+  },
+  "ar": {
+    "name": "Argentina",
+    "regions": ["south america"],
+    "alphabets": ["latin"],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-white", "white-yellow"],
+    "extra_languages": []
+  },
+  "au": {
+    "name": "Australia",
+    "regions": ["oceania"],
+    "alphabets": ["latin"],
+    "scenery": [],
+    "driving": ["left"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-white", "yellow-yellow"],
+    "extra_languages": []
+  },
+  "at": {
+    "name": "Austria",
+    "regions": ["europe"],
+    "alphabets": ["latin"],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-white"],
+    "extra_languages": []
+  },
+  "bd": {
+    "name": "Bangladesh",
+    "regions": ["south asia"],
+    "alphabets": ["বাংলা বর্ণমালা বা লিপি"],
+    "scenery": [],
+    "driving": ["left"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-white"],
+    "extra_languages": []
+  },
+  "be": {
+    "name": "Belgium",
+    "regions": ["europe"],
+    "alphabets": ["latin"],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-white"],
+    "extra_languages": []
+  },
+  "bo": {
+    "name": "Bolivia",
+    "regions": ["south america"],
+    "alphabets": ["latin"],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-white", "white-yellow"],
+    "extra_languages": []
+  },
+  "bw": {
+    "name": "Botswana",
+    "regions": ["south of africa"],
+    "alphabets": ["latin"],
+    "scenery": [],
+    "driving": ["left"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["yellow-white"],
+    "extra_languages": []
+  },
+  "bt": {
+    "name": "Bhutan",
+    "regions": ["south asia"],
+    "alphabets": ["གྲོ་བ་མི་རིགསགདབང་ཆ་འདྲ་མཏམད་སྒྱེཝ་་ག་།"],
+    "scenery": [],
+    "driving": ["left"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-white"],
+    "extra_languages": []
+  },
+  "br": {
+    "name": "Brazil",
+    "regions": ["south america"],
+    "alphabets": ["latin"],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-white", "white-yellow"],
+    "extra_languages": []
+  },
+  "bg": {
+    "name": "Bulgaria",
+    "regions": ["balkan", "europe"],
+    "alphabets": ["cyrillic", "latin"],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-white"],
+    "extra_languages": []
+  },
+  "kh": {
+    "name": "Cambodia",
+    "regions": ["sea"],
+    "alphabets": ["អក្សរខ្មែរ"],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-yellow"],
+    "extra_languages": []
+  },
+  "ca": {
+    "name": "Canada",
+    "regions": ["north america"],
+    "alphabets": ["latin"],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": ["red", "white"],
+      "patterns": ["stripes"]
+    },
+    "lines": ["white-yellow"],
+    "extra_languages": []
+  },
+  "cl": {
+    "name": "Chile",
+    "regions": ["south america"],
+    "alphabets": ["latin"],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["yellow-white", "white-white", "white-yellow", "yellow-yellow"],
+    "extra_languages": []
+  },
+  "cn": {
+    "name": "China",
+    "regions": ["east asia"],
+    "alphabets": ["汉语漢語"],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": [],
+    "extra_languages": []
+  },
+  "co": {
+    "name": "Colombia",
+    "regions": ["south america"],
+    "alphabets": ["latin"],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-yellow"],
+    "extra_languages": []
+  },
+  "cr": {
+    "name": "Costa Rica",
+    "regions": ["central america"],
+    "alphabets": ["latin"],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": [],
+    "extra_languages": []
+  },
+  "hr": {
+    "name": "Croatia",
+    "regions": ["balkan", "europe"],
+    "alphabets": ["latin"],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-white"],
+    "extra_languages": []
+  },
+  "cz": {
+    "name": "Czechia",
+    "regions": ["balkan", "europe"],
+    "alphabets": ["latin"],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-white"],
+    "extra_languages": []
+  },
+  "dk": {
+    "name": "Denmark",
+    "regions": ["nordic", "europe"],
+    "alphabets": ["latin"],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-white"],
+    "extra_languages": []
+  },
+  "ec": {
+    "name": "Ecuador",
+    "regions": ["south america"],
+    "alphabets": ["latin"],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-yellow"],
+    "extra_languages": []
+  },
+  "eg": {
+    "name": "Egypt",
+    "regions": ["middle-east"],
+    "alphabets": ["arabic"],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": [],
+    "extra_languages": ["english"]
+  },
+  "sv": {
+    "name": "El Salvador",
+    "regions": ["central america"],
+    "alphabets": ["latin"],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": [],
+    "extra_languages": []
+  },
+  "ee": {
+    "name": "Estonia",
+    "regions": ["baltic", "europe"],
+    "alphabets": ["latin"],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-white"],
+    "extra_languages": []
+  },
+  "sz": {
+    "name": "Eswatini",
+    "regions": ["south of africa"],
+    "alphabets": ["latin"],
+    "scenery": [],
+    "driving": ["left"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["yellow-white"],
+    "extra_languages": []
+  },
+  "fi": {
+    "name": "Finland",
+    "regions": ["nordic", "europe"],
+    "alphabets": ["latin"],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-white", "white-yellow"],
+    "extra_languages": []
+  },
+  "fr": {
+    "name": "France",
+    "regions": ["europe"],
+    "alphabets": ["latin"],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-white"],
+    "extra_languages": []
+  },
+  "de": {
+    "name": "Germany",
+    "regions": ["europe"],
+    "alphabets": ["latin"],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-white", "yellow-yellow"],
+    "extra_languages": []
+  },
+  "gh": {
+    "name": "Ghana",
+    "regions": ["west africa"],
+    "alphabets": ["latin"],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-white"],
+    "extra_languages": []
+  },
+  "gr": {
+    "name": "Greece",
+    "regions": ["europe", "balkan"],
+    "alphabets": ["greek"],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-white"],
+    "extra_languages": []
+  },
+  "gt": {
+    "name": "Guatemala",
+    "regions": ["central america"],
+    "alphabets": ["latin"],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-yellow"],
+    "extra_languages": []
+  },
+  "hu": {
+    "name": "Hungary",
+    "regions": ["balkan", "europe"],
+    "alphabets": ["latin"],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-white"],
+    "extra_languages": []
+  },
+  "is": {
+    "name": "Iceland",
+    "regions": ["nordic", "europe"],
+    "alphabets": ["latin"],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-white"],
+    "extra_languages": []
+  },
+  "in": {
+    "name": "India",
+    "regions": ["south asia"],
+    "alphabets": ["मानक हिन्दी"],
+    "scenery": [],
+    "driving": ["left"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["yellow-white", "white-white", "yellow-yellow"],
+    "extra_languages": []
+  },
+  "id": {
+    "name": "Indonesia",
+    "regions": ["sea"],
+    "alphabets": ["latin"],
+    "scenery": [],
+    "driving": ["left"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-white", "white-yellow"],
+    "extra_languages": []
+  },
+  "ie": {
+    "name": "Ireland",
+    "regions": ["europe"],
+    "alphabets": ["latin"],
+    "scenery": [],
+    "driving": ["left"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["yellow-white"],
+    "extra_languages": []
+  },
+  "il": {
+    "name": "Israel",
+    "regions": ["middle-east"],
+    "alphabets": ["אָלֶף־בֵּית עִבְרִ"],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["yellow-white"],
+    "extra_languages": []
+  },
+  "it": {
+    "name": "Italy",
+    "regions": ["europe"],
+    "alphabets": ["latin"],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-white"],
+    "extra_languages": []
+  },
+  "jp": {
+    "name": "Japan",
+    "regions": ["east asia"],
+    "alphabets": [],
+    "scenery": [],
+    "driving": ["left"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-white", "white-yellow"],
+    "extra_languages": []
+  },
+  "jo": {
+    "name": "Jordan",
+    "regions": ["middle-east"],
+    "alphabets": [],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["yellow-white"],
+    "extra_languages": []
+  },
+  "ke": {
+    "name": "Kenya",
+    "regions": ["east africa"],
+    "alphabets": [],
+    "scenery": [],
+    "driving": ["left"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-yellow"],
+    "extra_languages": []
+  },
+  "kg": {
+    "name": "Kyrgyzstan",
+    "regions": ["central asia"],
+    "alphabets": [],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-white"],
+    "extra_languages": []
+  },
+  "la": {
+    "name": "Laos",
+    "regions": ["sea"],
+    "alphabets": [],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-white"],
+    "extra_languages": []
+  },
+  "lv": {
+    "name": "Latvia",
+    "regions": ["baltic", "europe"],
+    "alphabets": [],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-white"],
+    "extra_languages": []
+  },
+  "ls": {
+    "name": "Lesotho",
+    "regions": ["south of africa"],
+    "alphabets": [],
+    "scenery": [],
+    "driving": ["left"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["yellow-white"],
+    "extra_languages": []
+  },
+  "lt": {
+    "name": "Lithuania",
+    "regions": ["baltic", "europe"],
+    "alphabets": [],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["yellow-white", "white-white"],
+    "extra_languages": []
+  },
+  "lu": {
+    "name": "Luxembourg",
+    "regions": ["europe"],
+    "alphabets": [],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-white"],
+    "extra_languages": []
+  },
+  "mt": {
+    "name": "Malta",
+    "regions": ["europe"],
+    "alphabets": [],
+    "scenery": [],
+    "driving": ["left"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-white"],
+    "extra_languages": []
+  },
+  "my": {
+    "name": "Malaysia",
+    "regions": ["sea"],
+    "alphabets": [],
+    "scenery": [],
+    "driving": ["left"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-white"],
+    "extra_languages": []
+  },
+  "mk": {
+    "name": "North Macedonia",
+    "regions": ["balkan", "europe"],
+    "alphabets": ["cyrillic", "latin"],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-white", "yellow-yellow"],
+    "extra_languages": []
+  },
+  "mx": {
+    "name": "Mexico",
+    "regions": ["central america"],
+    "alphabets": [],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["yellow-white", "white-yellow"],
+    "extra_languages": []
+  },
+  "mc": {
+    "name": "Monaco",
+    "regions": ["europe"],
+    "alphabets": [],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-white"],
+    "extra_languages": []
+  },
+  "me": {
+    "name": "Montenegro",
+    "regions": ["balkan", "europe"],
+    "alphabets": ["cyrillic", "latin"],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-white"],
+    "extra_languages": []
+  },
+  "mn": {
+    "name": "Mongolia",
+    "regions": ["east asia"],
+    "alphabets": [],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-white"],
+    "extra_languages": []
+  },
+  "ma": {
+    "name": "Morocco",
+    "regions": ["maghreb"],
+    "alphabets": [],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": [],
+    "extra_languages": []
+  },
+  "np": {
+    "name": "Nepal",
+    "regions": ["south asia"],
+    "alphabets": [],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": [],
+    "extra_languages": []
+  },
+  "nl": {
+    "name": "Netherlands",
+    "regions": ["europe"],
+    "alphabets": [],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-white"],
+    "extra_languages": []
+  },
+  "nz": {
+    "name": "New Zealand",
+    "regions": ["oceania"],
+    "alphabets": [],
+    "scenery": [],
+    "driving": ["left"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["yellow-white", "white-white", "white-yellow", "yellow-yellow"],
+    "extra_languages": []
+  },
+  "ng": {
+    "name": "Nigeria",
+    "regions": ["west africa"],
+    "alphabets": [],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["yellow-white"],
+    "extra_languages": []
+  },
+  "no": {
+    "name": "Norway",
+    "regions": ["nordic", "europe"],
+    "alphabets": [],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-yellow"],
+    "extra_languages": []
+  },
+  "pk": {
+    "name": "Pakistan",
+    "regions": ["south asia"],
+    "alphabets": [],
+    "scenery": [],
+    "driving": ["left"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": [],
+    "extra_languages": []
+  },
+  "pe": {
+    "name": "Peru",
+    "regions": ["south america"],
+    "alphabets": [],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-white", "white-yellow"],
+    "extra_languages": []
+  },
+  "ph": {
+    "name": "Philippines",
+    "regions": ["sea"],
+    "alphabets": [],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-white", "white-yellow"],
+    "extra_languages": []
+  },
+  "pl": {
+    "name": "Poland",
+    "regions": ["europe"],
+    "alphabets": [],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-white"],
+    "extra_languages": []
+  },
+  "pt": {
+    "name": "Portugal",
+    "regions": ["europe"],
+    "alphabets": [],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["yellow-white", "white-white"],
+    "extra_languages": []
+  },
+  "qa": {
+    "name": "Qatar",
+    "regions": ["middle-east"],
+    "alphabets": [],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-yellow"],
+    "extra_languages": []
+  },
+  "ro": {
+    "name": "Romania",
+    "regions": ["balkan", "europe"],
+    "alphabets": [],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-white", "yellow-yellow"],
+    "extra_languages": []
+  },
+  "ru": {
+    "name": "Russia",
+    "regions": ["europe"],
+    "alphabets": ["cyrillic"],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["yellow-white", "white-white", "white-yellow"],
+    "extra_languages": []
+  },
+  "sn": {
+    "name": "Senegal",
+    "regions": ["west africa"],
+    "alphabets": [],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-white"],
+    "extra_languages": []
+  },
+  "rs": {
+    "name": "Serbia",
+    "regions": ["balkan", "europe"],
+    "alphabets": ["cyrillic", "latin"],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-white"],
+    "extra_languages": []
+  },
+  "sg": {
+    "name": "Singapore",
+    "regions": ["sea"],
+    "alphabets": [],
+    "scenery": [],
+    "driving": ["left"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-white"],
+    "extra_languages": []
+  },
+  "sk": {
+    "name": "Slovakia",
+    "regions": ["balkan", "europe"],
+    "alphabets": [],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-white"],
+    "extra_languages": []
+  },
+  "si": {
+    "name": "Slovenia",
+    "regions": ["balkan", "europe"],
+    "alphabets": [],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-white"],
+    "extra_languages": []
+  },
+  "za": {
+    "name": "South Africa",
+    "regions": ["south of africa"],
+    "alphabets": [],
+    "scenery": [],
+    "driving": ["left"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["yellow-white"],
+    "extra_languages": []
+  },
+  "sm": {
+    "name": "San Marino",
+    "regions": ["europe"],
+    "alphabets": ["latin"],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-white"],
+    "extra_languages": []
+  },
+  "es": {
+    "name": "Spain",
+    "regions": ["europe"],
+    "alphabets": [],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["yellow-white", "white-white"],
+    "extra_languages": []
+  },
+  "lk": {
+    "name": "Sri Lanka",
+    "regions": ["south asia"],
+    "alphabets": [],
+    "scenery": [],
+    "driving": ["left"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["yellow-white", "white-white"],
+    "extra_languages": []
+  },
+  "kr": {
+    "name": "South Korea",
+    "regions": ["east asia"],
+    "alphabets": [],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-yellow"],
+    "extra_languages": []
+  },
+  "se": {
+    "name": "Sweden",
+    "regions": ["nordic", "europe"],
+    "alphabets": [],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-white"],
+    "extra_languages": []
+  },
+  "ch": {
+    "name": "Switzerland",
+    "regions": ["europe"],
+    "alphabets": [],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-white"],
+    "extra_languages": []
+  },
+  "tw": {
+    "name": "Taiwan",
+    "regions": ["east asia"],
+    "alphabets": [],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-yellow"],
+    "extra_languages": []
+  },
+  "th": {
+    "name": "Thailand",
+    "regions": ["sea"],
+    "alphabets": [],
+    "scenery": [],
+    "driving": ["left"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-yellow"],
+    "extra_languages": []
+  },
+  "tn": {
+    "name": "Tunisia",
+    "regions": ["maghreb"],
+    "alphabets": [],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": [],
+    "extra_languages": ["french"]
+  },
+  "tr": {
+    "name": "Turkey",
+    "regions": ["balkan", "europe"],
+    "alphabets": [],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-white", "white-yellow", "yellow-yellow"],
+    "extra_languages": []
+  },
+  "ua": {
+    "name": "Ukraine",
+    "regions": ["europe"],
+    "alphabets": ["cyrillic"],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-white"],
+    "extra_languages": []
+  },
+  "ae": {
+    "name": "United Arab Emirates",
+    "regions": ["middle-east"],
+    "alphabets": [],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["yellow-white", "yellow-yellow"],
+    "extra_languages": []
+  },
+  "gb": {
+    "name": "United Kingdom",
+    "regions": ["europe"],
+    "alphabets": [],
+    "scenery": [],
+    "driving": ["left"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["yellow-white", "white-white"],
+    "extra_languages": []
+  },
+  "us": {
+    "name": "United States of America",
+    "regions": ["north america"],
+    "alphabets": ["latin"],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": ["red", "blue", "white"],
+      "patterns": ["horizontal stripes", "stars"]
+    },
+    "lines": ["white-yellow"],
+    "extra_languages": []
+  },
+  "uy": {
+    "name": "Uruguay",
+    "regions": ["south america"],
+    "alphabets": [],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": [],
+    "extra_languages": []
+  },
+  "ug": {
+    "name": "Uganda",
+    "regions": ["east africa"],
+    "alphabets": [],
+    "scenery": [],
+    "driving": ["left"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": ["white-white", "white-yellow"],
+    "extra_languages": []
+  },
+  "vn": {
+    "name": "Vietnam",
+    "regions": ["sea"],
+    "alphabets": [],
+    "scenery": [],
+    "driving": ["right"],
+    "flag": {
+      "colors": [],
+      "patterns": []
+    },
+    "lines": [],
+    "extra_languages": []
+  }
+}

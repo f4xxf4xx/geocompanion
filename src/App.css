@@ -1,0 +1,91 @@
+.clueContainer {
+  display: flex;
+  width: 200px;
+  padding: 20px;
+  margin: 20px;
+
+  font-size: larger;
+
+  border: 1px black solid;
+  border-radius: 16px;
+
+  text-decoration: none;
+}
+
+.cluesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+
+.clueTileContainer {
+  display: flex;
+  min-width: 50px;
+  height: 40px;
+  background-color: lightblue;
+
+  margin: 8px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.clueSelected {
+  background-color: lightgreen;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0px;
+}
+
+.countryHeader {
+  margin: 0;
+}
+.countryUl {
+  margin: 0;
+}
+
+.comparatorContainer {
+  margin: 8px;
+  display: grid;
+  grid-template-columns: repeat(2, 200px);
+  gap: 8px;
+}
+
+.cell {
+  background-color: bisque;
+  margin: 0px;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.flagIcon {
+  width: 30px;
+  height: 20px;
+  border: 1px solid black;
+}
+
+.flagIconSmall {
+  width: 20px;
+  height: 13px;
+}
+
+.flagIconBig {
+  width: 60px;
+  height: 40px;
+}
+
+.actionBtn {
+  margin: 8px;
+  padding: 8px;
+  border-radius: 4px;
+  background-color: lightblue;
+  cursor: pointer;
+}
