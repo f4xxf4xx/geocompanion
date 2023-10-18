@@ -1,8 +1,8 @@
 import { useCallback } from "react";
 import { Link } from "react-router-dom";
-import characters from "../data/characters.json";
-import countries from "../data/countries_mapping.json";
-import Flag from "./flags";
+import characters from "data/characters.json";
+import countries from "data/countries_mapping.json";
+import Flag from "components/flags";
 
 const Solver = ({ clues, resetClues }) => {
   const getPossibleCountries = useCallback(() => {
@@ -11,39 +11,39 @@ const Solver = ({ clues, resetClues }) => {
     clues.forEach((clue, i) => {
       let matchingCountries = [];
 
-      if (clue.type === "alphabets") {
+      if (clue.clueType === "alphabets") {
         matchingCountries = Object.keys(countries).filter((country) =>
           countries[country].alphabets.includes(clue.value)
         );
       }
-      if (clue.type === "region") {
+      if (clue.clueType === "region") {
         matchingCountries = Object.keys(countries).filter((country) =>
           countries[country].regions.includes(clue.value)
         );
       }
-      if (clue.type === "driving") {
+      if (clue.clueType === "driving") {
         matchingCountries = Object.keys(countries).filter((country) =>
           countries[country].driving.includes(clue.value)
         );
       }
-      if (clue.type === "characters") {
+      if (clue.clueType === "characters") {
         const character = clue.value;
         matchingCountries = characters[character];
       }
-      if (clue.type === "lines") {
+      if (clue.clueType === "lines") {
         const lines = clue.value;
         matchingCountries = Object.keys(countries).filter((country) =>
           countries[country].lines.includes(lines)
         );
       }
-      if (clue.type === "color") {
+      if (clue.clueType === "color") {
         const color = clue.value;
         matchingCountries = Object.keys(countries).filter((country) =>
           countries[country].flag.colors.includes(color)
         );
       }
 
-      if (clue.type === "pattern") {
+      if (clue.clueType === "pattern") {
         const pattern = clue.value;
         matchingCountries = Object.keys(countries).filter((country) =>
           countries[country].flag.patterns.includes(pattern)

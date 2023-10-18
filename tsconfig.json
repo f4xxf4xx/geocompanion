@@ -6,8 +6,12 @@
     "isolatedModules": true,
     "baseUrl": "src",
     "jsx": "react-jsx",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "strict": false,
     "moduleResolution": "node",
     "resolveJsonModule": true,
     "allowSyntheticDefaultImports": true
-  }
+  },
+  "include": ["src"]
 }

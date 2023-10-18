@@ -1,9 +1,9 @@
-import codeMapping from "../data/code_mapping.json";
+import codeMapping from "data/code_mapping.json";
 
-const ClueTile = ({ value, onPress, type, clues }) => {
+const ClueTile = ({ value, onPress, clueType, clues }) => {
   let displayedName = value;
 
-  if (type === "lines") {
+  if (clueType === "lines") {
     displayedName = codeMapping["lines"][value];
   }
 
@@ -14,19 +14,19 @@ const ClueTile = ({ value, onPress, type, clues }) => {
         clues?.filter((clue) => clue.value === value).length > 0
           ? "clueSelected"
           : ""
-      } ${onPress ? "clickable" : ""}`}
+      } clickable`}
       onClick={
         onPress
           ? () =>
               onPress({
-                type,
+                clueType,
                 value,
               })
           : null
       }
     >
       <h3>
-        {type === "color" && (
+        {clueType === "color" && (
           <div
             style={{
               width: "8px",

@@ -2,26 +2,37 @@ import { useState } from "react";
 import "App.css";
 import Solver from "components/solver";
 import characters from "data/characters.json";
-import SmallClueTile from "components/clue-tile";
+import ClueTile from "components/clue-tile";
 import { Link } from "react-router-dom";
 import {
   allAlphabets,
   allColors,
+  allDriving,
+  allLines,
   allPatterns,
   allRegions,
 } from "./data/dataHelper";
 
-const ClueSection = ({ name, children }) => {
+const ClueSection = ({ name, data, clueType, toggle, selectedClues }) => {
   return (
     <div className="cluesContainer">
       <h2>{name}</h2>
-      {children}
+      {data.map((item) => (
+        <ClueTile
+          clueType={clueType}
+          value={item}
+          onPress={toggle}
+          clues={selectedClues}
+        />
+      ))}
     </div>
   );
 };
 
 function App() {
   const [selectedClues, setSelectedClues] = useState([]);
+
+  console.debug("selectedClues", selectedClues);
 
   const toggleClue = (clue) => {
     if (selectedClues.filter((c) => c.value === clue.value).length > 0) {
@@ -35,17 +46,6 @@ function App() {
     setSelectedClues([]);
   };
 
-  const renderClueTile = (value, type) => {
-    return (
-      <SmallClueTile
-        value={value}
-        type={type}
-        onPress={toggleClue}
-        clues={selectedClues}
-      />
-    );
-  };
-
   return (
     <div className="App">
       <header className="App-header">
@@ -53,36 +53,55 @@ function App() {
         <Link to="/practice-tool">Practice Tool</Link>
       </header>
       <div>
-        <ClueSection name="Region">
-          {allRegions.map((region) => renderClueTile(region, "region"))}
-        </ClueSection>
-        <ClueSection name="Driving">
-          {renderClueTile("left", "driving")}
-          {renderClueTile("right", "driving")}
-        </ClueSection>
-        <ClueSection name="Lines">
-          {renderClueTile("yellow-white", "lines")}
-          {renderClueTile("white-white", "lines")}
-          {renderClueTile("white-yellow", "lines")}
-          {renderClueTile("yellow-yellow", "lines")}
-        </ClueSection>
-        <ClueSection name="Alphabets">
-          {allAlphabets.map((alphabet) =>
-            renderClueTile(alphabet, "alphabets")
-          )}
-        </ClueSection>
-        <ClueSection name="Characters">
-          {Object.keys(characters).map((character) =>
-            renderClueTile(character, "characters")
-          )}
-        </ClueSection>
-
-        <ClueSection name="Flag color">
-          {allColors.map((color) => renderClueTile(color, "color"))}
-        </ClueSection>
-        <ClueSection name="Flag patterns">
-          {allPatterns.map((pattern) => renderClueTile(pattern, "pattern"))}
-        </ClueSection>
+        <ClueSection
+          name="Region"
+          data={allRegions}
+          clueType="region"
+          toggle={toggleClue}
+          selectedClues={selectedClues}
+        />
+        <ClueSection
+          name="Driving"
+          data={allRegions}
+          clueType="driving"
+          toggle={toggleClue}
+          selectedClues={selectedClues}
+        />
+        <ClueSection
+          name="Lines"
+          data={allLines}
+          clueType="lines"
+          toggle={toggleClue}
+          selectedClues={selectedClues}
+        />
+        <ClueSection
+          name="Alphabets"
+          data={allAlphabets}
+          clueType="alphabets"
+          toggle={toggleClue}
+          selectedClues={selectedClues}
+        />
+        <ClueSection
+          name="Characters"
+          data={Object.keys(characters)}
+          clueType="characters"
+          toggle={toggleClue}
+          selectedClues={selectedClues}
+        />
+        <ClueSection
+          name="Flag color"
+          data={allColors}
+          clueType="color"
+          toggle={toggleClue}
+          selectedClues={selectedClues}
+        />
+        <ClueSection
+          name="Flag patterns"
+          data={allPatterns}
+          clueType="pattern"
+          toggle={toggleClue}
+          selectedClues={selectedClues}
+        />
         <Solver resetClues={resetClues} clues={selectedClues} />
       </div>
     </div>
