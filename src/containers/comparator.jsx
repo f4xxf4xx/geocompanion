@@ -112,7 +112,7 @@ const Comparator = () => {
               <h4>Unique lines: </h4>
               <ul>
                 {secondUniqueLines.map((line) => (
-                  <li>{codeMapping[line]}</li>
+                  <li>{codeMapping["lines"][line]}</li>
                 ))}
               </ul>
             </>
