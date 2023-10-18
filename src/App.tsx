@@ -1,8 +1,8 @@
 import { useState } from "react";
-import "./App.css";
-import Solver from "./components/solver";
-import characters from "./data/characters.json";
-import SmallClueTile from "./components/clue-tile";
+import "App.css";
+import Solver from "components/solver";
+import characters from "data/characters.json";
+import SmallClueTile from "components/clue-tile";
 import { Link } from "react-router-dom";
 import {
   allAlphabets,
@@ -32,7 +32,7 @@ function App() {
   };
 
   const resetClues = () => {
-    setClues([]);
+    setSelectedClues([]);
   };
 
   const renderClueTile = (value, type) => {
