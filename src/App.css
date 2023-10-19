@@ -1,3 +1,8 @@
+.clueFinderContainer {
+  display: flex;
+  flex-direction: row;
+}
+
 .clueTilesContainer {
   margin-top: 4px;
   display: flex;
@@ -87,4 +92,21 @@ h4 {
   border-radius: 4px;
   background-color: lightblue;
   cursor: pointer;
+}
+
+.solverContainer {
+  min-width: 240px;
+}
+
+.solverUl {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.solverLi {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
 }

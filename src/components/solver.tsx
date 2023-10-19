@@ -21,13 +21,14 @@ const Solver = () => {
       {possibleCountries?.length >= 1 && (
         <div>
           <h4 className="solverHeader">Possible countries:</h4>
-          <ul className="solverUl">
+          <div className="solverUl">
             {possibleCountries?.map((country) => (
-              <li key={country}>
-                {countries?.[country]?.name} <Flag code={country} />
-              </li>
+              <div key={country} className="solverLi">
+                <Flag code={country} />
+                {countries?.[country]?.name}
+              </div>
             ))}
-          </ul>
+          </div>
           <Link to={`/compare?countries=${possibleCountries.join(",")}`}>
             Compare these countries
           </Link>
