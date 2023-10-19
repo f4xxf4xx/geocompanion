@@ -8,7 +8,7 @@ const ClueFinder = () => {
   return (
     <div className="clueFinderContainer">
       <div>
-        <ClueSection name="Region" clueType={ClueType.Region} />
+        <ClueSection name="Region (union)" clueType={ClueType.Region} />
         <ClueSection name="Driving" clueType={ClueType.Driving} />
         <ClueSection name="Scenery" clueType={ClueType.Scenery} />
         <ClueSection name="Road Line" clueType={ClueType.RoadLine} />

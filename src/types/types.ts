@@ -3,6 +3,23 @@ export interface Clue {
   value: string;
 }
 
+export interface CountryData {
+  [key: string]: Country;
+}
+
+export interface Country {
+  name: string;
+  region: string[];
+  alphabet: string[];
+  scenery: string[];
+  driving: string[];
+  flagColor: string[];
+  flagPattern: string[];
+  roadLine: string[];
+  language: string[];
+  coverage: boolean
+}
+
 export enum ClueType {
   Character = "character",
   Region = "region",

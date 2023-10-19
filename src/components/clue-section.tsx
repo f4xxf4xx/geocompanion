@@ -1,6 +1,7 @@
 import ClueTile from "components/clue-tile";
 import { getDataFromClueType } from "data/dataHelper";
 import { ClueType } from "types/types";
+import countries from "data/country_data.json";
 
 const ClueSection = ({
   name,
@@ -9,7 +10,7 @@ const ClueSection = ({
   name: string;
   clueType: ClueType;
 }) => {
-  const data = getDataFromClueType(clueType);
+  const data = getDataFromClueType(countries, clueType);
 
   return (
     <div>

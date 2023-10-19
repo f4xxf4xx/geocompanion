@@ -1,6 +1,5 @@
-import { Clue, ClueType } from "types/types";
+import { Clue, ClueType, CountryData } from "types/types";
 import characters from "data/characters.json";
-import countries from "data/country_data.json";
 
 const requiredFields = [
   "name",
@@ -15,25 +14,28 @@ const requiredFields = [
   "coverage",
 ];
 
-export const validateCountryData = (countries) => {
+export const validateCountryData = (countries: CountryData) => {
   const countryCodes = Object.keys(countries);
   const errors = [];
-  console.debug(`Validating ${countryCodes.length} countries...`);
 
   countryCodes.forEach((countryCode) => {
     const countryData = countries[countryCode];
     requiredFields.forEach((field) => {
-      if (!(field in countryData)) {
+      if (!(field in countryData && countryData[field] !== undefined)) {
         errors.push(`Missing ${field} for ${countryCode}`);
       }
     });
   });
-
-  console.debug("Validation complete.");
   return errors;
 };
 
-export const getDataFromClueType = (clueType: ClueType) => {
+export const getDataFromClueType = (
+  countries: CountryData,
+  clueType: ClueType
+) => {
+  if (clueType === ClueType.Coverage) {
+    return;
+  }
   if (clueType === ClueType.Character) {
     return Object.keys(characters);
   }
@@ -44,7 +46,10 @@ export const getDataFromClueType = (clueType: ClueType) => {
     .sort();
 };
 
-export const getPossibleCountries = (selectedClues: Clue[]) => {
+export const getPossibleCountries = (
+  countries: CountryData,
+  selectedClues: Clue[]
+) => {
   let possibleCountries = [];
 
   selectedClues.forEach((clue, i) => {
@@ -52,7 +57,9 @@ export const getPossibleCountries = (selectedClues: Clue[]) => {
 
     switch (clue.type) {
       case ClueType.Character:
-        matchingCountries = characters[clue.value];
+        matchingCountries = characters[clue.value].filter((country) =>
+          Object.keys(countries).includes(country)
+        );
         break;
       default:
         matchingCountries = Object.keys(countries).filter((country) =>
@@ -61,7 +68,7 @@ export const getPossibleCountries = (selectedClues: Clue[]) => {
         break;
     }
 
-    if (i === 0) {
+    if (i === 0 || clue.type === ClueType.Region) {
       possibleCountries.push(...matchingCountries);
     } else {
       possibleCountries = possibleCountries.filter((country) =>
@@ -70,5 +77,5 @@ export const getPossibleCountries = (selectedClues: Clue[]) => {
     }
   });
 
-  return possibleCountries;
+  return possibleCountries.sort();
 };

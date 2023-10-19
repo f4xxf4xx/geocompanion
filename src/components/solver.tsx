@@ -7,7 +7,7 @@ import { getPossibleCountries } from "data/dataHelper";
 
 const Solver = () => {
   const { selectedClues, resetClues } = useContext(ClueContext);
-  const possibleCountries = getPossibleCountries(selectedClues);
+  const possibleCountries = getPossibleCountries(countries, selectedClues);
 
   return (
     <div className="solverContainer">
