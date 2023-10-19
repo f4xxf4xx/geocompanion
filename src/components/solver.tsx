@@ -1,53 +1,29 @@
-import { useCallback } from "react";
+import { useCallback, useContext } from "react";
 import { Link } from "react-router-dom";
 import characters from "data/characters.json";
 import countries from "data/countries_mapping.json";
-import Flag from "components/flags";
+import Flag from "components/flag";
+import { ClueContext } from "context/clue";
+import { Clue, ClueType } from "types/types";
 
-const Solver = ({ clues, resetClues }) => {
+const Solver = () => {
+  const { selectedClues, resetClues } = useContext(ClueContext);
+
   const getPossibleCountries = useCallback(() => {
     let possibleCountries = [];
 
-    clues.forEach((clue, i) => {
+    selectedClues.forEach((clue, i) => {
       let matchingCountries = [];
 
-      if (clue.clueType === "alphabets") {
-        matchingCountries = Object.keys(countries).filter((country) =>
-          countries[country].alphabets.includes(clue.value)
-        );
-      }
-      if (clue.clueType === "region") {
-        matchingCountries = Object.keys(countries).filter((country) =>
-          countries[country].regions.includes(clue.value)
-        );
-      }
-      if (clue.clueType === "driving") {
-        matchingCountries = Object.keys(countries).filter((country) =>
-          countries[country].driving.includes(clue.value)
-        );
-      }
-      if (clue.clueType === "characters") {
-        const character = clue.value;
-        matchingCountries = characters[character];
-      }
-      if (clue.clueType === "lines") {
-        const lines = clue.value;
-        matchingCountries = Object.keys(countries).filter((country) =>
-          countries[country].lines.includes(lines)
-        );
-      }
-      if (clue.clueType === "color") {
-        const color = clue.value;
-        matchingCountries = Object.keys(countries).filter((country) =>
-          countries[country].flag.colors.includes(color)
-        );
-      }
-
-      if (clue.clueType === "pattern") {
-        const pattern = clue.value;
-        matchingCountries = Object.keys(countries).filter((country) =>
-          countries[country].flag.patterns.includes(pattern)
-        );
+      switch (clue.type) {
+        case ClueType.Character:
+          matchingCountries = characters[clue.value];
+          break;
+        default:
+          matchingCountries = Object.keys(countries).filter((country) =>
+            countries[country][clue.type].includes(clue.value)
+          );
+          break;
       }
 
       if (i === 0) {
@@ -60,7 +36,7 @@ const Solver = ({ clues, resetClues }) => {
     });
 
     return possibleCountries;
-  }, [clues]);
+  }, [selectedClues]);
 
   const possibleCountries = getPossibleCountries();
 
@@ -69,8 +45,8 @@ const Solver = ({ clues, resetClues }) => {
       <h3 className="solverTitle">Solver</h3>
       <h4 className="solverHeader">Clues:</h4>
       <ul className="solverUl">
-        {clues?.map((clue) => (
-          <li key={clue.value}>{clue.name ? clue.name : clue.value}</li>
+        {selectedClues?.map((clue) => (
+          <li key={clue.value}>{clue.value}</li>
         ))}
       </ul>
       {possibleCountries?.length >= 1 && (
@@ -89,7 +65,7 @@ const Solver = ({ clues, resetClues }) => {
           <br />
         </div>
       )}
-      {clues?.length >= 1 && (
+      {selectedClues?.length >= 1 && (
         <button className="resetButton" onClick={() => resetClues()}>
           Reset
         </button>

@@ -1,1224 +1,1188 @@
 {
   "af": {
     "name": "Afghanistan",
-    "regions": ["middle-east"],
-    "alphabets": ["arabic"],
+    "region": ["middle-east"],
+    "alphabet": ["arabic"],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": [],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": [],
+    "language": [],
+    "coverage": false
   },
   "al": {
     "name": "Albania",
-    "regions": ["balkan", "europe"],
-    "alphabets": ["latin"],
+    "region": ["balkan", "europe"],
+    "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-white", "white-yellow"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-white", "white-yellow"],
+    "language": [],
+    "coverage": true
   },
   "dz": {
     "name": "Algeria",
-    "regions": ["maghreb"],
-    "alphabets": ["arabic", "latin"],
+    "region": ["maghreb"],
+    "alphabet": ["arabic", "latin"],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": [],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": [],
+    "language": [],
+    "coverage": false
   },
   "ad": {
     "name": "Andorra",
-    "regions": ["europe"],
-    "alphabets": ["latin"],
+    "region": ["europe"],
+    "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-white"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-white"],
+    "language": [],
+    "coverage": true
   },
   "ar": {
     "name": "Argentina",
-    "regions": ["south america"],
-    "alphabets": ["latin"],
+    "region": ["south america"],
+    "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-white", "white-yellow"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-white", "white-yellow"],
+    "language": [],
+    "coverage": true
   },
   "au": {
     "name": "Australia",
-    "regions": ["oceania"],
-    "alphabets": ["latin"],
+    "region": ["oceania"],
+    "alphabet": ["latin"],
     "scenery": [],
     "driving": ["left"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-white", "yellow-yellow"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-white", "yellow-yellow"],
+    "language": [],
+    "coverage": true
   },
   "at": {
     "name": "Austria",
-    "regions": ["europe"],
-    "alphabets": ["latin"],
+    "region": ["europe"],
+    "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-white"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-white"],
+    "language": [],
+    "coverage": true
   },
   "bd": {
     "name": "Bangladesh",
-    "regions": ["south asia"],
-    "alphabets": ["বাংলা বর্ণমালা বা লিপি"],
+    "region": ["south asia"],
+    "alphabet": ["বাংলা বর্ণমালা বা লিপি"],
     "scenery": [],
     "driving": ["left"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-white"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-white"],
+    "language": [],
+    "coverage": true
   },
   "be": {
     "name": "Belgium",
-    "regions": ["europe"],
-    "alphabets": ["latin"],
+    "region": ["europe"],
+    "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-white"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-white"],
+    "language": [],
+    "coverage": true
   },
   "bo": {
     "name": "Bolivia",
-    "regions": ["south america"],
-    "alphabets": ["latin"],
+    "region": ["south america"],
+    "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-white", "white-yellow"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-white", "white-yellow"],
+    "language": [],
+    "coverage": true
   },
   "bw": {
     "name": "Botswana",
-    "regions": ["south of africa"],
-    "alphabets": ["latin"],
+    "region": ["south of africa"],
+    "alphabet": ["latin"],
     "scenery": [],
     "driving": ["left"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["yellow-white"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["yellow-white"],
+    "language": [],
+    "coverage": true
   },
   "bt": {
     "name": "Bhutan",
-    "regions": ["south asia"],
-    "alphabets": ["གྲོ་བ་མི་རིགསགདབང་ཆ་འདྲ་མཏམད་སྒྱེཝ་་ག་།"],
+    "region": ["south asia"],
+    "alphabet": ["གྲོ་བ་མི་རིགསགདབང་ཆ་འདྲ་མཏམད་སྒྱེཝ་་ག་།"],
     "scenery": [],
     "driving": ["left"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-white"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-white"],
+    "language": [],
+    "coverage": true
   },
   "br": {
     "name": "Brazil",
-    "regions": ["south america"],
-    "alphabets": ["latin"],
+    "region": ["south america"],
+    "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-white", "white-yellow"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-white", "white-yellow"],
+    "language": [],
+    "coverage": true
   },
   "bg": {
     "name": "Bulgaria",
-    "regions": ["balkan", "europe"],
-    "alphabets": ["cyrillic", "latin"],
+    "region": ["balkan", "europe"],
+    "alphabet": ["cyrillic", "latin"],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-white"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-white"],
+    "language": [],
+    "coverage": true
   },
   "kh": {
     "name": "Cambodia",
-    "regions": ["sea"],
-    "alphabets": ["អក្សរខ្មែរ"],
+    "region": ["sea"],
+    "alphabet": ["អក្សរខ្មែរ"],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-yellow"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-yellow"],
+    "language": [],
+    "coverage": true
   },
   "ca": {
     "name": "Canada",
-    "regions": ["north america"],
-    "alphabets": ["latin"],
+    "region": ["north america"],
+    "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": ["red", "white"],
-      "patterns": ["stripes"]
-    },
-    "lines": ["white-yellow"],
-    "extra_languages": []
+    "flagColor": ["red", "white"],
+    "flagPattern": ["stripes"],
+    "roadLine": ["white-yellow"],
+    "language": [],
+    "coverage": true
   },
   "cl": {
     "name": "Chile",
-    "regions": ["south america"],
-    "alphabets": ["latin"],
+    "region": ["south america"],
+    "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["yellow-white", "white-white", "white-yellow", "yellow-yellow"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": [
+      "yellow-white",
+      "white-white",
+      "white-yellow",
+      "yellow-yellow"
+    ],
+    "language": [],
+    "coverage": true
   },
   "cn": {
     "name": "China",
-    "regions": ["east asia"],
-    "alphabets": ["汉语漢語"],
+    "region": ["east asia"],
+    "alphabet": ["汉语漢語"],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": [],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": [],
+    "language": [],
+    "coverage": true
   },
   "co": {
     "name": "Colombia",
-    "regions": ["south america"],
-    "alphabets": ["latin"],
+    "region": ["south america"],
+    "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-yellow"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-yellow"],
+    "language": [],
+    "coverage": true
   },
   "cr": {
     "name": "Costa Rica",
-    "regions": ["central america"],
-    "alphabets": ["latin"],
+    "region": ["central america"],
+    "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": [],
-    "extra_languages": []
+    "flagColor": ["red", "white", "blue"],
+    "flagPattern": ["stripes"],
+    "roadLine": [],
+    "language": [],
+    "coverage": true
   },
   "hr": {
     "name": "Croatia",
-    "regions": ["balkan", "europe"],
-    "alphabets": ["latin"],
+    "region": ["balkan", "europe"],
+    "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-white"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-white"],
+    "language": [],
+    "coverage": true
+  },
+  "cu": {
+    "name": "Cuba",
+    "region": ["caribbeans"],
+    "alphabet": ["latin"],
+    "scenery": [],
+    "driving": ["right"],
+    "flagColor": ["red", "white", "blue"],
+    "flagPattern": ["stripes", "stars"],
+    "roadLine": [],
+    "language": [],
+    "coverage": false
   },
   "cz": {
     "name": "Czechia",
-    "regions": ["balkan", "europe"],
-    "alphabets": ["latin"],
+    "region": ["balkan", "europe"],
+    "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-white"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-white"],
+    "language": [],
+    "coverage": true
   },
   "dk": {
     "name": "Denmark",
-    "regions": ["nordic", "europe"],
-    "alphabets": ["latin"],
+    "region": ["nordic", "europe"],
+    "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-white"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-white"],
+    "language": [],
+    "coverage": true
   },
   "ec": {
     "name": "Ecuador",
-    "regions": ["south america"],
-    "alphabets": ["latin"],
+    "region": ["south america"],
+    "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-yellow"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-yellow"],
+    "language": [],
+    "coverage": true
   },
   "eg": {
     "name": "Egypt",
-    "regions": ["middle-east"],
-    "alphabets": ["arabic"],
+    "region": ["middle-east"],
+    "alphabet": ["arabic"],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": [],
-    "extra_languages": ["english"]
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": [],
+    "language": ["english"],
+    "coverage": true
   },
   "sv": {
     "name": "El Salvador",
-    "regions": ["central america"],
-    "alphabets": ["latin"],
+    "region": ["central america"],
+    "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": [],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": [],
+    "language": [],
+    "coverage": true
   },
   "ee": {
     "name": "Estonia",
-    "regions": ["baltic", "europe"],
-    "alphabets": ["latin"],
+    "region": ["baltic", "europe"],
+    "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-white"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-white"],
+    "language": [],
+    "coverage": true
   },
   "sz": {
     "name": "Eswatini",
-    "regions": ["south of africa"],
-    "alphabets": ["latin"],
+    "region": ["south of africa"],
+    "alphabet": ["latin"],
     "scenery": [],
     "driving": ["left"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["yellow-white"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["yellow-white"],
+    "language": [],
+    "coverage": true
   },
   "fi": {
     "name": "Finland",
-    "regions": ["nordic", "europe"],
-    "alphabets": ["latin"],
+    "region": ["nordic", "europe"],
+    "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-white", "white-yellow"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-white", "white-yellow"],
+    "language": [],
+    "coverage": true
   },
   "fr": {
     "name": "France",
-    "regions": ["europe"],
-    "alphabets": ["latin"],
+    "region": ["europe"],
+    "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-white"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-white"],
+    "language": [],
+    "coverage": true
   },
   "de": {
     "name": "Germany",
-    "regions": ["europe"],
-    "alphabets": ["latin"],
+    "region": ["europe"],
+    "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-white", "yellow-yellow"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-white", "yellow-yellow"],
+    "language": [],
+    "coverage": true
   },
   "gh": {
     "name": "Ghana",
-    "regions": ["west africa"],
-    "alphabets": ["latin"],
+    "region": ["west africa"],
+    "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-white"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-white"],
+    "language": [],
+    "coverage": true
   },
   "gr": {
     "name": "Greece",
-    "regions": ["europe", "balkan"],
-    "alphabets": ["greek"],
+    "region": ["europe", "balkan"],
+    "alphabet": ["greek"],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-white"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-white"],
+    "language": [],
+    "coverage": true
   },
   "gt": {
     "name": "Guatemala",
-    "regions": ["central america"],
-    "alphabets": ["latin"],
+    "region": ["central america"],
+    "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-yellow"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-yellow"],
+    "language": [],
+    "coverage": true
+  },
+  "ht": {
+    "name": "Haiti",
+    "region": ["caribbeans"],
+    "alphabet": ["latin"],
+    "scenery": [],
+    "driving": ["right"],
+    "flagColor": ["red", "blue"],
+    "flagPattern": ["stripes", "drawing"],
+    "roadLine": [],
+    "language": ["french"],
+    "coverage": false
+  },
+  "hn": {
+    "name": "Honduras",
+    "region": ["central america"],
+    "alphabet": ["latin"],
+    "scenery": [],
+    "driving": ["right"],
+    "flagColor": ["blue", "white"],
+    "flagPattern": ["stars"],
+    "roadLine": [],
+    "language": [],
+    "coverage": false
   },
   "hu": {
     "name": "Hungary",
-    "regions": ["balkan", "europe"],
-    "alphabets": ["latin"],
+    "region": ["balkan", "europe"],
+    "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-white"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-white"],
+    "language": [],
+    "coverage": true
   },
   "is": {
     "name": "Iceland",
-    "regions": ["nordic", "europe"],
-    "alphabets": ["latin"],
+    "region": ["nordic", "europe"],
+    "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-white"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-white"],
+    "language": [],
+    "coverage": true
   },
   "in": {
     "name": "India",
-    "regions": ["south asia"],
-    "alphabets": ["मानक हिन्दी"],
+    "region": ["south asia"],
+    "alphabet": ["मानक हिन्दी"],
     "scenery": [],
     "driving": ["left"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["yellow-white", "white-white", "yellow-yellow"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["yellow-white", "white-white", "yellow-yellow"],
+    "language": [],
+    "coverage": true
   },
   "id": {
     "name": "Indonesia",
-    "regions": ["sea"],
-    "alphabets": ["latin"],
+    "region": ["sea"],
+    "alphabet": ["latin"],
     "scenery": [],
     "driving": ["left"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-white", "white-yellow"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-white", "white-yellow"],
+    "language": [],
+    "coverage": true
   },
   "ie": {
     "name": "Ireland",
-    "regions": ["europe"],
-    "alphabets": ["latin"],
+    "region": ["europe"],
+    "alphabet": ["latin"],
     "scenery": [],
     "driving": ["left"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["yellow-white"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["yellow-white"],
+    "language": [],
+    "coverage": true
   },
   "il": {
     "name": "Israel",
-    "regions": ["middle-east"],
-    "alphabets": ["אָלֶף־בֵּית עִבְרִ"],
+    "region": ["middle-east"],
+    "alphabet": ["אָלֶף־בֵּית עִבְרִ"],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["yellow-white"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["yellow-white"],
+    "language": [],
+    "coverage": true
   },
   "it": {
     "name": "Italy",
-    "regions": ["europe"],
-    "alphabets": ["latin"],
+    "region": ["europe"],
+    "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-white"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-white"],
+    "language": [],
+    "coverage": true
   },
   "jp": {
     "name": "Japan",
-    "regions": ["east asia"],
-    "alphabets": [],
+    "region": ["east asia"],
+    "alphabet": [],
     "scenery": [],
     "driving": ["left"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-white", "white-yellow"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-white", "white-yellow"],
+    "language": [],
+    "coverage": true
   },
   "jo": {
     "name": "Jordan",
-    "regions": ["middle-east"],
-    "alphabets": [],
+    "region": ["middle-east"],
+    "alphabet": [],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["yellow-white"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["yellow-white"],
+    "language": [],
+    "coverage": true
   },
   "ke": {
     "name": "Kenya",
-    "regions": ["east africa"],
-    "alphabets": [],
+    "region": ["east africa"],
+    "alphabet": [],
     "scenery": [],
     "driving": ["left"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-yellow"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-yellow"],
+    "language": [],
+    "coverage": true
   },
   "kg": {
     "name": "Kyrgyzstan",
-    "regions": ["central asia"],
-    "alphabets": [],
+    "region": ["central asia"],
+    "alphabet": [],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-white"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-white"],
+    "language": [],
+    "coverage": true
   },
   "la": {
     "name": "Laos",
-    "regions": ["sea"],
-    "alphabets": [],
+    "region": ["sea"],
+    "alphabet": [],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-white"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-white"],
+    "language": [],
+    "coverage": true
   },
   "lv": {
     "name": "Latvia",
-    "regions": ["baltic", "europe"],
-    "alphabets": [],
+    "region": ["baltic", "europe"],
+    "alphabet": [],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-white"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-white"],
+    "language": [],
+    "coverage": true
   },
   "ls": {
     "name": "Lesotho",
-    "regions": ["south of africa"],
-    "alphabets": [],
+    "region": ["south of africa"],
+    "alphabet": [],
     "scenery": [],
     "driving": ["left"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["yellow-white"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["yellow-white"],
+    "language": [],
+    "coverage": true
   },
   "lt": {
     "name": "Lithuania",
-    "regions": ["baltic", "europe"],
-    "alphabets": [],
+    "region": ["baltic", "europe"],
+    "alphabet": [],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["yellow-white", "white-white"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["yellow-white", "white-white"],
+    "language": [],
+    "coverage": true
   },
   "lu": {
     "name": "Luxembourg",
-    "regions": ["europe"],
-    "alphabets": [],
+    "region": ["europe"],
+    "alphabet": [],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-white"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-white"],
+    "language": [],
+    "coverage": true
   },
   "mt": {
     "name": "Malta",
-    "regions": ["europe"],
-    "alphabets": [],
+    "region": ["europe"],
+    "alphabet": [],
     "scenery": [],
     "driving": ["left"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-white"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-white"],
+    "language": [],
+    "coverage": true
   },
   "my": {
     "name": "Malaysia",
-    "regions": ["sea"],
-    "alphabets": [],
+    "region": ["sea"],
+    "alphabet": [],
     "scenery": [],
     "driving": ["left"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-white"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-white"],
+    "language": [],
+    "coverage": true
   },
   "mk": {
     "name": "North Macedonia",
-    "regions": ["balkan", "europe"],
-    "alphabets": ["cyrillic", "latin"],
+    "region": ["balkan", "europe"],
+    "alphabet": ["cyrillic", "latin"],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-white", "yellow-yellow"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-white", "yellow-yellow"],
+    "language": [],
+    "coverage": true
   },
   "mx": {
     "name": "Mexico",
-    "regions": ["central america"],
-    "alphabets": [],
+    "region": ["central america"],
+    "alphabet": [],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["yellow-white", "white-yellow"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["yellow-white", "white-yellow"],
+    "language": [],
+    "coverage": true
   },
   "mc": {
     "name": "Monaco",
-    "regions": ["europe"],
-    "alphabets": [],
+    "region": ["europe"],
+    "alphabet": [],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-white"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-white"],
+    "language": [],
+    "coverage": true
   },
   "me": {
     "name": "Montenegro",
-    "regions": ["balkan", "europe"],
-    "alphabets": ["cyrillic", "latin"],
+    "region": ["balkan", "europe"],
+    "alphabet": ["cyrillic", "latin"],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-white"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-white"],
+    "language": [],
+    "coverage": true
   },
   "mn": {
     "name": "Mongolia",
-    "regions": ["east asia"],
-    "alphabets": [],
+    "region": ["east asia"],
+    "alphabet": [],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-white"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-white"],
+    "language": [],
+    "coverage": true
   },
   "ma": {
     "name": "Morocco",
-    "regions": ["maghreb"],
-    "alphabets": [],
+    "region": ["maghreb"],
+    "alphabet": [],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": [],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": [],
+    "language": [],
+    "coverage": true
   },
   "np": {
     "name": "Nepal",
-    "regions": ["south asia"],
-    "alphabets": [],
+    "region": ["south asia"],
+    "alphabet": [],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": [],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": [],
+    "language": [],
+    "coverage": true
   },
   "nl": {
     "name": "Netherlands",
-    "regions": ["europe"],
-    "alphabets": [],
+    "region": ["europe"],
+    "alphabet": [],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-white"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-white"],
+    "language": [],
+    "coverage": true
   },
   "nz": {
     "name": "New Zealand",
-    "regions": ["oceania"],
-    "alphabets": [],
+    "region": ["oceania"],
+    "alphabet": [],
     "scenery": [],
     "driving": ["left"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["yellow-white", "white-white", "white-yellow", "yellow-yellow"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": [
+      "yellow-white",
+      "white-white",
+      "white-yellow",
+      "yellow-yellow"
+    ],
+    "language": [],
+    "coverage": true
   },
   "ng": {
     "name": "Nigeria",
-    "regions": ["west africa"],
-    "alphabets": [],
+    "region": ["west africa"],
+    "alphabet": [],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["yellow-white"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["yellow-white"],
+    "language": [],
+    "coverage": true
   },
   "no": {
     "name": "Norway",
-    "regions": ["nordic", "europe"],
-    "alphabets": [],
+    "region": ["nordic", "europe"],
+    "alphabet": [],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-yellow"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-yellow"],
+    "language": [],
+    "coverage": true
+  },
+  "pa": {
+    "name": "Panama",
+    "region": ["central america"],
+    "alphabet": ["latin"],
+    "scenery": [],
+    "driving": ["right"],
+    "flagColor": ["red", "white", "blue"],
+    "flagPattern": ["rectangles", "stars"],
+    "roadLine": [],
+    "language": [],
+    "coverage": true
   },
   "pk": {
     "name": "Pakistan",
-    "regions": ["south asia"],
-    "alphabets": [],
+    "region": ["south asia"],
+    "alphabet": [],
     "scenery": [],
     "driving": ["left"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": [],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": [],
+    "language": [],
+    "coverage": true
   },
   "pe": {
     "name": "Peru",
-    "regions": ["south america"],
-    "alphabets": [],
+    "region": ["south america"],
+    "alphabet": [],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-white", "white-yellow"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-white", "white-yellow"],
+    "language": [],
+    "coverage": true
   },
   "ph": {
     "name": "Philippines",
-    "regions": ["sea"],
-    "alphabets": [],
+    "region": ["sea"],
+    "alphabet": [],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-white", "white-yellow"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-white", "white-yellow"],
+    "language": [],
+    "coverage": true
   },
   "pl": {
     "name": "Poland",
-    "regions": ["europe"],
-    "alphabets": [],
+    "region": ["europe"],
+    "alphabet": [],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-white"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-white"],
+    "language": [],
+    "coverage": true
   },
   "pt": {
     "name": "Portugal",
-    "regions": ["europe"],
-    "alphabets": [],
+    "region": ["europe"],
+    "alphabet": [],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["yellow-white", "white-white"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["yellow-white", "white-white"],
+    "language": [],
+    "coverage": true
   },
   "qa": {
     "name": "Qatar",
-    "regions": ["middle-east"],
-    "alphabets": [],
+    "region": ["middle-east"],
+    "alphabet": [],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-yellow"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-yellow"],
+    "language": [],
+    "coverage": true
   },
   "ro": {
     "name": "Romania",
-    "regions": ["balkan", "europe"],
-    "alphabets": [],
+    "region": ["balkan", "europe"],
+    "alphabet": [],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-white", "yellow-yellow"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-white", "yellow-yellow"],
+    "language": [],
+    "coverage": true
   },
   "ru": {
     "name": "Russia",
-    "regions": ["europe"],
-    "alphabets": ["cyrillic"],
+    "region": ["europe"],
+    "alphabet": ["cyrillic"],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["yellow-white", "white-white", "white-yellow"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["yellow-white", "white-white", "white-yellow"],
+    "language": [],
+    "coverage": true
   },
   "sn": {
     "name": "Senegal",
-    "regions": ["west africa"],
-    "alphabets": [],
+    "region": ["west africa"],
+    "alphabet": [],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-white"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-white"],
+    "language": [],
+    "coverage": true
   },
   "rs": {
     "name": "Serbia",
-    "regions": ["balkan", "europe"],
-    "alphabets": ["cyrillic", "latin"],
+    "region": ["balkan", "europe"],
+    "alphabet": ["cyrillic", "latin"],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-white"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-white"],
+    "language": [],
+    "coverage": true
   },
   "sg": {
     "name": "Singapore",
-    "regions": ["sea"],
-    "alphabets": [],
+    "region": ["sea"],
+    "alphabet": [],
     "scenery": [],
     "driving": ["left"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-white"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-white"],
+    "language": [],
+    "coverage": true
   },
   "sk": {
     "name": "Slovakia",
-    "regions": ["balkan", "europe"],
-    "alphabets": [],
+    "region": ["balkan", "europe"],
+    "alphabet": [],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-white"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-white"],
+    "language": [],
+    "coverage": true
   },
   "si": {
     "name": "Slovenia",
-    "regions": ["balkan", "europe"],
-    "alphabets": [],
+    "region": ["balkan", "europe"],
+    "alphabet": [],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-white"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-white"],
+    "language": [],
+    "coverage": true
   },
   "za": {
     "name": "South Africa",
-    "regions": ["south of africa"],
-    "alphabets": [],
+    "region": ["south of africa"],
+    "alphabet": [],
     "scenery": [],
     "driving": ["left"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["yellow-white"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["yellow-white"],
+    "language": [],
+    "coverage": true
   },
   "sm": {
     "name": "San Marino",
-    "regions": ["europe"],
-    "alphabets": ["latin"],
+    "region": ["europe"],
+    "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-white"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-white"],
+    "language": [],
+    "coverage": true
   },
   "es": {
     "name": "Spain",
-    "regions": ["europe"],
-    "alphabets": [],
+    "region": ["europe"],
+    "alphabet": [],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["yellow-white", "white-white"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["yellow-white", "white-white"],
+    "language": [],
+    "coverage": true
   },
   "lk": {
     "name": "Sri Lanka",
-    "regions": ["south asia"],
-    "alphabets": [],
+    "region": ["south asia"],
+    "alphabet": [],
     "scenery": [],
     "driving": ["left"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["yellow-white", "white-white"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["yellow-white", "white-white"],
+    "language": [],
+    "coverage": true
   },
   "kr": {
     "name": "South Korea",
-    "regions": ["east asia"],
-    "alphabets": [],
+    "region": ["east asia"],
+    "alphabet": [],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-yellow"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-yellow"],
+    "language": [],
+    "coverage": true
   },
   "se": {
     "name": "Sweden",
-    "regions": ["nordic", "europe"],
-    "alphabets": [],
+    "region": ["nordic", "europe"],
+    "alphabet": [],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-white"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-white"],
+    "language": [],
+    "coverage": true
   },
   "ch": {
     "name": "Switzerland",
-    "regions": ["europe"],
-    "alphabets": [],
+    "region": ["europe"],
+    "alphabet": [],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-white"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-white"],
+    "language": [],
+    "coverage": true
   },
   "tw": {
     "name": "Taiwan",
-    "regions": ["east asia"],
-    "alphabets": [],
+    "region": ["east asia"],
+    "alphabet": [],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-yellow"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-yellow"],
+    "language": [],
+    "coverage": true
   },
   "th": {
     "name": "Thailand",
-    "regions": ["sea"],
-    "alphabets": [],
+    "region": ["sea"],
+    "alphabet": [],
     "scenery": [],
     "driving": ["left"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-yellow"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-yellow"],
+    "language": [],
+    "coverage": true
   },
   "tn": {
     "name": "Tunisia",
-    "regions": ["maghreb"],
-    "alphabets": [],
+    "region": ["maghreb"],
+    "alphabet": [],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": [],
-    "extra_languages": ["french"]
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": [],
+    "language": ["french"],
+    "coverage": true
   },
   "tr": {
     "name": "Turkey",
-    "regions": ["balkan", "europe"],
-    "alphabets": [],
+    "region": ["balkan", "europe"],
+    "alphabet": [],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-white", "white-yellow", "yellow-yellow"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-white", "white-yellow", "yellow-yellow"],
+    "language": [],
+    "coverage": true
   },
   "ua": {
     "name": "Ukraine",
-    "regions": ["europe"],
-    "alphabets": ["cyrillic"],
+    "region": ["europe"],
+    "alphabet": ["cyrillic"],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-white"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-white"],
+    "language": [],
+    "coverage": true
   },
   "ae": {
     "name": "United Arab Emirates",
-    "regions": ["middle-east"],
-    "alphabets": [],
+    "region": ["middle-east"],
+    "alphabet": [],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["yellow-white", "yellow-yellow"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["yellow-white", "yellow-yellow"],
+    "language": [],
+    "coverage": true
   },
   "gb": {
     "name": "United Kingdom",
-    "regions": ["europe"],
-    "alphabets": [],
+    "region": ["europe"],
+    "alphabet": [],
     "scenery": [],
     "driving": ["left"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["yellow-white", "white-white"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["yellow-white", "white-white"],
+    "language": [],
+    "coverage": true
   },
   "us": {
     "name": "United States of America",
-    "regions": ["north america"],
-    "alphabets": ["latin"],
+    "region": ["north america"],
+    "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": ["red", "blue", "white"],
-      "patterns": ["horizontal stripes", "stars"]
-    },
-    "lines": ["white-yellow"],
-    "extra_languages": []
+    "flagColor": ["red", "blue", "white"],
+    "flagPattern": ["horizontal stripes", "stars"],
+    "roadLine": ["white-yellow"],
+    "language": [],
+    "coverage": true
   },
   "uy": {
     "name": "Uruguay",
-    "regions": ["south america"],
-    "alphabets": [],
+    "region": ["south america"],
+    "alphabet": [],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": [],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": [],
+    "language": [],
+    "coverage": true
   },
   "ug": {
     "name": "Uganda",
-    "regions": ["east africa"],
-    "alphabets": [],
+    "region": ["east africa"],
+    "alphabet": [],
     "scenery": [],
     "driving": ["left"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": ["white-white", "white-yellow"],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": ["white-white", "white-yellow"],
+    "language": [],
+    "coverage": true
   },
   "vn": {
     "name": "Vietnam",
-    "regions": ["sea"],
-    "alphabets": [],
+    "region": ["sea"],
+    "alphabet": [],
     "scenery": [],
     "driving": ["right"],
-    "flag": {
-      "colors": [],
-      "patterns": []
-    },
-    "lines": [],
-    "extra_languages": []
+    "flagColor": [],
+    "flagPattern": [],
+    "roadLine": [],
+    "language": [],
+    "coverage": true
   }
 }

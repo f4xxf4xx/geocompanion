@@ -1,6 +1,14 @@
 import { createContext } from "react";
+import { Clue } from "types/types";
 
-export const ClueContext = createContext({
+interface ClueContextType {
+  selectedClues: Clue[];
+  toggleClue: (clue: Clue) => void;
+  resetClues: () => void;
+}
+
+export const ClueContext = createContext<ClueContextType>({
   selectedClues: [],
-  toggleClue: (clue) => {},
+  toggleClue: () => {},
+  resetClues: () => {},
 });

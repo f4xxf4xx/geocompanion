@@ -1,8 +1,8 @@
 import { useState } from "react";
-import characters from "../data/characters.json";
-import countries from "../data/countries_mapping.json";
+import characters from "data/characters.json";
+import countries from "data/countries_mapping.json";
 import { Link, useSearchParams } from "react-router-dom";
-import codeMapping from "../data/code_mapping.json";
+import clueNameMapping from "data/clue_name_mapping.json";
 
 const Comparator = () => {
   let [searchParams] = useSearchParams();
@@ -112,7 +112,7 @@ const Comparator = () => {
               <h4>Unique lines: </h4>
               <ul>
                 {secondUniqueLines.map((line) => (
-                  <li>{codeMapping["lines"][line]}</li>
+                  <li>{clueNameMapping["lines"][line]}</li>
                 ))}
               </ul>
             </>

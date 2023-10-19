@@ -1,22 +1,21 @@
-import { useContext } from "react";
-
 import ClueTile from "components/clue-tile";
-import { ClueContext } from "context/clue";
+import { getDataFromClueType } from "data/dataHelper";
+import { ClueType } from "types/types";
 
-const ClueSection = ({ name, data, clueType }) => {
-  const { selectedClues, toggleClue } = useContext(ClueContext);
+const ClueSection = ({
+  name,
+  clueType,
+}: {
+  name: string;
+  clueType: ClueType;
+}) => {
+  const data = getDataFromClueType(clueType);
 
   return (
     <div className="cluesContainer">
       <h2>{name}</h2>
-      {data.map((item) => (
-        <ClueTile
-          key={item}
-          clueType={clueType}
-          value={item}
-          onPress={toggleClue}
-          clues={selectedClues}
-        />
+      {data.map((value, index) => (
+        <ClueTile key={index} clue={{ type: clueType, value }} />
       ))}
     </div>
   );

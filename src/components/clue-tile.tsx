@@ -1,38 +1,32 @@
-import codeMapping from "data/code_mapping.json";
+import { ClueContext } from "context/clue";
+import clueNameMapping from "data/clue_name_mapping.json";
+import { useContext } from "react";
+import { Clue, ClueType } from "types/types";
 
-const ClueTile = ({ value, onPress, clueType, clues }) => {
-  let displayedName = value;
+const ClueTile = ({ clue }: { clue: Clue }) => {
+  const { selectedClues, toggleClue } = useContext(ClueContext);
+  const isSelected = selectedClues.find(
+    (selectedClue) => selectedClue.value === clue.value
+  );
 
-  if (clueType === "lines") {
-    displayedName = codeMapping["lines"][value];
+  let displayedName = clue.value;
+  if (clue.type === ClueType.RoadLine) {
+    displayedName = clueNameMapping[ClueType.RoadLine][clue.value];
   }
 
   return (
     <button
-      key={value}
+      key={clue.value}
       className={`clueTileContainer ${
-        clues?.filter((clue) => clue.value === value).length > 0
-          ? "clueSelected"
-          : ""
+        isSelected ? "clueSelected" : ""
       } clickable`}
-      onClick={
-        onPress
-          ? () =>
-              onPress({
-                clueType,
-                value,
-              })
-          : null
-      }
+      onClick={() => toggleClue(clue)}
     >
-      <h3>
-        {clueType === "color" && (
+      <h3 className="clueTileTitle">
+        {clue.type === ClueType.FlagColor && (
           <div
-            style={{
-              width: "8px",
-              height: "8px",
-              backgroundColor: value,
-            }}
+            className="clueTileColor"
+            style={{ backgroundColor: clue.value }}
           />
         )}
         {displayedName}
