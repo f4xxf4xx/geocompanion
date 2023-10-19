@@ -1,7 +1,7 @@
 ## code enhancements
 
-- add vitest
 - split css
+- maybe move the data validation to a command ran on start?
 
 ## features
 

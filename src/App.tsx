@@ -6,13 +6,13 @@ import { ClueContext } from "context/clue";
 import ClueSection from "components/clue-section";
 import { Clue, ClueType } from "types/types";
 import Header from "components/layout/header";
-import { validateCountryData } from "data/validateData";
+
+import countries from "data/country_data.json";
+import { validateCountryData } from "data/dataHelper";
 
 function App() {
   const [selectedClues, setSelectedClues] = useState<Clue[]>([]);
-
-  // TODO move to a command `npm run validate`
-  const valideData = validateCountryData();
+  const validData = validateCountryData(countries);
 
   const toggleClue = (clue: Clue) => {
     if (selectedClues.filter((c) => c.value === clue.value).length > 0) {
@@ -31,7 +31,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      {valideData ? (
+      {validData ? (
         <ClueContext.Provider value={{ selectedClues, toggleClue, resetClues }}>
           <ClueSection name="Region" clueType={ClueType.Region} />
           <ClueSection name="Driving" clueType={ClueType.Driving} />

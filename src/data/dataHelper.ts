@@ -2,6 +2,37 @@ import { Clue, ClueType } from "types/types";
 import characters from "data/characters.json";
 import countries from "data/country_data.json";
 
+const requiredFields = [
+  "name",
+  "region",
+  "alphabet",
+  "scenery",
+  "driving",
+  "flagColor",
+  "flagPattern",
+  "roadLine",
+  "language",
+  "coverage",
+];
+
+export const validateCountryData = (countries) => {
+  const countryCodes = Object.keys(countries);
+  const errors = [];
+  console.debug(`Validating ${countryCodes.length} countries...`);
+
+  countryCodes.forEach((countryCode) => {
+    const countryData = countries[countryCode];
+    requiredFields.forEach((field) => {
+      if (!(field in countryData)) {
+        errors.push(`Missing ${field} for ${countryCode}`);
+      }
+    });
+  });
+
+  console.debug("Validation complete.");
+  return errors;
+};
+
 export const getDataFromClueType = (clueType: ClueType) => {
   if (clueType === ClueType.Character) {
     return Object.keys(characters);
