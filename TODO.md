@@ -7,6 +7,8 @@
 
 - better UI
 - show list of "impossible" countries that explains why it cant be
+- make "OR" filter for regions
+- fix country compare to show road line "name"
 
 ## data
 
