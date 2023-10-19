@@ -63,7 +63,7 @@
     "name": "Australia",
     "region": ["oceania"],
     "alphabet": ["latin"],
-    "scenery": ["mountains", "flat", "desert"],
+    "scenery": ["flat", "desert"],
     "driving": ["left"],
     "flagColor": [],
     "flagPattern": [],

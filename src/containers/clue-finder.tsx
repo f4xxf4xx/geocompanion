@@ -10,6 +10,7 @@ const ClueFinder = () => {
       <div>
         <ClueSection name="Region" clueType={ClueType.Region} />
         <ClueSection name="Driving" clueType={ClueType.Driving} />
+        <ClueSection name="Scenery" clueType={ClueType.Scenery} />
         <ClueSection name="Road Line" clueType={ClueType.RoadLine} />
         <ClueSection name="Alphabet" clueType={ClueType.Alphabet} />
         <ClueSection name="Character" clueType={ClueType.Character} />
