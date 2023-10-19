@@ -12,11 +12,13 @@ const ClueSection = ({
   const data = getDataFromClueType(clueType);
 
   return (
-    <div className="cluesContainer">
+    <div>
       <h2>{name}</h2>
-      {data.map((value, index) => (
-        <ClueTile key={index} clue={{ type: clueType, value }} />
-      ))}
+      <div className="clueTilesContainer">
+        {data.map((value, index) => (
+          <ClueTile key={index} clue={{ type: clueType, value }} />
+        ))}
+      </div>
     </div>
   );
 };

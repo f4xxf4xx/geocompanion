@@ -1,33 +1,21 @@
-.clueContainer {
-  display: flex;
-  width: 200px;
-  padding: 20px;
-  margin: 20px;
-
-  font-size: larger;
-
-  border: 1px black solid;
-  border-radius: 16px;
-
-  text-decoration: none;
-}
-
-.cluesContainer {
+.clueTilesContainer {
+  margin-top: 4px;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
+  gap: 4px
 }
 
 .clueTileContainer {
   display: flex;
   min-width: 50px;
   height: 40px;
-  background-color: lightblue;
-
-  margin: 8px;
+  background-color: linen;
+  border: none;
   align-items: center;
   justify-content: center;
   border-radius: 8px;
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.4);
 }
 
 .clueTileTitle {
@@ -36,7 +24,7 @@
   gap: 4px;
 }
 
-.clueTileColor {
+.clueFlagColor {
   width: 8px;
   height: 8px;
 }
@@ -46,7 +34,7 @@
 }
 
 .clueSelected {
-  background-color: lightgreen;
+  background-color: rgb(232, 252, 211);
 }
 
 h1,

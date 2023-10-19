@@ -17,15 +17,15 @@ const ClueTile = ({ clue }: { clue: Clue }) => {
   return (
     <button
       key={clue.value}
-      className={`clueTileContainer ${
+      className={`clueTileContainer clickable ${
         isSelected ? "clueSelected" : ""
-      } clickable`}
+      }`}
       onClick={() => toggleClue(clue)}
     >
       <h3 className="clueTileTitle">
         {clue.type === ClueType.FlagColor && (
           <div
-            className="clueTileColor"
+            className="clueFlagColor"
             style={{ backgroundColor: clue.value }}
           />
         )}
