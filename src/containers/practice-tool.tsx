@@ -1,8 +1,8 @@
 import { useState } from "react";
-import characters from "../data/characters.json";
-import countries from "../data/countries_mapping.json";
+import characters from "data/characters.json";
+import countries from "data/country_data.json";
 import { Link } from "react-router-dom";
-import SmallClueTile from "../components/clue-tile";
+import SmallClueTile from "components/clue-tile";
 
 const Comparator = () => {
   const [state, setState] = useState("NOT_STARTED");

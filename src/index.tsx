@@ -1,11 +1,11 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import "./index.css";
-import App from "./App";
-import reportWebVitals from "./reportWebVitals";
+import "index.css";
+import App from "App";
+import reportWebVitals from "reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Comparator from "./containers/comparator";
-import PracticeTool from "./containers/practice-tool";
+import Comparator from "containers/comparator";
+import PracticeTool from "containers/practice-tool";
 
 const router = createBrowserRouter([
   {

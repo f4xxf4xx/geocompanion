@@ -10,7 +10,6 @@
 
 ## data
 
-- make mapping validator
 - add missing countries
 - add flag data
 - add road line data

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import characters from "data/characters.json";
-import countries from "data/countries_mapping.json";
+import countries from "data/country_data.json";
 import { Link, useSearchParams } from "react-router-dom";
 import clueNameMapping from "data/clue_name_mapping.json";
 

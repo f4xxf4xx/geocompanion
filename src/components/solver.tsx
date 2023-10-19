@@ -1,44 +1,13 @@
-import { useCallback, useContext } from "react";
+import { useContext } from "react";
 import { Link } from "react-router-dom";
-import characters from "data/characters.json";
-import countries from "data/countries_mapping.json";
+import countries from "data/country_data.json";
 import Flag from "components/flag";
 import { ClueContext } from "context/clue";
-import { Clue, ClueType } from "types/types";
+import { getPossibleCountries } from "data/dataHelper";
 
 const Solver = () => {
   const { selectedClues, resetClues } = useContext(ClueContext);
-
-  const getPossibleCountries = useCallback(() => {
-    let possibleCountries = [];
-
-    selectedClues.forEach((clue, i) => {
-      let matchingCountries = [];
-
-      switch (clue.type) {
-        case ClueType.Character:
-          matchingCountries = characters[clue.value];
-          break;
-        default:
-          matchingCountries = Object.keys(countries).filter((country) =>
-            countries[country][clue.type].includes(clue.value)
-          );
-          break;
-      }
-
-      if (i === 0) {
-        possibleCountries.push(...matchingCountries);
-      } else {
-        possibleCountries = possibleCountries.filter((country) =>
-          matchingCountries.includes(country)
-        );
-      }
-    });
-
-    return possibleCountries;
-  }, [selectedClues]);
-
-  const possibleCountries = getPossibleCountries();
+  const possibleCountries = getPossibleCountries(selectedClues);
 
   return (
     <div className="solverContainer">
