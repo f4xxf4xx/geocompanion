@@ -715,7 +715,7 @@
   "mn": {
     "name": "Mongolia",
     "region": ["east asia"],
-    "alphabet": [],
+    "alphabet": ["cyrillic"],
     "scenery": [],
     "driving": ["right"],
     "flagColor": ["red", "blue"],
