@@ -1,73 +1,8 @@
-.clueFinderContainer {
-  display: flex;
-  flex-direction: row;
-}
-
-.clueTilesContainer {
-  margin-top: 4px;
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  gap: 4px;
-}
-
-.clueTileContainer {
-  display: flex;
-  min-width: 50px;
-  height: 40px;
-  background-color: lightgray;
-  border: none;
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
-  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.4);
-}
-
-.clueTileTitle {
-  align-items: center;
-  display: flex;
-  gap: 4px;
-}
-
-.clueFlagColor {
-  width: 8px;
-  height: 8px;
-}
-
-.clickable {
-  cursor: pointer;
-}
-
-.clueSelected {
-  background-color: rgb(232, 252, 211);
-}
-
 h1,
 h2,
 h3,
 h4 {
   margin: 0px;
-}
-
-.countryHeader {
-  margin: 0;
-}
-.countryUl {
-  margin: 0;
-}
-
-.comparatorContainer {
-  margin: 8px;
-  display: grid;
-  grid-template-columns: repeat(2, 200px);
-  gap: 8px;
-}
-
-.cell {
-  background-color: bisque;
-  margin: 0px;
-  padding: 8px;
-  border-radius: 4px;
 }
 
 .flagIcon {
@@ -84,29 +19,4 @@ h4 {
 .flagIconBig {
   width: 60px;
   height: 40px;
-}
-
-.actionBtn {
-  margin: 8px;
-  padding: 8px;
-  border-radius: 4px;
-  background-color: lightblue;
-  cursor: pointer;
-}
-
-.solverContainer {
-  min-width: 240px;
-}
-
-.solverUl {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-}
-
-.solverLi {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 4px;
 }

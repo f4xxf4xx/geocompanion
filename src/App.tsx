@@ -28,7 +28,7 @@ function App() {
   console.debug("Selected clues", selectedClues);
 
   return (
-    <div className="App">
+    <div>
       <Header />
       {validData ? (
         <ClueContext.Provider value={{ selectedClues, toggleClue, resetClues }}>

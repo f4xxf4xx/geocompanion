@@ -3,6 +3,15 @@ import characters from "data/characters.json";
 import countries from "data/country_data.json";
 import { Link } from "react-router-dom";
 import SmallClueTile from "components/clue-tile";
+import styled from "styled-components";
+
+const StyledButton = styled.button`
+  margin: 8px;
+  padding: 8px;
+  border-radius: 4px;
+  background-color: lightblue;
+  cursor: pointer;
+`;
 
 const Comparator = () => {
   const [state, setState] = useState("NOT_STARTED");
@@ -128,19 +137,13 @@ const Comparator = () => {
         <Link to="/">Back</Link>
         <h3>Practice Tool</h3>
         {state === "NOT_STARTED" && (
-          <button className="actionBtn" onClick={start}>
-            Start
-          </button>
+          <StyledButton onClick={start}>Start</StyledButton>
         )}
         {state === "STARTED" && (
-          <button className="actionBtn" onClick={reset}>
-            Restart
-          </button>
+          <StyledButton onClick={reset}>Restart</StyledButton>
         )}
         {state === "STARTED" && (
-          <button className="actionBtn" onClick={addClue}>
-            Add a clue
-          </button>
+          <StyledButton onClick={addClue}>Add a clue</StyledButton>
         )}
         {renderClues()}
       </div>

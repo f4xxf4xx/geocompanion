@@ -3,6 +3,21 @@ import characters from "data/characters.json";
 import countries from "data/country_data.json";
 import { Link, useSearchParams } from "react-router-dom";
 import clueNameMapping from "data/clue_name_mapping.json";
+import styled from "styled-components";
+
+const StyledContainer = styled.div`
+  margin: 8px;
+  display: grid;
+  grid-template-columns: repeat(2, 200px);
+  gap: 8px;
+`;
+
+const StyledCell = styled.div`
+  background-color: bisque;
+  margin: 0px;
+  padding: 8px;
+  border-radius: 4px;
+`;
 
 const Comparator = () => {
   let [searchParams] = useSearchParams();
@@ -67,10 +82,10 @@ const Comparator = () => {
     const secondUniqueLines = getUniqueLines(secondCountry, firstCountry);
 
     return (
-      <div className="comparatorContainer">
-        <h3 className="cell">{countries[firstCountry]?.name}</h3>
-        <h3 className="cell">{countries[secondCountry]?.name}</h3>
-        <div className="cell">
+      <StyledContainer>
+        <StyledCell>{countries[firstCountry]?.name}</StyledCell>
+        <StyledCell>{countries[secondCountry]?.name}</StyledCell>
+        <StyledCell>
           {firstUniqueCharacters?.length > 0 && (
             <>
               <h4>Unique letters: </h4>
@@ -81,8 +96,8 @@ const Comparator = () => {
               </ul>
             </>
           )}
-        </div>
-        <div className="cell">
+        </StyledCell>
+        <StyledCell>
           {secondUniqueCharacters?.length > 0 && (
             <>
               <h4>Unique letters: </h4>
@@ -93,8 +108,8 @@ const Comparator = () => {
               </ul>
             </>
           )}
-        </div>
-        <div className="cell">
+        </StyledCell>
+        <StyledCell>
           {firstUniqueLines?.length > 0 && (
             <>
               <h4>Unique lines: </h4>
@@ -105,8 +120,8 @@ const Comparator = () => {
               </ul>
             </>
           )}
-        </div>
-        <div className="cell">
+        </StyledCell>
+        <StyledCell>
           {secondUniqueLines?.length > 0 && (
             <>
               <h4>Unique lines: </h4>
@@ -117,14 +132,14 @@ const Comparator = () => {
               </ul>
             </>
           )}
-        </div>
-      </div>
+        </StyledCell>
+      </StyledContainer>
     );
   };
 
   return (
     <div>
-      <div className="comparatorHeader">
+      <div>
         <Link to="/">Back</Link>
         <h3>Comparing countries: </h3>
         <ul>
@@ -137,7 +152,7 @@ const Comparator = () => {
                 checked={selectedCountries.includes(country)}
                 onChange={onCheck}
               />
-              <label for={country}>{countries[country]?.name}</label>
+              <label htmlFor={country}>{countries[country]?.name}</label>
             </li>
           ))}
         </ul>

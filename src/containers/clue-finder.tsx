@@ -3,10 +3,15 @@ import Solver from "components/solver";
 
 import ClueSection from "components/clue-section";
 import { ClueType } from "types/types";
+import styled from "styled-components";
+
+const StyledContainer = styled.div`
+  display: flex;
+`;
 
 const ClueFinder = () => {
   return (
-    <div className="clueFinderContainer">
+    <StyledContainer>
       <div>
         <ClueSection name="Region (union)" clueType={ClueType.Region} />
         <ClueSection name="Driving" clueType={ClueType.Driving} />
@@ -18,7 +23,7 @@ const ClueFinder = () => {
         <ClueSection name="Flag pattern" clueType={ClueType.FlagPattern} />
       </div>
       <Solver />
-    </div>
+    </StyledContainer>
   );
 };
 

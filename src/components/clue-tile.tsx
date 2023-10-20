@@ -10,6 +10,33 @@ import {
   faMinus,
   faDroplet,
 } from "@fortawesome/free-solid-svg-icons";
+import styled from "styled-components";
+
+const StyledClueButton = styled.button<{ isSelected: boolean }>`
+  display: flex;
+  min-width: 50px;
+  height: 40px;
+  background-color: ${({ isSelected }) =>
+    isSelected ? "rgb(232, 252, 211)" : "lightgray"};
+  border: none;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.4);
+  cursor: pointer;
+`;
+
+const StyledTitle = styled.h3`
+  align-items: center;
+  display: flex;
+  gap: 4px;
+`;
+
+const StyledColor = styled.div<{ color: string }>`
+  width: 8px;
+  height: 8px;
+  background-color: ${({ color }) => color};
+`;
 
 const sceneryIconMapping = {
   desert: faSun,
@@ -28,8 +55,8 @@ const roadLineColorMapping = {
 
 const ClueTile = ({ clue }: { clue: Clue }) => {
   const { selectedClues, toggleClue } = useContext(ClueContext);
-  const isSelected = selectedClues.find(
-    (selectedClue) => selectedClue.value === clue.value
+  const isSelected = Boolean(
+    selectedClues.find((selectedClue) => selectedClue.value === clue.value)
   );
 
   let displayedName: string = clue.value;
@@ -47,27 +74,20 @@ const ClueTile = ({ clue }: { clue: Clue }) => {
   };
 
   return (
-    <button
+    <StyledClueButton
       key={clue.value}
-      className={`clueTileContainer clickable ${
-        isSelected ? "clueSelected" : ""
-      }`}
       onClick={() => toggleClue(clue)}
+      isSelected={isSelected}
     >
-      <h3 className="clueTileTitle">
-        {clue.type === ClueType.FlagColor && (
-          <div
-            className="clueFlagColor"
-            style={{ backgroundColor: clue.value }}
-          />
-        )}
+      <StyledTitle>
+        {clue.type === ClueType.FlagColor && <StyledColor color={clue.value} />}
         {clue.type === ClueType.Scenery && sceneryIconMapping?.[clue.value] && (
           <FontAwesomeIcon icon={sceneryIconMapping[clue.value]} />
         )}
         {getRoadLineColor()}
         {displayedName}
-      </h3>
-    </button>
+      </StyledTitle>
+    </StyledClueButton>
   );
 };
 

@@ -4,31 +4,49 @@ import countries from "data/country_data.json";
 import Flag from "components/flag";
 import { ClueContext } from "context/clue";
 import { getPossibleCountries } from "data/dataHelper";
+import styled from "styled-components";
+
+const StyledContainer = styled.div`
+  min-width: 240px;
+`;
+
+const StyledItemContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+`;
+
+const StyledItem = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 4px;
+`;
 
 const Solver = () => {
   const { selectedClues, resetClues } = useContext(ClueContext);
   const possibleCountries = getPossibleCountries(countries, selectedClues);
 
   return (
-    <div className="solverContainer">
-      <h3 className="solverTitle">Solver</h3>
-      <h4 className="solverHeader">Clues:</h4>
-      <ul className="solverUl">
+    <StyledContainer>
+      <h3>Solver</h3>
+      <h4>Clues:</h4>
+      <StyledItemContainer>
         {selectedClues?.map((clue) => (
-          <li key={clue.value}>{clue.value}</li>
+          <div key={clue.value}>{clue.value}</div>
         ))}
-      </ul>
+      </StyledItemContainer>
       {possibleCountries?.length >= 1 && (
         <div>
           <h4 className="solverHeader">Possible countries:</h4>
-          <div className="solverUl">
+          <StyledItemContainer>
             {possibleCountries?.map((country) => (
-              <div key={country} className="solverLi">
+              <StyledItem key={country}>
                 <Flag code={country} />
                 {countries?.[country]?.name}
-              </div>
+              </StyledItem>
             ))}
-          </div>
+          </StyledItemContainer>
           <Link to={`/compare?countries=${possibleCountries.join(",")}`}>
             Compare these countries
           </Link>
@@ -40,7 +58,7 @@ const Solver = () => {
           Reset
         </button>
       )}
-    </div>
+    </StyledContainer>
   );
 };
 
