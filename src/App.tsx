@@ -3,15 +3,15 @@ import "App.css";
 
 import { ClueContext } from "context/clue";
 import { Clue } from "types/types";
-import Header from "components/layout/header";
 
 import countries from "data/country_data.json";
-import { validateCountryData } from "data/dataHelper";
-import ClueFinder from "containers/clue-finder";
 
-function App() {
+import { DataContext } from "context/data";
+import clueNameMapping from "data/clue_name_mapping.json";
+import characters from "data/characters.json";
+
+function App({ children }) {
   const [selectedClues, setSelectedClues] = useState<Clue[]>([]);
-  const validData = validateCountryData(countries);
 
   const toggleClue = (clue: Clue) => {
     if (selectedClues.filter((c) => c.value === clue.value).length > 0) {
@@ -25,19 +25,12 @@ function App() {
     setSelectedClues([]);
   };
 
-  console.debug("Selected clues", selectedClues);
-
   return (
-    <div>
-      <Header />
-      {validData ? (
-        <ClueContext.Provider value={{ selectedClues, toggleClue, resetClues }}>
-          <ClueFinder />
-        </ClueContext.Provider>
-      ) : (
-        <div>Invalid data</div>
-      )}
-    </div>
+    <DataContext.Provider value={{ countries, characters, clueNameMapping }}>
+      <ClueContext.Provider value={{ selectedClues, toggleClue, resetClues }}>
+        {children}
+      </ClueContext.Provider>
+    </DataContext.Provider>
   );
 }
 

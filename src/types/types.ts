@@ -11,6 +11,14 @@ export interface CharacterData {
   [key: string]: string[];
 }
 
+export interface NameMapping {
+  [key: string]: string;
+}
+
+export interface ClueNameMapping {
+  [key: string]: NameMapping;
+}
+
 export interface Country {
   name: string;
   region: string[];

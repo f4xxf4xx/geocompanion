@@ -2,6 +2,8 @@
 
 - split css
 - maybe move the data validation to a command ran on start?
+- maybe add the json data in a provider?
+- make generic button
 
 ## features
 

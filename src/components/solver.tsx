@@ -1,11 +1,10 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
-import countries from "data/country_data.json";
-import characters from "data/characters.json";
 import Flag from "components/flag";
 import { ClueContext } from "context/clue";
 import { getPossibleCountries } from "data/dataHelper";
 import styled from "styled-components";
+import { DataContext } from "context/data";
 
 const StyledContainer = styled.div`
   min-width: 240px;
@@ -25,6 +24,7 @@ const StyledItem = styled.div`
 `;
 
 const Solver = () => {
+  const { countries, characters } = useContext(DataContext);
   const { selectedClues, resetClues } = useContext(ClueContext);
   const possibleCountries = getPossibleCountries(
     countries,

@@ -11,6 +11,8 @@ import {
   faDroplet,
 } from "@fortawesome/free-solid-svg-icons";
 import styled from "styled-components";
+import ColoredRoadLine from "./clues/colored-road-line";
+import { StyledColorSquare } from "./colored-square";
 
 const StyledClueButton = styled.button<{ isSelected: boolean }>`
   display: flex;
@@ -32,25 +34,12 @@ const StyledTitle = styled.h3`
   gap: 4px;
 `;
 
-const StyledColor = styled.div<{ color: string }>`
-  width: 8px;
-  height: 8px;
-  background-color: ${({ color }) => color};
-`;
-
 const sceneryIconMapping = {
   desert: faSun,
   mountains: faMountain,
   woods: faTree,
   flat: faMinus,
   tropical: faDroplet,
-};
-
-const roadLineColorMapping = {
-  "yellow-white": ["yellow", "white", "yellow"],
-  "white-white": ["white", "white", "white"],
-  "yellow-yellow": ["yellow", "yellow", "yellow"],
-  "white-yellow": ["white", "yellow", "white"],
 };
 
 const ClueTile = ({ clue }: { clue: Clue }) => {
@@ -64,15 +53,6 @@ const ClueTile = ({ clue }: { clue: Clue }) => {
     displayedName = clueNameMapping[ClueType.RoadLine][clue.value];
   }
 
-  const getRoadLineColor = () => {
-    if (clue.type !== ClueType.RoadLine) {
-      return null;
-    }
-    return roadLineColorMapping[clue.value].map((color) => (
-      <StyledColor color={color} />
-    ));
-  };
-
   return (
     <StyledClueButton
       key={clue.value}
@@ -80,11 +60,15 @@ const ClueTile = ({ clue }: { clue: Clue }) => {
       isSelected={isSelected}
     >
       <StyledTitle>
-        {clue.type === ClueType.FlagColor && <StyledColor color={clue.value} />}
+        {clue.type === ClueType.FlagColor && (
+          <StyledColorSquare color={clue.value} />
+        )}
         {clue.type === ClueType.Scenery && sceneryIconMapping?.[clue.value] && (
           <FontAwesomeIcon icon={sceneryIconMapping[clue.value]} />
         )}
-        {getRoadLineColor()}
+        {clue.type === ClueType.RoadLine && (
+          <ColoredRoadLine value={clue.value} />
+        )}
         {displayedName}
       </StyledTitle>
     </StyledClueButton>

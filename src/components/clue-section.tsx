@@ -1,15 +1,14 @@
+import { useContext } from "react";
 import ClueTile from "components/clue-tile";
 import { getDataFromClueType } from "data/dataHelper";
 import { ClueType } from "types/types";
-import countries from "data/country_data.json";
 import styled from "styled-components";
-import characters from "data/characters.json";
+import { DataContext } from "context/data";
 
 const StyledClueContainer = styled.div`
   margin-top: 4px;
   display: flex;
   flex-wrap: wrap;
-  flex-direction: row;
   gap: 4px;
 `;
 
@@ -20,6 +19,7 @@ const ClueSection = ({
   name: string;
   clueType: ClueType;
 }) => {
+  const { countries, characters } = useContext(DataContext);
   const data = getDataFromClueType(countries, characters, clueType);
 
   return (
