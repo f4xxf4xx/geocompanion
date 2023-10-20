@@ -69,7 +69,7 @@ const ClueTile = ({ clue }: { clue: Clue }) => {
       return null;
     }
     return roadLineColorMapping[clue.value].map((color) => (
-      <div className="clueFlagColor" style={{ backgroundColor: color }} />
+      <StyledColor color={color} />
     ));
   };
 

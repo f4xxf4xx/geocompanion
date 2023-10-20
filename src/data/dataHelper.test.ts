@@ -61,6 +61,11 @@ const countries: CountryData = {
   jp: japanData,
 };
 
+// TODO type
+const characters = {
+  Éé: ["fr", "ca"],
+};
+
 describe("validateData", () => {
   test("with valid data", () => {
     expect(validateCountryData({ ca: canadaData })).toStrictEqual([]);
@@ -75,29 +80,46 @@ describe("validateData", () => {
 describe("getPossibleCountries", () => {
   test("with character clue", () => {
     expect(
-      getPossibleCountries(countries, [
+      getPossibleCountries(countries, characters, [
         { type: ClueType.Character, value: "Éé" },
       ])
     ).toStrictEqual(["ca", "fr"]);
   });
   test("with region clue union", () => {
     expect(
-      getPossibleCountries(countries, [
+      getPossibleCountries(countries, characters, [
         { type: ClueType.Region, value: "north america" },
         { type: ClueType.Region, value: "europe" },
       ])
     ).toStrictEqual(["ca", "fr", "us"]);
   });
+  test("with one region clue and one other", () => {
+    expect(
+      getPossibleCountries(countries, characters, [
+        { type: ClueType.Character, value: "Éé" },
+        { type: ClueType.Region, value: "north america" },
+      ])
+    ).toStrictEqual(["ca"]);
+  });
+  test("with two regions and one other clue", () => {
+    expect(
+      getPossibleCountries(countries, characters, [
+        { type: ClueType.Region, value: "north america" },
+        { type: ClueType.Region, value: "europe" },
+        { type: ClueType.Character, value: "Éé" },
+      ])
+    ).toStrictEqual(["ca", "fr"]);
+  });
   test("with flagColor clue", () => {
     expect(
-      getPossibleCountries(countries, [
+      getPossibleCountries(countries, characters, [
         { type: ClueType.FlagColor, value: "blue" },
       ])
     ).toStrictEqual(["fr", "us"]);
   });
   test("with character and flagColor clue", () => {
     expect(
-      getPossibleCountries(countries, [
+      getPossibleCountries(countries, characters, [
         { type: ClueType.FlagColor, value: "blue" },
         { type: ClueType.Character, value: "Éé" },
       ])

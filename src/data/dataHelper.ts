@@ -1,5 +1,4 @@
-import { Clue, ClueType, CountryData } from "types/types";
-import characters from "data/characters.json";
+import { CharacterData, Clue, ClueType, CountryData } from "types/types";
 
 const requiredFields = [
   "name",
@@ -31,6 +30,7 @@ export const validateCountryData = (countries: CountryData) => {
 
 export const getDataFromClueType = (
   countries: CountryData,
+  characters: CharacterData,
   clueType: ClueType
 ) => {
   if (clueType === ClueType.Coverage) {
@@ -46,13 +46,28 @@ export const getDataFromClueType = (
     .sort();
 };
 
+// probably the worst piece of code i've ever written, but it works
 export const getPossibleCountries = (
   countries: CountryData,
-  selectedClues: Clue[]
+  characters: CharacterData,
+  clues: Clue[]
 ) => {
-  let possibleCountries = [];
+  const regionClues = clues.filter((clue) => clue.type === ClueType.Region);
+  const otherClues = clues.filter((clue) => clue.type !== ClueType.Region);
 
-  selectedClues.forEach((clue, i) => {
+  const countriesThatMatchRegionClues = [
+    ...new Set(
+      regionClues.reduce((result, clue) => {
+        const matchingCountries = Object.keys(countries).filter((country) =>
+          countries[country].region.includes(clue.value)
+        );
+        return [...result, ...matchingCountries];
+      }, [])
+    ),
+  ];
+
+  let possibleCountries = [];
+  otherClues.forEach((clue, i) => {
     let matchingCountries = [];
 
     switch (clue.type) {
@@ -68,7 +83,7 @@ export const getPossibleCountries = (
         break;
     }
 
-    if (i === 0 || clue.type === ClueType.Region) {
+    if (i === 0) {
       possibleCountries.push(...matchingCountries);
     } else {
       possibleCountries = possibleCountries.filter((country) =>
@@ -76,6 +91,15 @@ export const getPossibleCountries = (
       );
     }
   });
+
+  if (regionClues.length > 0) {
+    possibleCountries = possibleCountries.filter((country) =>
+      countriesThatMatchRegionClues.includes(country)
+    );
+  }
+  if (otherClues.length === 0) {
+    possibleCountries = countriesThatMatchRegionClues;
+  }
 
   return possibleCountries.sort();
 };

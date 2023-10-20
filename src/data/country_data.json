@@ -13,7 +13,7 @@
   },
   "al": {
     "name": "Albania",
-    "region": ["balkan", "europe"],
+    "region": ["balkan", "eu"],
     "alphabet": ["latin"],
     "scenery": ["mountains"],
     "driving": ["right"],
@@ -37,7 +37,7 @@
   },
   "ad": {
     "name": "Andorra",
-    "region": ["europe"],
+    "region": ["eu"],
     "alphabet": ["latin"],
     "scenery": ["mountains"],
     "driving": ["right"],
@@ -73,7 +73,7 @@
   },
   "at": {
     "name": "Austria",
-    "region": ["europe"],
+    "region": ["eu"],
     "alphabet": ["latin"],
     "scenery": ["mountains"],
     "driving": ["right"],
@@ -97,7 +97,7 @@
   },
   "be": {
     "name": "Belgium",
-    "region": ["europe"],
+    "region": ["eu"],
     "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
@@ -157,7 +157,7 @@
   },
   "bg": {
     "name": "Bulgaria",
-    "region": ["balkan", "europe"],
+    "region": ["balkan", "eu"],
     "alphabet": ["cyrillic", "latin"],
     "scenery": [],
     "driving": ["right"],
@@ -181,7 +181,7 @@
   },
   "ca": {
     "name": "Canada",
-    "region": ["north america"],
+    "region": ["na"],
     "alphabet": ["latin"],
     "scenery": ["woods"],
     "driving": ["right"],
@@ -246,7 +246,7 @@
   },
   "hr": {
     "name": "Croatia",
-    "region": ["balkan", "europe"],
+    "region": ["balkan", "eu"],
     "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
@@ -270,7 +270,7 @@
   },
   "cz": {
     "name": "Czechia",
-    "region": ["balkan", "europe"],
+    "region": ["balkan", "eu"],
     "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
@@ -282,7 +282,7 @@
   },
   "dk": {
     "name": "Denmark",
-    "region": ["nordic", "europe"],
+    "region": ["nordic", "eu"],
     "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
@@ -330,7 +330,7 @@
   },
   "ee": {
     "name": "Estonia",
-    "region": ["baltic", "europe"],
+    "region": ["baltic", "eu"],
     "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
@@ -354,7 +354,7 @@
   },
   "fi": {
     "name": "Finland",
-    "region": ["nordic", "europe"],
+    "region": ["nordic", "eu"],
     "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
@@ -366,7 +366,7 @@
   },
   "fr": {
     "name": "France",
-    "region": ["europe"],
+    "region": ["eu"],
     "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
@@ -378,7 +378,7 @@
   },
   "de": {
     "name": "Germany",
-    "region": ["europe"],
+    "region": ["eu"],
     "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
@@ -402,7 +402,7 @@
   },
   "gr": {
     "name": "Greece",
-    "region": ["europe", "balkan"],
+    "region": ["eu", "balkan"],
     "alphabet": ["greek"],
     "scenery": [],
     "driving": ["right"],
@@ -450,7 +450,7 @@
   },
   "hu": {
     "name": "Hungary",
-    "region": ["balkan", "europe"],
+    "region": ["balkan", "eu"],
     "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
@@ -462,7 +462,7 @@
   },
   "is": {
     "name": "Iceland",
-    "region": ["nordic", "europe"],
+    "region": ["nordic", "eu"],
     "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
@@ -498,7 +498,7 @@
   },
   "ie": {
     "name": "Ireland",
-    "region": ["europe"],
+    "region": ["eu"],
     "alphabet": ["latin"],
     "scenery": [],
     "driving": ["left"],
@@ -522,7 +522,7 @@
   },
   "it": {
     "name": "Italy",
-    "region": ["europe"],
+    "region": ["eu"],
     "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
@@ -594,7 +594,7 @@
   },
   "lv": {
     "name": "Latvia",
-    "region": ["baltic", "europe"],
+    "region": ["baltic", "eu"],
     "alphabet": [],
     "scenery": [],
     "driving": ["right"],
@@ -618,7 +618,7 @@
   },
   "lt": {
     "name": "Lithuania",
-    "region": ["baltic", "europe"],
+    "region": ["baltic", "eu"],
     "alphabet": [],
     "scenery": [],
     "driving": ["right"],
@@ -630,7 +630,7 @@
   },
   "lu": {
     "name": "Luxembourg",
-    "region": ["europe"],
+    "region": ["eu"],
     "alphabet": [],
     "scenery": [],
     "driving": ["right"],
@@ -642,7 +642,7 @@
   },
   "mt": {
     "name": "Malta",
-    "region": ["europe"],
+    "region": ["eu"],
     "alphabet": [],
     "scenery": [],
     "driving": ["left"],
@@ -666,7 +666,7 @@
   },
   "mk": {
     "name": "North Macedonia",
-    "region": ["balkan", "europe"],
+    "region": ["balkan", "eu"],
     "alphabet": ["cyrillic", "latin"],
     "scenery": [],
     "driving": ["right"],
@@ -690,7 +690,7 @@
   },
   "mc": {
     "name": "Monaco",
-    "region": ["europe"],
+    "region": ["eu"],
     "alphabet": [],
     "scenery": [],
     "driving": ["right"],
@@ -702,7 +702,7 @@
   },
   "me": {
     "name": "Montenegro",
-    "region": ["balkan", "europe"],
+    "region": ["balkan", "eu"],
     "alphabet": ["cyrillic", "latin"],
     "scenery": [],
     "driving": ["right"],
@@ -750,7 +750,7 @@
   },
   "nl": {
     "name": "Netherlands",
-    "region": ["europe"],
+    "region": ["eu"],
     "alphabet": [],
     "scenery": [],
     "driving": ["right"],
@@ -791,7 +791,7 @@
   },
   "no": {
     "name": "Norway",
-    "region": ["nordic", "europe"],
+    "region": ["nordic", "eu"],
     "alphabet": [],
     "scenery": [],
     "driving": ["right"],
@@ -851,7 +851,7 @@
   },
   "pl": {
     "name": "Poland",
-    "region": ["europe"],
+    "region": ["eu"],
     "alphabet": [],
     "scenery": [],
     "driving": ["right"],
@@ -863,7 +863,7 @@
   },
   "pt": {
     "name": "Portugal",
-    "region": ["europe"],
+    "region": ["eu"],
     "alphabet": [],
     "scenery": [],
     "driving": ["right"],
@@ -887,7 +887,7 @@
   },
   "ro": {
     "name": "Romania",
-    "region": ["balkan", "europe"],
+    "region": ["balkan", "eu"],
     "alphabet": [],
     "scenery": [],
     "driving": ["right"],
@@ -899,7 +899,7 @@
   },
   "ru": {
     "name": "Russia",
-    "region": ["europe"],
+    "region": ["eu"],
     "alphabet": ["cyrillic"],
     "scenery": [],
     "driving": ["right"],
@@ -923,7 +923,7 @@
   },
   "rs": {
     "name": "Serbia",
-    "region": ["balkan", "europe"],
+    "region": ["balkan", "eu"],
     "alphabet": ["cyrillic", "latin"],
     "scenery": [],
     "driving": ["right"],
@@ -947,7 +947,7 @@
   },
   "sk": {
     "name": "Slovakia",
-    "region": ["balkan", "europe"],
+    "region": ["balkan", "eu"],
     "alphabet": [],
     "scenery": [],
     "driving": ["right"],
@@ -959,7 +959,7 @@
   },
   "si": {
     "name": "Slovenia",
-    "region": ["balkan", "europe"],
+    "region": ["balkan", "eu"],
     "alphabet": [],
     "scenery": [],
     "driving": ["right"],
@@ -983,7 +983,7 @@
   },
   "sm": {
     "name": "San Marino",
-    "region": ["europe"],
+    "region": ["eu"],
     "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
@@ -995,7 +995,7 @@
   },
   "es": {
     "name": "Spain",
-    "region": ["europe"],
+    "region": ["eu"],
     "alphabet": [],
     "scenery": [],
     "driving": ["right"],
@@ -1031,7 +1031,7 @@
   },
   "se": {
     "name": "Sweden",
-    "region": ["nordic", "europe"],
+    "region": ["nordic", "eu"],
     "alphabet": [],
     "scenery": [],
     "driving": ["right"],
@@ -1043,7 +1043,7 @@
   },
   "ch": {
     "name": "Switzerland",
-    "region": ["europe"],
+    "region": ["eu"],
     "alphabet": [],
     "scenery": [],
     "driving": ["right"],
@@ -1091,7 +1091,7 @@
   },
   "tr": {
     "name": "Turkey",
-    "region": ["balkan", "europe"],
+    "region": ["balkan", "eu"],
     "alphabet": [],
     "scenery": [],
     "driving": ["right"],
@@ -1103,7 +1103,7 @@
   },
   "ua": {
     "name": "Ukraine",
-    "region": ["europe"],
+    "region": ["eu"],
     "alphabet": ["cyrillic"],
     "scenery": [],
     "driving": ["right"],
@@ -1127,7 +1127,7 @@
   },
   "gb": {
     "name": "United Kingdom",
-    "region": ["europe"],
+    "region": ["eu"],
     "alphabet": [],
     "scenery": [],
     "driving": ["left"],
@@ -1139,7 +1139,7 @@
   },
   "us": {
     "name": "United States of America",
-    "region": ["north america"],
+    "region": ["na"],
     "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],

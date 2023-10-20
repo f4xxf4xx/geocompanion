@@ -7,6 +7,10 @@ export interface CountryData {
   [key: string]: Country;
 }
 
+export interface CharacterData {
+  [key: string]: string[];
+}
+
 export interface Country {
   name: string;
   region: string[];
@@ -17,7 +21,7 @@ export interface Country {
   flagPattern: string[];
   roadLine: string[];
   language: string[];
-  coverage: boolean
+  coverage: boolean;
 }
 
 export enum ClueType {

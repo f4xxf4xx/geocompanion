@@ -3,6 +3,7 @@ import { getDataFromClueType } from "data/dataHelper";
 import { ClueType } from "types/types";
 import countries from "data/country_data.json";
 import styled from "styled-components";
+import characters from "data/characters.json";
 
 const StyledClueContainer = styled.div`
   margin-top: 4px;
@@ -19,7 +20,7 @@ const ClueSection = ({
   name: string;
   clueType: ClueType;
 }) => {
-  const data = getDataFromClueType(countries, clueType);
+  const data = getDataFromClueType(countries, characters, clueType);
 
   return (
     <div>
