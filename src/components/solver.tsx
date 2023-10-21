@@ -6,8 +6,8 @@ import { getPossibleCountries } from "data/dataHelper";
 import styled from "styled-components";
 import { DataContext } from "context/data";
 import { AnimatePresence, motion } from "framer-motion";
-import { StyledButton, StyledLink } from "./button";
 import { Link } from "react-router-dom";
+import FlagCountry from "./flag-country";
 
 const StyledContainer = styled.div`
   min-width: 240px;
@@ -50,8 +50,7 @@ const Solver = () => {
                 transition={{ duration: 1 }}
                 key={country}
               >
-                <Flag code={country} />
-                {countries?.[country]?.name}
+                <FlagCountry country={country} />
               </StyledItem>
             ))}
           </AnimatePresence>
