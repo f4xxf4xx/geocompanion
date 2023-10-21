@@ -1,10 +1,13 @@
 import { useContext } from "react";
-import { Link } from "react-router-dom";
+
 import Flag from "components/flag";
 import { ClueContext } from "context/clue";
 import { getPossibleCountries } from "data/dataHelper";
 import styled from "styled-components";
 import { DataContext } from "context/data";
+import { AnimatePresence, motion } from "framer-motion";
+import { StyledButton, StyledLink } from "./button";
+import { Link } from "react-router-dom";
 
 const StyledContainer = styled.div`
   min-width: 240px;
@@ -13,14 +16,15 @@ const StyledContainer = styled.div`
 const StyledItemContainer = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  overflow-y: scroll;
 `;
 
-const StyledItem = styled.div`
+const StyledItem = styled(motion.div)`
   display: flex;
-  flex-direction: row;
   align-items: center;
+  justify-items: center;
   gap: 4px;
+  padding: 2px;
 `;
 
 const Solver = () => {
@@ -35,33 +39,29 @@ const Solver = () => {
   return (
     <StyledContainer>
       <h3>Solver</h3>
-      <h4>Clues:</h4>
-      <StyledItemContainer>
-        {selectedClues?.map((clue) => (
-          <div key={clue.value}>{clue.value}</div>
-        ))}
-      </StyledItemContainer>
-      {possibleCountries?.length >= 1 && (
-        <div>
-          <h4 className="solverHeader">Possible countries:</h4>
-          <StyledItemContainer>
+      <div>
+        <h4 className="solverHeader">Possible countries:</h4>
+        <StyledItemContainer>
+          <AnimatePresence initial={false}>
             {possibleCountries?.map((country) => (
-              <StyledItem key={country}>
+              <StyledItem
+                initial={{ opacity: 1 }}
+                exit={{ opacity: 0, backgroundColor: "#ff5555" }}
+                transition={{ duration: 1 }}
+                key={country}
+              >
                 <Flag code={country} />
                 {countries?.[country]?.name}
               </StyledItem>
             ))}
-          </StyledItemContainer>
-          <Link to={`/compare?countries=${possibleCountries.join(",")}`}>
-            Compare these countries
-          </Link>
-          <br />
-        </div>
-      )}
+          </AnimatePresence>
+        </StyledItemContainer>
+        <Link to={`/compare?countries=${possibleCountries.join(",")}`}>
+          Compare
+        </Link>
+      </div>
       {selectedClues?.length >= 1 && (
-        <button className="resetButton" onClick={() => resetClues()}>
-          Reset
-        </button>
+        <button onClick={() => resetClues()}>Reset</button>
       )}
     </StyledContainer>
   );
