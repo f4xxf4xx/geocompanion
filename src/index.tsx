@@ -6,6 +6,7 @@ import reportWebVitals from "reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Comparator from "containers/comparator";
 import PracticeTool from "containers/practice-tool";
+import Country from "containers/country";
 import Home from "containers/home";
 
 const router = createBrowserRouter([
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
   {
     path: "/practice-tool",
     element: <PracticeTool />,
+  },
+  {
+    path: "/:countryCode",
+    element: <Country />,
   },
 ]);
 

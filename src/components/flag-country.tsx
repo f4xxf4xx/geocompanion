@@ -2,21 +2,25 @@ import styled from "styled-components";
 import Flag from "./flag";
 import { useContext } from "react";
 import { DataContext } from "context/data";
+import { Link } from "react-router-dom";
 
-const StyledContainer = styled.div`
+const StyledLink = styled(Link)`
   display: flex;
   align-items: center;
   justify-items: center;
   gap: 4px;
+  text-decoration: none;
+  color: black;
 `;
 
-const FlagCountry = ({ country }) => {
+const FlagCountry = ({ countryCode }: { countryCode: string }) => {
   const { countries } = useContext(DataContext);
+
   return (
-    <StyledContainer>
-      <Flag code={country} />
-      {countries?.[country]?.name}
-    </StyledContainer>
+    <StyledLink to={`/${countryCode}`}>
+      <Flag code={countryCode} />
+      {countries?.[countryCode]?.name}
+    </StyledLink>
   );
 };
 

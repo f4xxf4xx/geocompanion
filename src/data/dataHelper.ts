@@ -51,7 +51,7 @@ export const getPossibleCountries = (
   countries: CountryData,
   characters: CharacterData,
   clues: Clue[]
-) => {
+): string[] => {
   const regionClues = clues.filter((clue) => clue.type === ClueType.Region);
   const otherClues = clues.filter((clue) => clue.type !== ClueType.Region);
 

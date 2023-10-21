@@ -16,7 +16,6 @@ const StyledContainer = styled.div`
 const StyledItemContainer = styled.div`
   display: flex;
   flex-direction: column;
-  overflow-y: scroll;
 `;
 
 const StyledItem = styled(motion.div)`
@@ -43,14 +42,14 @@ const Solver = () => {
         <h4 className="solverHeader">Possible countries:</h4>
         <StyledItemContainer>
           <AnimatePresence initial={false}>
-            {possibleCountries?.map((country) => (
+            {possibleCountries?.map((countryCode) => (
               <StyledItem
                 initial={{ opacity: 1 }}
                 exit={{ opacity: 0, backgroundColor: "#ff5555" }}
                 transition={{ duration: 1 }}
-                key={country}
+                key={countryCode}
               >
-                <FlagCountry country={country} />
+                <FlagCountry countryCode={countryCode} />
               </StyledItem>
             ))}
           </AnimatePresence>
