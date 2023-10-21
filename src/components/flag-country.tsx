@@ -12,10 +12,12 @@ const StyledContainer = styled.div`
 
 const FlagCountry = ({ country }) => {
   const { countries } = useContext(DataContext);
-  <StyledContainer>
-    <Flag code={country} />
-    {countries?.[country]?.name}
-  </StyledContainer>;
+  return (
+    <StyledContainer>
+      <Flag code={country} />
+      {countries?.[country]?.name}
+    </StyledContainer>
+  );
 };
 
 export default FlagCountry;
