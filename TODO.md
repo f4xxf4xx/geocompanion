@@ -2,13 +2,13 @@
 
 - move the data validation to a command ran on start
 - make generic button
+- add prettier config
 
 ## features
 
-- country page
 - being able to pick countries to compare without having to put any clue
 - show list of "impossible" countries that explains why it cant be
-- fix country compare to show road line "name"
+- add map onclick open country page
 
 ## clues
 

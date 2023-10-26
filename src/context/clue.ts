@@ -1,9 +1,9 @@
 import { createContext } from "react";
-import { Clue } from "types/types";
+import { SelectedClue } from "types/types";
 
 interface ClueContextType {
-  selectedClues: Clue[];
-  toggleClue: (clue: Clue) => void;
+  selectedClues: SelectedClue[];
+  toggleClue: (clue: SelectedClue) => void;
   resetClues: () => void;
 }
 

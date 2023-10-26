@@ -1,14 +1,16 @@
 import { createContext } from "react";
-import { CharacterData, Clue, ClueNameMapping, CountryData } from "types/types";
+import { CharacterData, ClueData, CountryData } from "types/types";
 
 interface DataContextType {
   countries: CountryData;
   characters: CharacterData;
-  clueNameMapping: ClueNameMapping;
+  clues: ClueData;
+  possibleCountries: string[];
 }
 
 export const DataContext = createContext<DataContextType>({
   countries: {},
   characters: {},
-  clueNameMapping: {},
+  clues: {},
+  possibleCountries: [],
 });

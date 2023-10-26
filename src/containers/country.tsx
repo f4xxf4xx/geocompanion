@@ -6,7 +6,6 @@ import FlagCountry from "components/flag-country";
 const Country = () => {
   let { countryCode } = useParams();
   const { countries } = useContext(DataContext);
-  console.debug("countryCode", countryCode);
   const country = countries?.[countryCode];
 
   if (!country) {

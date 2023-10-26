@@ -1,9 +1,8 @@
-import { useState } from "react";
-import characters from "data/characters.json";
-import countries from "data/country_data.json";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import SmallClueTile from "components/clue-tile";
 import styled from "styled-components";
+import { DataContext } from "context/data";
 
 const StyledButton = styled.button`
   margin: 8px;
@@ -14,6 +13,7 @@ const StyledButton = styled.button`
 `;
 
 const Comparator = () => {
+  const { countries, characters } = useContext(DataContext);
   const [state, setState] = useState("NOT_STARTED");
   const [clues, setClues] = useState([]);
   const [country, setCountry] = useState(null);

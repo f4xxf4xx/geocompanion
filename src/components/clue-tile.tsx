@@ -1,31 +1,31 @@
 import { ClueContext } from "context/clue";
-import clueNameMapping from "data/clue_name_mapping.json";
 import { useContext } from "react";
-import { Clue, ClueType } from "types/types";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faTree,
-  faSun,
-  faMountain,
-  faMinus,
-  faDroplet,
-} from "@fortawesome/free-solid-svg-icons";
+import { ClueType, SelectedClue } from "types/types";
+
 import styled from "styled-components";
 import ColoredRoadLine from "./clues/colored-road-line";
-import { StyledColorSquare } from "./colored-square";
+import ClueIcon from "./clues/clue-icon";
 
-const StyledClueButton = styled.button<{ isSelected: boolean }>`
+const StyledClueButton = styled.button<{ $isSelected: boolean }>`
   display: flex;
   min-width: 50px;
   height: 40px;
-  background-color: ${({ isSelected }) =>
-    isSelected ? "rgb(232, 252, 211)" : "lightgray"};
+  background-color: ${({ $isSelected }) =>
+    $isSelected ? "rgb(232, 252, 211)" : "lightgray"};
   border: none;
   align-items: center;
   justify-content: center;
   border-radius: 8px;
-  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.4);
+  border: 1px solid lightgray;
   cursor: pointer;
+`;
+
+const StyledFlagColorButton = styled(StyledClueButton)<{
+  color: string;
+  $isSelected: boolean;
+}>`
+  background-color: ${({ color }) => color};
+  border: ${({ $isSelected }) => ($isSelected ? "4px" : "1px")} solid lightgray;
 `;
 
 const StyledTitle = styled.h3`
@@ -34,15 +34,7 @@ const StyledTitle = styled.h3`
   gap: 4px;
 `;
 
-const sceneryIconMapping = {
-  desert: faSun,
-  mountains: faMountain,
-  woods: faTree,
-  flat: faMinus,
-  tropical: faDroplet,
-};
-
-const ClueTile = ({ clue }: { clue: Clue }) => {
+const ClueTile = ({ clue }: { clue: SelectedClue }) => {
   const { selectedClues, toggleClue } = useContext(ClueContext);
   const isSelected = Boolean(
     selectedClues.find((selectedClue) => selectedClue.value === clue.value)
@@ -50,25 +42,30 @@ const ClueTile = ({ clue }: { clue: Clue }) => {
 
   let displayedName: string = clue.value;
   if (clue.type === ClueType.RoadLine) {
-    displayedName = clueNameMapping[ClueType.RoadLine][clue.value];
+    displayedName = "";
+  }
+
+  if (clue.type === ClueType.FlagColor) {
+    return (
+      <StyledFlagColorButton
+        color={clue.value}
+        $isSelected={isSelected}
+        onClick={() => toggleClue(clue)}
+      />
+    );
   }
 
   return (
     <StyledClueButton
       key={clue.value}
       onClick={() => toggleClue(clue)}
-      isSelected={isSelected}
+      $isSelected={isSelected}
     >
       <StyledTitle>
-        {clue.type === ClueType.FlagColor && (
-          <StyledColorSquare color={clue.value} />
-        )}
-        {clue.type === ClueType.Scenery && sceneryIconMapping?.[clue.value] && (
-          <FontAwesomeIcon icon={sceneryIconMapping[clue.value]} />
-        )}
         {clue.type === ClueType.RoadLine && (
           <ColoredRoadLine value={clue.value} />
         )}
+        <ClueIcon clue={clue} />
         {displayedName}
       </StyledTitle>
     </StyledClueButton>

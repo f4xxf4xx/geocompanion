@@ -1,21 +1,26 @@
-import { CharacterData, Clue, ClueType, CountryData } from "types/types";
-
-const requiredFields = [
-  "name",
-  "region",
-  "alphabet",
-  "scenery",
-  "driving",
-  "flagColor",
-  "flagPattern",
-  "roadLine",
-  "language",
-  "coverage",
-];
+import {
+  CharacterData,
+  ClueData,
+  ClueType,
+  CountryData,
+  SelectedClue,
+} from "types/types";
 
 export const validateCountryData = (countries: CountryData) => {
   const countryCodes = Object.keys(countries);
   const errors = [];
+  const requiredFields = [
+    "name",
+    "region",
+    "alphabet",
+    "scenery",
+    "driving",
+    "flagColor",
+    "flagPattern",
+    "roadLine",
+    "language",
+    "coverage",
+  ];
 
   countryCodes.forEach((countryCode) => {
     const countryData = countries[countryCode];
@@ -50,8 +55,11 @@ export const getDataFromClueType = (
 export const getPossibleCountries = (
   countries: CountryData,
   characters: CharacterData,
-  clues: Clue[]
+  clues: SelectedClue[]
 ): string[] => {
+  if (clues.length === 0) {
+    return Object.keys(countries).sort();
+  }
   const regionClues = clues.filter((clue) => clue.type === ClueType.Region);
   const otherClues = clues.filter((clue) => clue.type !== ClueType.Region);
 
@@ -102,4 +110,31 @@ export const getPossibleCountries = (
   }
 
   return possibleCountries.sort();
+};
+
+export const getSearchItems = (
+  countries: CountryData,
+  characters: CharacterData,
+  clues: ClueData
+) => {
+  const items = [];
+  let i = 0;
+
+  const addClues = (clueType: ClueType) => {
+    getDataFromClueType(countries, characters, clueType).forEach((clue) => {
+      items.push({
+        id: i,
+        name: `${clues[clueType].clueName} ${clue}`,
+        clueType: clueType,
+        value: clue,
+      });
+      i++;
+    });
+  };
+
+  addClues(ClueType.Driving);
+  addClues(ClueType.FlagColor);
+  addClues(ClueType.Character);
+
+  return items;
 };

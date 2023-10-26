@@ -4,25 +4,33 @@ import Solver from "components/solver";
 import ClueSection from "components/clue-section";
 import { ClueType } from "types/types";
 import styled from "styled-components";
+import Map from "components/map";
+import ClueSearchbar from "components/clue-searchbar";
 
 const StyledContainer = styled.div`
-  display: flex;
+  display: grid;
+  grid-template-columns: 800px 1fr;
 `;
 
 const ClueFinder = () => {
   return (
     <StyledContainer>
       <div>
-        <ClueSection name="Character" clueType={ClueType.Character} />
-        <ClueSection name="Road Line" clueType={ClueType.RoadLine} />
-        <ClueSection name="Flag color" clueType={ClueType.FlagColor} />
-        <ClueSection name="Flag pattern" clueType={ClueType.FlagPattern} />
-        <ClueSection name="Region (union)" clueType={ClueType.Region} />
-        <ClueSection name="Driving" clueType={ClueType.Driving} />
-        <ClueSection name="Scenery" clueType={ClueType.Scenery} />
-        <ClueSection name="Alphabet" clueType={ClueType.Alphabet} />
+        <Map />
+        <Solver />
       </div>
-      <Solver />
+      <div>
+        <p>Press 1 to reset clues</p>
+        <ClueSearchbar />
+        <ClueSection clueType={ClueType.Character} />
+        <ClueSection clueType={ClueType.Driving} />
+        <ClueSection clueType={ClueType.FlagColor} />
+        <ClueSection clueType={ClueType.FlagPattern} />
+        <ClueSection clueType={ClueType.RoadLine} />
+        <ClueSection clueType={ClueType.Region} />
+        <ClueSection clueType={ClueType.Scenery} />
+        <ClueSection clueType={ClueType.Alphabet} />
+      </div>
     </StyledContainer>
   );
 };

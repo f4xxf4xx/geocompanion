@@ -12,19 +12,13 @@ const StyledClueContainer = styled.div`
   gap: 4px;
 `;
 
-const ClueSection = ({
-  name,
-  clueType,
-}: {
-  name: string;
-  clueType: ClueType;
-}) => {
-  const { countries, characters } = useContext(DataContext);
+const ClueSection = ({ clueType }: { clueType: ClueType }) => {
+  const { countries, characters, clues } = useContext(DataContext);
   const data = getDataFromClueType(countries, characters, clueType);
 
   return (
     <div>
-      <h2>{name}</h2>
+      <h2>{clues[clueType].displayName}</h2>
       <StyledClueContainer>
         {data.map((value, index) => (
           <ClueTile key={index} clue={{ type: clueType, value }} />

@@ -16,8 +16,8 @@ const StyledRoadLineContaier = styled.div`
 const ColoredRoadLine = ({ value }: { value: string }) => {
   return (
     <StyledRoadLineContaier>
-      {roadLineColorMapping[value]?.map((color) => (
-        <StyledColorSquare color={color} />
+      {roadLineColorMapping[value]?.map((color, index) => (
+        <StyledColorSquare key={index} color={color} />
       ))}
     </StyledRoadLineContaier>
   );

@@ -1,0 +1,34 @@
+{
+  "roadLine": {
+    "displayName": "Road lines",
+    "clueName": "road line"
+  },
+  "character": {
+    "displayName": "Characters",
+    "clueName": "character"
+  },
+  "driving": {
+    "displayName": "Driving side",
+    "clueName": "driving"
+  },
+  "flagColor": {
+    "displayName": "Flag Color",
+    "clueName": "flag color"
+  },
+  "flagPattern": {
+    "displayName": "Flag Pattern",
+    "clueName": "flag pattern"
+  },
+  "region": {
+    "displayName": "Region (union)",
+    "clueName": "region"
+  },
+  "alphabet": {
+    "displayName": "Alphabet",
+    "clueName": "alphabet"
+  },
+  "scenery": {
+    "displayName": "Scenery",
+    "clueName": "scenery"
+  }
+}

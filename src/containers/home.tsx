@@ -2,11 +2,13 @@ import "App.css";
 
 import Header from "components/layout/header";
 
-import countries from "data/country_data.json";
 import { validateCountryData } from "data/dataHelper";
 import ClueFinder from "containers/clue-finder";
+import { useContext } from "react";
+import { DataContext } from "context/data";
 
 const Home = () => {
+  const { countries } = useContext(DataContext);
   const validData = validateCountryData(countries);
 
   return (

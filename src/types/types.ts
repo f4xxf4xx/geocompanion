@@ -1,4 +1,4 @@
-export interface Clue {
+export interface SelectedClue {
   type: ClueType;
   value: string;
 }
@@ -11,12 +11,18 @@ export interface CharacterData {
   [key: string]: string[];
 }
 
-export interface NameMapping {
+interface ClueNameMapping {
   [key: string]: string;
 }
 
-export interface ClueNameMapping {
-  [key: string]: NameMapping;
+export interface Clue {
+  displayName: string;
+  clueName: string;
+  values?: ClueNameMapping;
+}
+
+export interface ClueData {
+  [key: string]: Clue;
 }
 
 export interface Country {

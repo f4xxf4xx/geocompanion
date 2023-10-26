@@ -9,7 +9,8 @@
     "flagPattern": ["vertical-stripes"],
     "roadLine": [],
     "language": [],
-    "coverage": false
+    "coverage": false,
+    "cameraGen": []
   },
   "al": {
     "name": "Albania",
@@ -21,7 +22,8 @@
     "flagPattern": [],
     "roadLine": ["white-white", "white-yellow"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "dz": {
     "name": "Algeria",
@@ -33,7 +35,8 @@
     "flagPattern": ["crescent-star"],
     "roadLine": [],
     "language": [],
-    "coverage": false
+    "coverage": false,
+    "cameraGen": []
   },
   "ad": {
     "name": "Andorra",
@@ -45,7 +48,8 @@
     "flagPattern": ["vertical-stripes"],
     "roadLine": ["white-white"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "ar": {
     "name": "Argentina",
@@ -57,7 +61,8 @@
     "flagPattern": ["stripes", "sun"],
     "roadLine": ["white-white", "white-yellow"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "au": {
     "name": "Australia",
@@ -66,10 +71,11 @@
     "scenery": ["flat", "desert"],
     "driving": ["left"],
     "flagColor": ["blue", "white", "red"],
-    "flagPattern": ["stars", "union-jack"],
+    "flagPattern": ["star", "union-jack"],
     "roadLine": ["white-white", "yellow-yellow"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": [1]
   },
   "at": {
     "name": "Austria",
@@ -81,7 +87,8 @@
     "flagPattern": ["stripes"],
     "roadLine": ["white-white"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "bd": {
     "name": "Bangladesh",
@@ -93,7 +100,8 @@
     "flagPattern": ["circle"],
     "roadLine": ["white-white"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "be": {
     "name": "Belgium",
@@ -105,7 +113,8 @@
     "flagPattern": ["vertical-stripes"],
     "roadLine": ["white-white"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "bo": {
     "name": "Bolivia",
@@ -117,7 +126,8 @@
     "flagPattern": ["stripes"],
     "roadLine": ["white-white", "white-yellow"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "bw": {
     "name": "Botswana",
@@ -129,7 +139,8 @@
     "flagPattern": ["stripes"],
     "roadLine": ["yellow-white"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "bt": {
     "name": "Bhutan",
@@ -141,7 +152,8 @@
     "flagPattern": [],
     "roadLine": ["white-white"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "br": {
     "name": "Brazil",
@@ -153,7 +165,8 @@
     "flagPattern": [],
     "roadLine": ["white-white", "white-yellow"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "bg": {
     "name": "Bulgaria",
@@ -165,7 +178,8 @@
     "flagPattern": ["stripes"],
     "roadLine": ["white-white"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "kh": {
     "name": "Cambodia",
@@ -177,7 +191,8 @@
     "flagPattern": ["stripes"],
     "roadLine": ["white-yellow"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "ca": {
     "name": "Canada",
@@ -189,7 +204,8 @@
     "flagPattern": ["stripes"],
     "roadLine": ["white-yellow"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": [1]
   },
   "cl": {
     "name": "Chile",
@@ -206,7 +222,8 @@
       "yellow-yellow"
     ],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "cn": {
     "name": "China",
@@ -215,10 +232,11 @@
     "scenery": [],
     "driving": ["right"],
     "flagColor": ["red", "yellow"],
-    "flagPattern": ["stars"],
+    "flagPattern": ["star"],
     "roadLine": [],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "co": {
     "name": "Colombia",
@@ -230,7 +248,8 @@
     "flagPattern": ["stripes"],
     "roadLine": ["white-yellow"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "cr": {
     "name": "Costa Rica",
@@ -242,7 +261,8 @@
     "flagPattern": ["stripes"],
     "roadLine": [],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "hr": {
     "name": "Croatia",
@@ -254,7 +274,8 @@
     "flagPattern": ["stripes"],
     "roadLine": ["white-white"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "cu": {
     "name": "Cuba",
@@ -263,10 +284,11 @@
     "scenery": [],
     "driving": ["right"],
     "flagColor": ["red", "white", "blue"],
-    "flagPattern": ["stripes", "stars"],
+    "flagPattern": ["stripes", "star"],
     "roadLine": [],
     "language": [],
-    "coverage": false
+    "coverage": false,
+    "cameraGen": []
   },
   "cz": {
     "name": "Czechia",
@@ -278,7 +300,8 @@
     "flagPattern": ["stripes"],
     "roadLine": ["white-white"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "dk": {
     "name": "Denmark",
@@ -290,7 +313,8 @@
     "flagPattern": ["cross"],
     "roadLine": ["white-white"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "ec": {
     "name": "Ecuador",
@@ -302,7 +326,8 @@
     "flagPattern": ["stripes"],
     "roadLine": ["white-yellow"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "eg": {
     "name": "Egypt",
@@ -314,7 +339,8 @@
     "flagPattern": ["stripes"],
     "roadLine": [],
     "language": ["english"],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "sv": {
     "name": "El Salvador",
@@ -326,7 +352,8 @@
     "flagPattern": ["stripes"],
     "roadLine": [],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "ee": {
     "name": "Estonia",
@@ -338,7 +365,8 @@
     "flagPattern": ["stripes"],
     "roadLine": ["white-white"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "sz": {
     "name": "Eswatini",
@@ -350,7 +378,8 @@
     "flagPattern": ["stripes"],
     "roadLine": ["yellow-white"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "fi": {
     "name": "Finland",
@@ -362,7 +391,8 @@
     "flagPattern": ["cross"],
     "roadLine": ["white-white", "white-yellow"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "fr": {
     "name": "France",
@@ -374,7 +404,8 @@
     "flagPattern": ["vertical-stripes"],
     "roadLine": ["white-white"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": [1]
   },
   "de": {
     "name": "Germany",
@@ -386,7 +417,8 @@
     "flagPattern": ["stripes"],
     "roadLine": ["white-white", "yellow-yellow"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "gh": {
     "name": "Ghana",
@@ -398,7 +430,8 @@
     "flagPattern": ["stripes"],
     "roadLine": ["white-white"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "gr": {
     "name": "Greece",
@@ -410,7 +443,8 @@
     "flagPattern": ["stripes"],
     "roadLine": ["white-white"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "gt": {
     "name": "Guatemala",
@@ -422,7 +456,8 @@
     "flagPattern": ["stripes"],
     "roadLine": ["white-yellow"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "ht": {
     "name": "Haiti",
@@ -434,7 +469,8 @@
     "flagPattern": ["stripes", "drawing"],
     "roadLine": [],
     "language": ["french"],
-    "coverage": false
+    "coverage": false,
+    "cameraGen": []
   },
   "hn": {
     "name": "Honduras",
@@ -443,10 +479,11 @@
     "scenery": [],
     "driving": ["right"],
     "flagColor": ["blue", "white"],
-    "flagPattern": ["stars"],
+    "flagPattern": ["star"],
     "roadLine": [],
     "language": [],
-    "coverage": false
+    "coverage": false,
+    "cameraGen": []
   },
   "hu": {
     "name": "Hungary",
@@ -458,7 +495,8 @@
     "flagPattern": ["stripes"],
     "roadLine": ["white-white"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "is": {
     "name": "Iceland",
@@ -470,7 +508,8 @@
     "flagPattern": ["cross"],
     "roadLine": ["white-white"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "in": {
     "name": "India",
@@ -482,7 +521,8 @@
     "flagPattern": ["circle"],
     "roadLine": ["yellow-white", "white-white", "yellow-yellow"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "id": {
     "name": "Indonesia",
@@ -494,7 +534,8 @@
     "flagPattern": ["stripes"],
     "roadLine": ["white-white", "white-yellow"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "ie": {
     "name": "Ireland",
@@ -506,7 +547,8 @@
     "flagPattern": ["vertical-stripes"],
     "roadLine": ["yellow-white"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "il": {
     "name": "Israel",
@@ -518,7 +560,8 @@
     "flagPattern": ["stripes", "star"],
     "roadLine": ["yellow-white"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "it": {
     "name": "Italy",
@@ -530,7 +573,8 @@
     "flagPattern": ["vertical-stripes"],
     "roadLine": ["white-white"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": [1]
   },
   "jp": {
     "name": "Japan",
@@ -542,7 +586,8 @@
     "flagPattern": ["circle"],
     "roadLine": ["white-white", "white-yellow"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": [1]
   },
   "jo": {
     "name": "Jordan",
@@ -554,7 +599,8 @@
     "flagPattern": ["stripes", "star"],
     "roadLine": ["yellow-white"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "ke": {
     "name": "Kenya",
@@ -566,7 +612,8 @@
     "flagPattern": ["stripes"],
     "roadLine": ["white-yellow"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "kg": {
     "name": "Kyrgyzstan",
@@ -578,7 +625,8 @@
     "flagPattern": [],
     "roadLine": ["white-white"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "la": {
     "name": "Laos",
@@ -590,7 +638,8 @@
     "flagPattern": ["stripes", "circle"],
     "roadLine": ["white-white"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "lv": {
     "name": "Latvia",
@@ -602,7 +651,8 @@
     "flagPattern": ["stripes"],
     "roadLine": ["white-white"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "ls": {
     "name": "Lesotho",
@@ -614,7 +664,8 @@
     "flagPattern": ["stripes"],
     "roadLine": ["yellow-white"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "lt": {
     "name": "Lithuania",
@@ -626,7 +677,8 @@
     "flagPattern": ["stripes"],
     "roadLine": ["yellow-white", "white-white"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "lu": {
     "name": "Luxembourg",
@@ -638,7 +690,8 @@
     "flagPattern": ["stripes"],
     "roadLine": ["white-white"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "mt": {
     "name": "Malta",
@@ -650,7 +703,8 @@
     "flagPattern": ["vertical-stripes"],
     "roadLine": ["white-white"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "my": {
     "name": "Malaysia",
@@ -662,7 +716,8 @@
     "flagPattern": ["stripes", "crescent-star"],
     "roadLine": ["white-white"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "mk": {
     "name": "North Macedonia",
@@ -674,7 +729,8 @@
     "flagPattern": ["stripes"],
     "roadLine": ["white-white", "yellow-yellow"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "mx": {
     "name": "Mexico",
@@ -686,7 +742,8 @@
     "flagPattern": ["vertical-stripes"],
     "roadLine": ["yellow-white", "white-yellow"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": [1]
   },
   "mc": {
     "name": "Monaco",
@@ -698,7 +755,8 @@
     "flagPattern": ["stripes"],
     "roadLine": ["white-white"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": [1]
   },
   "me": {
     "name": "Montenegro",
@@ -710,7 +768,8 @@
     "flagPattern": [],
     "roadLine": ["white-white"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "mn": {
     "name": "Mongolia",
@@ -722,7 +781,8 @@
     "flagPattern": ["vertical-stripes"],
     "roadLine": ["white-white"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "ma": {
     "name": "Morocco",
@@ -734,7 +794,8 @@
     "flagPattern": ["star"],
     "roadLine": [],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "np": {
     "name": "Nepal",
@@ -746,7 +807,8 @@
     "flagPattern": ["triangle"],
     "roadLine": [],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "nl": {
     "name": "Netherlands",
@@ -758,7 +820,8 @@
     "flagPattern": ["stripes"],
     "roadLine": ["white-white"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "nz": {
     "name": "New Zealand",
@@ -767,7 +830,7 @@
     "scenery": [],
     "driving": ["left"],
     "flagColor": ["blue", "white", "red"],
-    "flagPattern": ["stars", "union-jack"],
+    "flagPattern": ["star", "union-jack"],
     "roadLine": [
       "yellow-white",
       "white-white",
@@ -775,7 +838,8 @@
       "yellow-yellow"
     ],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": [1]
   },
   "ng": {
     "name": "Nigeria",
@@ -787,7 +851,8 @@
     "flagPattern": ["vertical-stripes"],
     "roadLine": ["yellow-white"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "no": {
     "name": "Norway",
@@ -799,7 +864,8 @@
     "flagPattern": ["cross"],
     "roadLine": ["white-yellow"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "pa": {
     "name": "Panama",
@@ -808,10 +874,11 @@
     "scenery": [],
     "driving": ["right"],
     "flagColor": ["red", "white", "blue"],
-    "flagPattern": ["rectangles", "stars"],
+    "flagPattern": ["rectangles", "star"],
     "roadLine": [],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "pk": {
     "name": "Pakistan",
@@ -823,7 +890,8 @@
     "flagPattern": ["crescent-star"],
     "roadLine": [],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "pe": {
     "name": "Peru",
@@ -835,7 +903,8 @@
     "flagPattern": ["vertical-stripes"],
     "roadLine": ["white-white", "white-yellow"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "ph": {
     "name": "Philippines",
@@ -847,7 +916,8 @@
     "flagPattern": ["stripes"],
     "roadLine": ["white-white", "white-yellow"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "pl": {
     "name": "Poland",
@@ -859,7 +929,8 @@
     "flagPattern": ["stripes"],
     "roadLine": ["white-white"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "pt": {
     "name": "Portugal",
@@ -871,7 +942,8 @@
     "flagPattern": ["vertical-stripes"],
     "roadLine": ["yellow-white", "white-white"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "qa": {
     "name": "Qatar",
@@ -883,7 +955,8 @@
     "flagPattern": ["zigzag"],
     "roadLine": ["white-yellow"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "ro": {
     "name": "Romania",
@@ -895,7 +968,8 @@
     "flagPattern": ["vertical-stripes"],
     "roadLine": ["white-white", "yellow-yellow"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "ru": {
     "name": "Russia",
@@ -907,7 +981,8 @@
     "flagPattern": ["stripes"],
     "roadLine": ["yellow-white", "white-white", "white-yellow"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "sn": {
     "name": "Senegal",
@@ -919,7 +994,8 @@
     "flagPattern": ["vertical-stripes", "star"],
     "roadLine": ["white-white"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "rs": {
     "name": "Serbia",
@@ -931,7 +1007,8 @@
     "flagPattern": ["stripes"],
     "roadLine": ["white-white"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "sg": {
     "name": "Singapore",
@@ -943,7 +1020,8 @@
     "flagPattern": ["crescent-star"],
     "roadLine": ["white-white"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "sk": {
     "name": "Slovakia",
@@ -955,7 +1033,8 @@
     "flagPattern": ["stripes"],
     "roadLine": ["white-white"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "si": {
     "name": "Slovenia",
@@ -967,7 +1046,8 @@
     "flagPattern": ["stripes"],
     "roadLine": ["white-white"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "za": {
     "name": "South Africa",
@@ -979,7 +1059,8 @@
     "flagPattern": ["stripes"],
     "roadLine": ["yellow-white"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "sm": {
     "name": "San Marino",
@@ -991,7 +1072,8 @@
     "flagPattern": ["stripes"],
     "roadLine": ["white-white"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "es": {
     "name": "Spain",
@@ -1003,7 +1085,8 @@
     "flagPattern": ["stripes"],
     "roadLine": ["yellow-white", "white-white"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "lk": {
     "name": "Sri Lanka",
@@ -1015,7 +1098,8 @@
     "flagPattern": ["vertical-stripes"],
     "roadLine": ["yellow-white", "white-white"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "kr": {
     "name": "South Korea",
@@ -1027,7 +1111,8 @@
     "flagPattern": ["circle"],
     "roadLine": ["white-yellow"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "se": {
     "name": "Sweden",
@@ -1039,7 +1124,8 @@
     "flagPattern": ["cross"],
     "roadLine": ["white-white"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "ch": {
     "name": "Switzerland",
@@ -1051,7 +1137,8 @@
     "flagPattern": ["cross"],
     "roadLine": ["white-white"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "tw": {
     "name": "Taiwan",
@@ -1063,7 +1150,8 @@
     "flagPattern": ["circle"],
     "roadLine": ["white-yellow"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "th": {
     "name": "Thailand",
@@ -1075,7 +1163,8 @@
     "flagPattern": ["stripes"],
     "roadLine": ["white-yellow"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "tn": {
     "name": "Tunisia",
@@ -1087,7 +1176,8 @@
     "flagPattern": ["crescent-star"],
     "roadLine": [],
     "language": ["french"],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "tr": {
     "name": "Turkey",
@@ -1099,7 +1189,8 @@
     "flagPattern": ["crescent-star"],
     "roadLine": ["white-white", "white-yellow", "yellow-yellow"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "ua": {
     "name": "Ukraine",
@@ -1111,10 +1202,11 @@
     "flagPattern": ["stripes"],
     "roadLine": ["white-white"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "ae": {
-    "name": "United Arab Emirates",
+    "name": "UAE",
     "region": ["middle-east"],
     "alphabet": [],
     "scenery": [],
@@ -1123,10 +1215,11 @@
     "flagPattern": ["stripes", "vertical-stripes"],
     "roadLine": ["yellow-white", "yellow-yellow"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "gb": {
-    "name": "United Kingdom",
+    "name": "UK",
     "region": ["eu"],
     "alphabet": [],
     "scenery": [],
@@ -1135,19 +1228,21 @@
     "flagPattern": ["union-jack"],
     "roadLine": ["yellow-white", "white-white"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "us": {
-    "name": "United States of America",
+    "name": "USA",
     "region": ["na"],
     "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
     "flagColor": ["red", "blue", "white"],
-    "flagPattern": ["stripes", "stars"],
+    "flagPattern": ["stripes", "star"],
     "roadLine": ["white-yellow"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": [1]
   },
   "uy": {
     "name": "Uruguay",
@@ -1159,7 +1254,8 @@
     "flagPattern": ["stripes", "sun"],
     "roadLine": [],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "ug": {
     "name": "Uganda",
@@ -1171,7 +1267,8 @@
     "flagPattern": ["stripes"],
     "roadLine": ["white-white", "white-yellow"],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   },
   "vn": {
     "name": "Vietnam",
@@ -1183,6 +1280,7 @@
     "flagPattern": ["star"],
     "roadLine": [],
     "language": [],
-    "coverage": true
+    "coverage": true,
+    "cameraGen": []
   }
 }
