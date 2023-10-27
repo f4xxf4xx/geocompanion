@@ -5,6 +5,14 @@ import { ClueType } from "types/types";
 import styled from "styled-components";
 import { DataContext } from "context/data";
 
+const StyledClueSection = styled.div`
+  margin-top: 8px;
+  margin-bottom: 8px;
+  //border: 1px solid #ccc;
+  border-radius: 16px;
+  //box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.08);
+`;
+
 const StyledClueContainer = styled.div`
   margin-top: 4px;
   display: flex;
@@ -17,14 +25,14 @@ const ClueSection = ({ clueType }: { clueType: ClueType }) => {
   const data = getDataFromClueType(countries, characters, clueType);
 
   return (
-    <div>
-      <h2>{clues[clueType].displayName}</h2>
+    <StyledClueSection>
+      <h3>{clues[clueType].displayName}</h3>
       <StyledClueContainer>
         {data.map((value, index) => (
           <ClueTile key={index} clue={{ type: clueType, value }} />
         ))}
       </StyledClueContainer>
-    </div>
+    </StyledClueSection>
   );
 };
 

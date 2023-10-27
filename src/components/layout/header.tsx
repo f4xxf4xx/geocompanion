@@ -1,10 +1,16 @@
-import { Link } from "react-router-dom";
+import styled from "styled-components";
+
+const StyledHeader = styled.header`
+  color: white;
+  background-color: #24292e;
+  padding: 2px 4px;
+`;
 
 const Header = () => (
-  <header>
+  <StyledHeader>
     <h1>Geo Companion</h1>
     {/*  <Link to="/practice-tool">Practice Tool</Link> */}
-  </header>
+  </StyledHeader>
 );
 
 export default Header;

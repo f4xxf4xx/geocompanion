@@ -12,14 +12,23 @@ const StyledContainer = styled.div`
   grid-template-columns: 800px 1fr;
 `;
 
+const StyledLeftContainer = styled.div`
+  background-color: #eef2f6;
+`;
+
+const StyledRightContainer = styled.div`
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  padding-left: 8px;
+`;
+
 const ClueFinder = () => {
   return (
     <StyledContainer>
-      <div>
+      <StyledLeftContainer>
         <Map />
         <Solver />
-      </div>
-      <div>
+      </StyledLeftContainer>
+      <StyledRightContainer>
         <p>Press 1 to reset clues</p>
         <ClueSearchbar />
         <ClueSection clueType={ClueType.Character} />
@@ -30,7 +39,7 @@ const ClueFinder = () => {
         <ClueSection clueType={ClueType.Region} />
         <ClueSection clueType={ClueType.Scenery} />
         <ClueSection clueType={ClueType.Alphabet} />
-      </div>
+      </StyledRightContainer>
     </StyledContainer>
   );
 };

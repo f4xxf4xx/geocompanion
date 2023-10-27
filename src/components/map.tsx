@@ -28,10 +28,11 @@ const Map = () => {
   return (
     <WorldMap
       color="purple"
-      size="xl"
+      size="responsive"
       data={getData()}
       styleFunction={stylingFunction}
       tooltipTextFunction={({ countryName }) => countryName}
+      backgroundColor="#eef2f6"
     />
   );
 };

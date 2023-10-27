@@ -11,13 +11,14 @@ const StyledClueButton = styled.button<{ $isSelected: boolean }>`
   min-width: 50px;
   height: 40px;
   background-color: ${({ $isSelected }) =>
-    $isSelected ? "rgb(232, 252, 211)" : "lightgray"};
+    $isSelected ? "rgb(232, 252, 211)" : "#eef2f6"};
   border: none;
   align-items: center;
   justify-content: center;
   border-radius: 8px;
   border: 1px solid lightgray;
   cursor: pointer;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
 `;
 
 const StyledFlagColorButton = styled(StyledClueButton)<{
