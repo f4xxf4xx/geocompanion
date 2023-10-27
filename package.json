@@ -25,7 +25,6 @@
     "styled-components": "^6.1.0",
     "typescript": "^5.2.2",
     "vite": "^4.5.0",
-    "vite-tsconfig-paths": "^4.2.1",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
@@ -62,6 +61,7 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-react-refresh": "^0.4.3",
     "prettier": "2.8.3",
+    "vite-tsconfig-paths": "^4.2.1",
     "vitest": "^0.34.6"
   }
 }
