@@ -15,10 +15,10 @@ const Comparator = () => {
   const { countries, characters } = useContext(DataContext);
   const [state, setState] = useState("NOT_STARTED");
   const [clues, setClues] = useState([]);
-  const [country, setCountry] = useState(null);
+  const [, setCountry] = useState(null);
   const [cluesQuantity, setCluesQuantity] = useState(3);
 
-  const [guessedCountry, setGuessedCountry] = useState("");
+  const [, setGuessedCountry] = useState("");
 
   const reset = () => {
     setState("NOT_STARTED");
