@@ -1,5 +1,3 @@
-import { useContext } from "react";
-import { DataContext } from "context/data";
 import styled from "styled-components";
 import ColoredRoadLine from "components/clues/colored-road-line";
 import { ClueType } from "types/types";

@@ -1,6 +1,5 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import SmallClueTile from "components/clue-tile";
 import styled from "styled-components";
 import { DataContext } from "context/data";
 
@@ -99,7 +98,7 @@ const Comparator = () => {
     const displayedClues = clues.slice(0, cluesQuantity);
     return (
       <div className="clues">
-        {displayedClues.map((clue, index) => {
+        {displayedClues.map((clue) => {
           return (
             <div>
               <h3>{clue.type}</h3>
@@ -115,7 +114,7 @@ const Comparator = () => {
     );
   };
 
-  const onChangeInput = (e) => {
+  /* const onChangeInput = (e) => {
     setGuessedCountry(e.target.value);
   };
 
@@ -129,7 +128,7 @@ const Comparator = () => {
     } else {
       alert("Incorrect!");
     }
-  };
+  }; */
 
   return (
     <div>

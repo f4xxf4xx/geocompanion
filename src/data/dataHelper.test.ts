@@ -1,4 +1,4 @@
-import { describe, expect, test, vi } from "vitest";
+import { describe, expect, test } from "vitest";
 import { getPossibleCountries, validateCountryData } from "./dataHelper";
 import { ClueType, Country, CountryData } from "types/types";
 
