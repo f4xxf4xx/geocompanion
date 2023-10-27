@@ -103,11 +103,11 @@ const Comparator = () => {
           return (
             <div>
               <h3>{clue.type}</h3>
-              <SmallClueTile
+              {/* <SmallClueTile
                 value={clue.value}
                 type={clue.type}
                 name={clue.name}
-              />
+              /> */}
             </div>
           );
         })}

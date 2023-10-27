@@ -43,14 +43,11 @@ const CompareCell = ({
   items: string[];
   clueType: ClueType;
 }) => {
-  const { clueNameMapping } = useContext(DataContext);
-
   const renderItem = (item: string) => {
     if (clueType === ClueType.RoadLine) {
       return (
         <StyledItem>
           <ColoredRoadLine value={item} />
-          {clueNameMapping["roadLine"][item]}
         </StyledItem>
       );
     }
