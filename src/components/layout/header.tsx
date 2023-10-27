@@ -1,14 +1,18 @@
 import styled from "styled-components";
 
 const StyledHeader = styled.header`
-  color: white;
-  background-color: #24292e;
-  padding: 2px 4px;
+  padding: 8px;
+`;
+
+const StyledSpan = styled.span`
+  font-weight: normal;
 `;
 
 const Header = () => (
   <StyledHeader>
-    <h1>Geo Companion</h1>
+    <h1>
+      Geo<StyledSpan>Companion</StyledSpan>
+    </h1>
     {/*  <Link to="/practice-tool">Practice Tool</Link> */}
   </StyledHeader>
 );

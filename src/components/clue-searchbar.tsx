@@ -47,6 +47,9 @@ function ClueSearchbar() {
       onFocus={handleOnFocus}
       autoFocus
       formatResult={formatResult}
+      styling={{
+        border: "1px solid #1a247f;",
+      }}
     />
   );
 }

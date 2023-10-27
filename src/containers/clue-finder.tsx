@@ -10,16 +10,14 @@ import ClueSearchbar from "components/clue-searchbar";
 const StyledContainer = styled.div`
   display: grid;
   grid-template-columns: 800px 1fr;
+  padding: 16px;
 `;
 
 const StyledLeftContainer = styled.div`
   background-color: #eef2f6;
 `;
 
-const StyledRightContainer = styled.div`
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-  padding-left: 8px;
-`;
+const StyledRightContainer = styled.div``;
 
 const ClueFinder = () => {
   return (
@@ -29,6 +27,7 @@ const ClueFinder = () => {
         <Solver />
       </StyledLeftContainer>
       <StyledRightContainer>
+        <h2>Filters</h2>
         <p>Press 1 to reset clues</p>
         <ClueSearchbar />
         <ClueSection clueType={ClueType.Character} />

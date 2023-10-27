@@ -10,15 +10,16 @@ const StyledClueButton = styled.button<{ $isSelected: boolean }>`
   display: flex;
   min-width: 50px;
   height: 40px;
+  color: ${({ $isSelected }) => ($isSelected ? "#eef2f6" : "#1a247f;")};
   background-color: ${({ $isSelected }) =>
-    $isSelected ? "rgb(232, 252, 211)" : "#eef2f6"};
-  border: none;
+    $isSelected ? "#1a247f;" : "#eef2f6"};
   align-items: center;
   justify-content: center;
   border-radius: 8px;
   border: 1px solid lightgray;
   cursor: pointer;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
+  text-transform: capitalize;
 `;
 
 const StyledFlagColorButton = styled(StyledClueButton)<{
@@ -26,7 +27,8 @@ const StyledFlagColorButton = styled(StyledClueButton)<{
   $isSelected: boolean;
 }>`
   background-color: ${({ color }) => color};
-  border: ${({ $isSelected }) => ($isSelected ? "4px" : "1px")} solid lightgray;
+  border: ${({ $isSelected }) => ($isSelected ? "4px" : "1px")} solid
+    ${({ $isSelected }) => ($isSelected ? "#1a247f;" : "lightgray")};
 `;
 
 const StyledTitle = styled.h3`

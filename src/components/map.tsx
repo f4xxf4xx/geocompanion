@@ -27,7 +27,7 @@ const Map = () => {
 
   return (
     <WorldMap
-      color="purple"
+      color="#1a247f"
       size="responsive"
       data={getData()}
       styleFunction={stylingFunction}
