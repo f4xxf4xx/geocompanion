@@ -3,8 +3,7 @@ import { useContext, useState } from "react";
 import styled from "styled-components";
 import { DataContext } from "context/data";
 import FlagCountry from "./flag-country";
-import { StyledButton } from "./layout/button";
-import { Link } from "react-router-dom";
+import { StyledButton, StyledLink } from "./layout/button";
 import { useWindowWidth } from "@react-hook/window-size";
 
 const StyledItemContainer = styled.div`
@@ -23,7 +22,7 @@ const StyledText = styled.p`
 `;
 
 const StyledShowAllButton = styled(StyledButton)`
-  height: auto;
+  height: 30px;
 `;
 
 const Solver = () => {
@@ -58,9 +57,9 @@ const Solver = () => {
           </>
         )}
       </StyledItemContainer>
-      <Link to={`/compare?countries=${possibleCountries.join(",")}`}>
+      <StyledLink to={`/compare?countries=${possibleCountries.join(",")}`}>
         Compare
-      </Link>
+      </StyledLink>
     </div>
   );
 };

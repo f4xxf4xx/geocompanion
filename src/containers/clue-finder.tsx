@@ -14,6 +14,9 @@ const StyledContainer = styled.div`
   gap: 16px;
   flex-direction: row;
   @media (max-width: 900px) {
+    grid-template-columns: 480px 1fr;
+  }
+  @media (max-width: 640px) {
     display: flex;
     flex-direction: column;
   }

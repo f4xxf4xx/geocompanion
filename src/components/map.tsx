@@ -31,7 +31,7 @@ const Map = () => {
   return (
     <WorldMap
       color={Colors.primary}
-      size={width > 900 ? "xl" : "lg"}
+      size={width > 900 ? "xl" : width > 640 ? "lg" : "responsive"}
       data={getData()}
       styleFunction={stylingFunction}
       tooltipTextFunction={({ countryName }) => countryName}
