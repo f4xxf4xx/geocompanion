@@ -4,6 +4,7 @@ import { DataContext } from "context/data";
 
 import { ReactSearchAutocomplete } from "react-search-autocomplete";
 import { ClueContext } from "context/clue";
+import { Colors } from "theme/theme";
 
 function ClueSearchbar() {
   const { countries, characters, clues } = useContext(DataContext);
@@ -48,7 +49,8 @@ function ClueSearchbar() {
       autoFocus
       formatResult={formatResult}
       styling={{
-        border: "1px solid #1a247f;",
+        border: `1px solid ${Colors.primary}`,
+        color: Colors.primary,
       }}
     />
   );

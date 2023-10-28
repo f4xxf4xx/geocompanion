@@ -9,13 +9,17 @@ import ClueSearchbar from "components/clue-searchbar";
 
 const StyledContainer = styled.div`
   display: grid;
-  grid-template-columns: 800px 1fr;
+  grid-template-columns: 640px 1fr;
   padding: 16px;
+  gap: 16px;
+  flex-direction: row;
+  @media (max-width: 900px) {
+    display: flex;
+    flex-direction: column;
+  }
 `;
 
-const StyledLeftContainer = styled.div`
-  background-color: #eef2f6;
-`;
+const StyledLeftContainer = styled.div``;
 
 const StyledRightContainer = styled.div``;
 
@@ -32,11 +36,11 @@ const ClueFinder = () => {
         <ClueSearchbar />
         <ClueSection clueType={ClueType.Character} />
         <ClueSection clueType={ClueType.Driving} />
+        <ClueSection clueType={ClueType.RoadLine} />
+        <ClueSection clueType={ClueType.Scenery} />
         <ClueSection clueType={ClueType.FlagColor} />
         <ClueSection clueType={ClueType.FlagPattern} />
-        <ClueSection clueType={ClueType.RoadLine} />
         <ClueSection clueType={ClueType.Region} />
-        <ClueSection clueType={ClueType.Scenery} />
         <ClueSection clueType={ClueType.Alphabet} />
       </StyledRightContainer>
     </StyledContainer>

@@ -5,30 +5,16 @@ import { ClueType, SelectedClue } from "types/types";
 import styled from "styled-components";
 import ColoredRoadLine from "./clues/colored-road-line";
 import ClueIcon from "./clues/clue-icon";
+import { StyledButton } from "./layout/button";
+import { Colors } from "theme/theme";
 
-const StyledClueButton = styled.button<{ $isSelected: boolean }>`
-  display: flex;
-  min-width: 50px;
-  height: 40px;
-  color: ${({ $isSelected }) => ($isSelected ? "#eef2f6" : "#1a247f;")};
-  background-color: ${({ $isSelected }) =>
-    $isSelected ? "#1a247f;" : "#eef2f6"};
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
-  border: 1px solid lightgray;
-  cursor: pointer;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
-  text-transform: capitalize;
-`;
-
-const StyledFlagColorButton = styled(StyledClueButton)<{
+const StyledFlagColorButton = styled(StyledButton)<{
   color: string;
   $isSelected: boolean;
 }>`
   background-color: ${({ color }) => color};
   border: ${({ $isSelected }) => ($isSelected ? "4px" : "1px")} solid
-    ${({ $isSelected }) => ($isSelected ? "#1a247f;" : "lightgray")};
+    ${({ $isSelected }) => ($isSelected ? Colors.primary : Colors.gray)};
 `;
 
 const StyledTitle = styled.h3`
@@ -59,7 +45,7 @@ const ClueTile = ({ clue }: { clue: SelectedClue }) => {
   }
 
   return (
-    <StyledClueButton
+    <StyledButton
       key={clue.value}
       onClick={() => toggleClue(clue)}
       $isSelected={isSelected}
@@ -71,7 +57,7 @@ const ClueTile = ({ clue }: { clue: SelectedClue }) => {
         <ClueIcon clue={clue} />
         {displayedName}
       </StyledTitle>
-    </StyledClueButton>
+    </StyledButton>
   );
 };
 

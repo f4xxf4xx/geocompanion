@@ -1,6 +1,7 @@
 import { DataContext } from "context/data";
 import { useCallback, useContext } from "react";
 import WorldMap, { CountryContext } from "react-svg-worldmap";
+import { Colors } from "theme/theme";
 
 const Map = () => {
   const { countries, possibleCountries } = useContext(DataContext);
@@ -27,12 +28,12 @@ const Map = () => {
 
   return (
     <WorldMap
-      color="#1a247f"
-      size="responsive"
+      color={Colors.primary}
+      size="xl"
       data={getData()}
       styleFunction={stylingFunction}
       tooltipTextFunction={({ countryName }) => countryName}
-      backgroundColor="#eef2f6"
+      backgroundColor={Colors.secondary}
     />
   );
 };
