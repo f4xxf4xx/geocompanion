@@ -35,7 +35,7 @@ const Solver = () => {
     setShowAll(true);
   };
 
-  const bigScreen = width > 800;
+  const bigScreen = width > 900;
 
   const displayedCountries =
     showAll || bigScreen ? possibleCountries : possibleCountries.slice(0, 27);
