@@ -8,9 +8,7 @@ import { DataContext } from "context/data";
 const StyledClueSection = styled.div`
   margin-top: 8px;
   margin-bottom: 8px;
-  //border: 1px solid #ccc;
   border-radius: 16px;
-  //box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.08);
 `;
 
 const StyledClueContainer = styled.div`

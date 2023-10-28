@@ -1,8 +1,6 @@
 ## code enhancements
 
 - move the data validation to a command ran on start
-- make generic button
-- add prettier config
 
 ## features
 
