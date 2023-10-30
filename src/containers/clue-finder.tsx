@@ -9,13 +9,10 @@ import ClueSearchbar from "components/clue-searchbar";
 
 const StyledContainer = styled.div`
   display: grid;
-  grid-template-columns: 640px 1fr;
+  grid-template-columns: 1fr 1fr;
   padding: 16px;
   gap: 16px;
   flex-direction: row;
-  @media (max-width: 900px) {
-    grid-template-columns: 480px 1fr;
-  }
   @media (max-width: 640px) {
     display: flex;
     flex-direction: column;

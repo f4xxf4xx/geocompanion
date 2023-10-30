@@ -277,19 +277,6 @@
     "coverage": true,
     "cameraGen": []
   },
-  "cu": {
-    "name": "Cuba",
-    "region": ["caribbeans"],
-    "alphabet": ["latin"],
-    "scenery": [],
-    "driving": ["right"],
-    "flagColor": ["red", "white", "blue"],
-    "flagPattern": ["stripes", "star"],
-    "roadLine": [],
-    "language": [],
-    "coverage": false,
-    "cameraGen": []
-  },
   "cz": {
     "name": "Czechia",
     "region": ["balkan", "eu"],
@@ -312,6 +299,19 @@
     "flagColor": ["red", "white"],
     "flagPattern": ["cross"],
     "roadLine": ["white-white"],
+    "language": [],
+    "coverage": true,
+    "cameraGen": []
+  },
+  "do": {
+    "name": "Dominican Republic",
+    "region": ["caribbeans"],
+    "alphabet": ["latin"],
+    "scenery": [],
+    "driving": ["right"],
+    "flagColor": ["red", "white", "blue"],
+    "flagPattern": ["cross"],
+    "roadLine": [],
     "language": [],
     "coverage": true,
     "cameraGen": []

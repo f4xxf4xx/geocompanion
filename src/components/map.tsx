@@ -1,4 +1,3 @@
-import { useWindowWidth } from "@react-hook/window-size";
 import { DataContext } from "context/data";
 import { useCallback, useContext } from "react";
 import WorldMap, { CountryContext } from "react-svg-worldmap";
@@ -6,7 +5,6 @@ import { Colors } from "theme/theme";
 
 const Map = () => {
   const { countries, possibleCountries } = useContext(DataContext);
-  const width = useWindowWidth();
 
   const stylingFunction = ({ countryValue, color }: CountryContext) => {
     const opacityLevel =
@@ -31,7 +29,7 @@ const Map = () => {
   return (
     <WorldMap
       color={Colors.primary}
-      size={width > 900 ? "xl" : width > 640 ? "lg" : "responsive"}
+      size="responsive"
       data={getData()}
       styleFunction={stylingFunction}
       tooltipTextFunction={({ countryName }) => countryName}
