@@ -1,5 +1,4 @@
 import { useContext, useState } from "react";
-
 import styled from "styled-components";
 import { DataContext } from "context/data";
 import FlagCountry from "./flag-country";
@@ -26,7 +25,7 @@ const StyledShowAllButton = styled(StyledButton)`
 `;
 
 const Solver = () => {
-  const { possibleCountries } = useContext(DataContext);
+  const { possibleCountries, countries } = useContext(DataContext);
   const [showAll, setShowAll] = useState(false);
   const width = useWindowWidth();
 
@@ -46,7 +45,12 @@ const Solver = () => {
       </StyledHeader>
       <StyledItemContainer>
         {displayedCountries?.map((countryCode) => (
-          <FlagCountry key={countryCode} countryCode={countryCode} />
+          <FlagCountry
+            key={countryCode}
+            data-tooltip-id="tooltip-country"
+            data-tooltip-content={countries[countryCode].name}
+            countryCode={countryCode}
+          />
         ))}
         {!showAll && !bigScreen && possibleCountries.length > 30 && (
           <>

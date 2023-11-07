@@ -184,7 +184,7 @@
   "kh": {
     "name": "Cambodia",
     "region": ["sea"],
-    "alphabet": ["អក្សរខ្មែរ"],
+    "alphabet": ["ប្រទេសកម្ពុជា ភ្នំពេញ"],
     "scenery": [],
     "driving": ["right"],
     "flagColor": ["red", "blue", "white"],
@@ -579,7 +579,7 @@
   "jp": {
     "name": "Japan",
     "region": ["east asia"],
-    "alphabet": [],
+    "alphabet": ["日本の東京", "汉语漢語"],
     "scenery": [],
     "driving": ["left"],
     "flagColor": ["red", "white"],
@@ -605,7 +605,7 @@
   "ke": {
     "name": "Kenya",
     "region": ["east africa"],
-    "alphabet": [],
+    "alphabet": ["latin"],
     "scenery": [],
     "driving": ["left"],
     "flagColor": ["black", "red", "green"],
@@ -709,7 +709,7 @@
   "my": {
     "name": "Malaysia",
     "region": ["sea"],
-    "alphabet": [],
+    "alphabet": ["latin"],
     "scenery": [],
     "driving": ["left"],
     "flagColor": ["red", "white", "blue"],
@@ -735,7 +735,7 @@
   "mx": {
     "name": "Mexico",
     "region": ["central america"],
-    "alphabet": [],
+    "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
     "flagColor": ["green", "white", "red"],
@@ -787,7 +787,7 @@
   "ma": {
     "name": "Morocco",
     "region": ["maghreb"],
-    "alphabet": [],
+    "alphabet": ["arabic"],
     "scenery": [],
     "driving": ["right"],
     "flagColor": ["red", "green"],
@@ -813,7 +813,7 @@
   "nl": {
     "name": "Netherlands",
     "region": ["eu"],
-    "alphabet": [],
+    "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
     "flagColor": ["red", "white", "blue"],
@@ -826,7 +826,7 @@
   "nz": {
     "name": "New Zealand",
     "region": ["oceania"],
-    "alphabet": [],
+    "alphabet": ["latin"],
     "scenery": [],
     "driving": ["left"],
     "flagColor": ["blue", "white", "red"],
@@ -844,7 +844,7 @@
   "ng": {
     "name": "Nigeria",
     "region": ["west africa"],
-    "alphabet": [],
+    "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
     "flagColor": ["green", "white"],
@@ -857,7 +857,7 @@
   "no": {
     "name": "Norway",
     "region": ["nordic", "eu"],
-    "alphabet": [],
+    "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
     "flagColor": ["red", "white", "blue"],
@@ -896,7 +896,7 @@
   "pe": {
     "name": "Peru",
     "region": ["south america"],
-    "alphabet": [],
+    "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
     "flagColor": ["red", "white"],
@@ -922,7 +922,7 @@
   "pl": {
     "name": "Poland",
     "region": ["eu"],
-    "alphabet": [],
+    "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
     "flagColor": ["white", "red"],
@@ -935,7 +935,7 @@
   "pt": {
     "name": "Portugal",
     "region": ["eu"],
-    "alphabet": [],
+    "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
     "flagColor": ["green", "red"],
@@ -961,7 +961,7 @@
   "ro": {
     "name": "Romania",
     "region": ["balkan", "eu"],
-    "alphabet": [],
+    "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
     "flagColor": ["blue", "yellow", "red"],
@@ -987,13 +987,13 @@
   "sn": {
     "name": "Senegal",
     "region": ["west africa"],
-    "alphabet": [],
+    "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
     "flagColor": ["green", "yellow", "red"],
     "flagPattern": ["vertical-stripes", "star"],
     "roadLine": ["white-white"],
-    "language": [],
+    "language": ["french"],
     "coverage": true,
     "cameraGen": []
   },
@@ -1052,7 +1052,7 @@
   "za": {
     "name": "South Africa",
     "region": ["south of africa"],
-    "alphabet": [],
+    "alphabet": ["latin"],
     "scenery": [],
     "driving": ["left"],
     "flagColor": ["black", "green", "yellow", "white", "red", "blue"],
@@ -1078,7 +1078,7 @@
   "es": {
     "name": "Spain",
     "region": ["eu"],
-    "alphabet": [],
+    "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
     "flagColor": ["red", "yellow"],
@@ -1104,7 +1104,7 @@
   "kr": {
     "name": "South Korea",
     "region": ["east asia"],
-    "alphabet": [],
+    "alphabet": ["한국인"],
     "scenery": [],
     "driving": ["right"],
     "flagColor": ["white", "blue", "red"],
@@ -1117,7 +1117,7 @@
   "se": {
     "name": "Sweden",
     "region": ["nordic", "eu"],
-    "alphabet": [],
+    "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
     "flagColor": ["blue", "yellow"],
@@ -1156,7 +1156,7 @@
   "th": {
     "name": "Thailand",
     "region": ["sea"],
-    "alphabet": [],
+    "alphabet": ["ชาวไทย"],
     "scenery": [],
     "driving": ["left"],
     "flagColor": ["red", "white", "blue"],
@@ -1182,7 +1182,7 @@
   "tr": {
     "name": "Turkey",
     "region": ["balkan", "eu"],
-    "alphabet": [],
+    "alphabet": ["latin"],
     "scenery": [],
     "driving": ["right"],
     "flagColor": ["red", "white"],
@@ -1221,7 +1221,7 @@
   "gb": {
     "name": "UK",
     "region": ["eu"],
-    "alphabet": [],
+    "alphabet": ["latin"],
     "scenery": [],
     "driving": ["left"],
     "flagColor": ["red", "white", "blue"],
@@ -1260,7 +1260,7 @@
   "ug": {
     "name": "Uganda",
     "region": ["east africa"],
-    "alphabet": [],
+    "alphabet": ["latin"],
     "scenery": [],
     "driving": ["left"],
     "flagColor": ["black", "yellow", "red"],

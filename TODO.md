@@ -5,8 +5,6 @@
 ## features
 
 - being able to pick countries to compare without having to put any clue
-- show list of "impossible" countries that explains why it cant be
-- add map onclick open country page
 
 ## clues
 
@@ -26,3 +24,9 @@
 - add language data
 - add scenery data
 - add missing alphabet data
+
+## reddit priority tasks
+
+- add car plates
+- road lines border for contrast
+-

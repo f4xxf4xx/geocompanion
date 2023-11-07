@@ -1,11 +1,11 @@
 import Flag from "./flag";
 import { Link } from "react-router-dom";
 
-const FlagCountry = ({ countryCode }: { countryCode: string }) => {
+const FlagCountry = ({ countryCode, ...rest }: { countryCode: string }) => {
   //TODO add tooltip with country name
 
   return (
-    <Link to={`/${countryCode}`}>
+    <Link to={`/${countryCode}`} {...rest}>
       <Flag code={countryCode} />
     </Link>
   );

@@ -10,6 +10,7 @@ import characters from "data/characters.json";
 
 import { DataContext } from "context/data";
 import { getPossibleCountries } from "data/dataHelper";
+import { Tooltip } from "react-tooltip";
 
 function App({ children }) {
   const [selectedClues, setSelectedClues] = useState<SelectedClue[]>([]);
@@ -52,6 +53,7 @@ function App({ children }) {
       }}
     >
       <ClueContext.Provider value={{ selectedClues, toggleClue, resetClues }}>
+        <Tooltip id="tooltip-country" place="bottom" />
         {children}
       </ClueContext.Provider>
     </DataContext.Provider>
