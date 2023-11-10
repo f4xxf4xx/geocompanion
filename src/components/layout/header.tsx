@@ -1,4 +1,5 @@
-import styled from "styled-components";
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
 
 const StyledHeader = styled.header`
   padding: 8px;
@@ -13,7 +14,7 @@ const Header = () => (
     <h1>
       Geo<StyledSpan>Companion</StyledSpan>
     </h1>
-    {/*  <Link to="/practice-tool">Practice Tool</Link> */}
+    <Link to="/practice-tool">Practice Tool</Link>
   </StyledHeader>
 );
 

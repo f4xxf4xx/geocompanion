@@ -1,11 +1,9 @@
-import "App.css";
-import Solver from "components/solver";
-
-import ClueSection from "components/clue-section";
-import { ClueType } from "types/types";
-import styled from "styled-components";
-import Map from "components/map";
-import ClueSearchbar from "components/clue-searchbar";
+import ClueSearchbar from 'components/clue-searchbar';
+import ClueSection from 'components/clue-section';
+import Map from 'components/map';
+import Solver from 'components/solver';
+import styled from 'styled-components';
+import { ClueType } from 'types/types';
 
 const StyledContainer = styled.div`
   display: grid;
@@ -19,18 +17,14 @@ const StyledContainer = styled.div`
   }
 `;
 
-const StyledLeftContainer = styled.div``;
-
-const StyledRightContainer = styled.div``;
-
 const ClueFinder = () => {
   return (
     <StyledContainer>
-      <StyledLeftContainer>
+      <div>
         <Map />
         <Solver />
-      </StyledLeftContainer>
-      <StyledRightContainer>
+      </div>
+      <div>
         <h2>Filters</h2>
         <p>Press 1 to reset clues</p>
         <ClueSearchbar />
@@ -42,7 +36,7 @@ const ClueFinder = () => {
         <ClueSection clueType={ClueType.FlagPattern} />
         <ClueSection clueType={ClueType.Region} />
         <ClueSection clueType={ClueType.Alphabet} />
-      </StyledRightContainer>
+      </div>
     </StyledContainer>
   );
 };

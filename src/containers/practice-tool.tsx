@@ -1,153 +1,121 @@
-import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
-import { DataContext } from "context/data";
+import ClueTile from 'components/clue-tile';
+import CountrySearchbar from 'components/country-searchbar';
+import { StyledButton } from 'components/layout/button';
+import { getCluesForCountry, getCountryName, getRandomCountryCode } from 'data/dataHelper';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import { Colors } from 'theme/theme';
+import { SelectedClue } from 'types/types';
 
-const StyledButton = styled.button`
-  margin: 8px;
+enum State {
+  NOT_STARTED = 'NOT_STARTED',
+  STARTED = 'STARTED',
+}
+
+const StyledContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   padding: 8px;
-  border-radius: 4px;
-  background-color: lightblue;
-  cursor: pointer;
 `;
 
-const Comparator = () => {
-  const { countries, characters } = useContext(DataContext);
-  const [state, setState] = useState("NOT_STARTED");
-  const [clues, setClues] = useState([]);
-  const [, setCountry] = useState(null);
-  const [cluesQuantity, setCluesQuantity] = useState(3);
+const StyledGivenClueWrapper = styled.div`
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+`;
 
-  const [, setGuessedCountry] = useState("");
+const StyledGivenClue = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100px;
+  border-radius: 8px;
+  padding: 16px;
+  border: 1px solid ${Colors.primary};
+
+  justify-content: center;
+  justify-items: center;
+`;
+
+const STARTING_CLUE_COUNT = 999;
+
+const PracticeTool = () => {
+  const [state, setState] = useState(State.NOT_STARTED);
+  const [clues, setClues] = useState<SelectedClue[]>([]);
+  const [country, setCountry] = useState(null);
+  const [cluesQuantity, setCluesQuantity] = useState(STARTING_CLUE_COUNT);
+  const [, setGuessedCountry] = useState('');
 
   const reset = () => {
-    setState("NOT_STARTED");
+    setState(State.NOT_STARTED);
     setClues([]);
     setCountry(null);
-    setCluesQuantity(3);
-    setGuessedCountry("");
+    setCluesQuantity(STARTING_CLUE_COUNT);
+    setGuessedCountry('');
     start();
   };
 
   const generateClues = (randomCountry) => {
-    const countryData = countries[randomCountry];
-    const clues = [];
-
-    const keysToUse = [
-      "regions",
-      "alphabets",
-      "driving",
-      "lines",
-      "flag.colors",
-      "flag.patterns",
-    ];
-
-    keysToUse.forEach((key) => {
-      const values = key.split(".").reduce((o, i) => o[i], countryData);
-      values.forEach((value) => {
-        const clue = {
-          type: key,
-          value: value,
-        };
-        clues.push(clue);
-      });
-    });
-
-    const countryCharacters = Object.keys(characters).filter((character) =>
-      characters[character].includes(randomCountry)
-    );
-
-    countryCharacters.forEach((character) => {
-      const clue = {
-        type: "characters",
-        value: character,
-      };
-      clues.push(clue);
-    });
-
-    // randomly shuffle the clues
-    for (let i = clues.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [clues[i], clues[j]] = [clues[j], clues[i]];
-    }
-
-    setClues(clues);
-    console.log(clues);
+    setClues(getCluesForCountry(randomCountry));
   };
 
   const start = () => {
-    setState("STARTED");
+    setState(State.STARTED);
 
-    const randomCountry =
-      Object.keys(countries)[
-        Math.floor(Math.random() * Object.keys(countries).length)
-      ];
-
+    const randomCountry = 'cl';
     setCountry(randomCountry);
-    console.log(randomCountry);
     generateClues(randomCountry);
   };
 
-  const addClue = () => {
+  /* const addClue = () => {
     if (cluesQuantity === clues.length) return;
     setCluesQuantity(cluesQuantity + 1);
-  };
+  }; */
 
   const renderClues = () => {
     if (!clues) return null;
     const displayedClues = clues.slice(0, cluesQuantity);
     return (
-      <div className="clues">
+      <StyledGivenClueWrapper>
         {displayedClues.map((clue) => {
           return (
-            <div>
+            <StyledGivenClue key={clue.value}>
               <h3>{clue.type}</h3>
-              {/* <SmallClueTile
-                value={clue.value}
-                type={clue.type}
-                name={clue.name}
-              /> */}
-            </div>
+              <ClueTile clue={clue} />
+            </StyledGivenClue>
           );
         })}
-      </div>
+      </StyledGivenClueWrapper>
     );
   };
 
-  /* const onChangeInput = (e) => {
-    setGuessedCountry(e.target.value);
-  };
-
-  const submitAnswer = () => {
+  const submitAnswer = (guessedCountry) => {
     if (
       guessedCountry.toLowerCase() === country ||
-      guessedCountry.toLowerCase() === countries[country].name.toLowerCase()
+      guessedCountry.toLowerCase() === getCountryName(country).toLowerCase()
     ) {
-      alert("Correct!");
+      alert('Correct!');
       reset();
     } else {
-      alert("Incorrect!");
+      alert('Incorrect!');
     }
-  }; */
+  };
 
   return (
-    <div>
-      <div className="comparatorHeader">
-        <Link to="/">Back</Link>
-        <h3>Practice Tool</h3>
-        {state === "NOT_STARTED" && (
-          <StyledButton onClick={start}>Start</StyledButton>
-        )}
-        {state === "STARTED" && (
-          <StyledButton onClick={reset}>Restart</StyledButton>
-        )}
-        {state === "STARTED" && (
-          <StyledButton onClick={addClue}>Add a clue</StyledButton>
-        )}
-        {renderClues()}
-      </div>
-    </div>
+    <StyledContainer>
+      <Link to="/">Back</Link>
+      <h3>Practice Tool</h3>
+      {state === State.NOT_STARTED && <StyledButton onClick={start}>Start</StyledButton>}
+      {state === State.STARTED && <StyledButton onClick={reset}>Restart</StyledButton>}
+      {/* {state === State.STARTED && clues && (
+        <StyledButton onClick={addClue}>Add a clue</StyledButton>
+      )} */}
+      <CountrySearchbar submitAnswer={submitAnswer} />
+      {renderClues()}
+    </StyledContainer>
   );
 };
 
-export default Comparator;
+export default PracticeTool;

@@ -4,13 +4,9 @@ import "App.css";
 import { ClueContext } from "context/clue";
 import { SelectedClue } from "types/types";
 
-import countries from "data/countries.json";
-import clues from "data/clues.json";
-import characters from "data/characters.json";
-
-import { DataContext } from "context/data";
 import { getPossibleCountries } from "data/dataHelper";
 import { Tooltip } from "react-tooltip";
+import { DataContext } from "context/data";
 
 function App({ children }) {
   const [selectedClues, setSelectedClues] = useState<SelectedClue[]>([]);
@@ -39,16 +35,13 @@ function App({ children }) {
   }, []);
 
   const possibleCountries = useMemo(
-    () => getPossibleCountries(countries, characters, selectedClues),
+    () => getPossibleCountries(selectedClues),
     [selectedClues]
   );
 
   return (
     <DataContext.Provider
       value={{
-        countries,
-        characters,
-        clues,
         possibleCountries,
       }}
     >

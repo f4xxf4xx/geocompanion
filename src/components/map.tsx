@@ -2,9 +2,17 @@ import { DataContext } from "context/data";
 import { useCallback, useContext } from "react";
 import WorldMap, { CountryContext } from "react-svg-worldmap";
 import { Colors } from "theme/theme";
+import countries from "data/countries.json";
+
+const getCountriesMapData = (possibleCountries: string[]) => {
+  return Object.keys(countries).map((key) => ({
+    country: key,
+    value: possibleCountries.includes(key) ? 1 : 0,
+  }));
+};
 
 const Map = () => {
-  const { countries, possibleCountries } = useContext(DataContext);
+  const { possibleCountries } = useContext(DataContext);
 
   const stylingFunction = ({ countryValue, color }: CountryContext) => {
     const opacityLevel =
@@ -20,11 +28,8 @@ const Map = () => {
   };
 
   const getData = useCallback(() => {
-    return Object.keys(countries).map((key) => ({
-      country: key,
-      value: possibleCountries.includes(key) ? 1 : 0,
-    }));
-  }, [possibleCountries, countries]);
+    return getCountriesMapData(possibleCountries);
+  }, [possibleCountries]);
 
   return (
     <WorldMap

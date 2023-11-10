@@ -1,6 +1,6 @@
-import styled from "styled-components";
-import ColoredRoadLine from "components/clues/colored-road-line";
-import { ClueType } from "types/types";
+import ColoredRoadLine from 'components/clues/colored-road-line';
+import styled from 'styled-components';
+import { ClueType } from 'types/types';
 
 const StyledCell = styled.div`
   background-color: linen;

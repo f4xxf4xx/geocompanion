@@ -1,9 +1,11 @@
-import { useContext, useState } from "react";
-import styled from "styled-components";
-import { DataContext } from "context/data";
-import FlagCountry from "./flag-country";
-import { StyledButton, StyledLink } from "./layout/button";
-import { useWindowWidth } from "@react-hook/window-size";
+import { useWindowWidth } from '@react-hook/window-size';
+import { DataContext } from 'context/data';
+import { getCountryName } from 'data/dataHelper';
+import { useContext, useState } from 'react';
+import styled from 'styled-components';
+
+import FlagCountry from './flag-country';
+import { StyledButton, StyledLink } from './layout/button';
 
 const StyledItemContainer = styled.div`
   display: flex;
@@ -25,7 +27,7 @@ const StyledShowAllButton = styled(StyledButton)`
 `;
 
 const Solver = () => {
-  const { possibleCountries, countries } = useContext(DataContext);
+  const { possibleCountries } = useContext(DataContext);
   const [showAll, setShowAll] = useState(false);
   const width = useWindowWidth();
 
@@ -40,30 +42,24 @@ const Solver = () => {
 
   return (
     <div>
-      <StyledHeader>
-        Possible countries ({possibleCountries.length}):
-      </StyledHeader>
+      <StyledHeader>Possible countries ({possibleCountries.length}):</StyledHeader>
       <StyledItemContainer>
         {displayedCountries?.map((countryCode) => (
           <FlagCountry
             key={countryCode}
             data-tooltip-id="tooltip-country"
-            data-tooltip-content={countries[countryCode].name}
+            data-tooltip-content={getCountryName(countryCode)}
             countryCode={countryCode}
           />
         ))}
         {!showAll && !bigScreen && possibleCountries.length > 30 && (
           <>
             <StyledText>...</StyledText>
-            <StyledShowAllButton onClick={handleShowAll}>
-              Show all
-            </StyledShowAllButton>
+            <StyledShowAllButton onClick={handleShowAll}>Show all</StyledShowAllButton>
           </>
         )}
       </StyledItemContainer>
-      <StyledLink to={`/compare?countries=${possibleCountries.join(",")}`}>
-        Compare
-      </StyledLink>
+      <StyledLink to={`/compare?countries=${possibleCountries.join(',')}`}>Compare</StyledLink>
     </div>
   );
 };

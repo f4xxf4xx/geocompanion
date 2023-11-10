@@ -1,5 +1,6 @@
-import Flag from "./flag";
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
+
+import Flag from './flag';
 
 const FlagCountry = ({ countryCode, ...rest }: { countryCode: string }) => {
   //TODO add tooltip with country name

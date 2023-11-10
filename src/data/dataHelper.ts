@@ -1,12 +1,8 @@
-import {
-  CharacterData,
-  ClueData,
-  ClueType,
-  CountryData,
-  SelectedClue,
-} from "types/types";
+import { ClueType, Country, SelectedClue } from "types/types";
+import countries from "data/countries.json";
+import characters from "data/characters.json";
 
-export const validateCountryData = (countries: CountryData) => {
+export const validateCountryData = () => {
   const countryCodes = Object.keys(countries);
   const errors = [];
   const requiredFields = [
@@ -33,11 +29,7 @@ export const validateCountryData = (countries: CountryData) => {
   return errors;
 };
 
-export const getDataFromClueType = (
-  countries: CountryData,
-  characters: CharacterData,
-  clueType: ClueType
-) => {
+export const getDataFromClueType = (clueType: ClueType) => {
   if (clueType === ClueType.Coverage) {
     return;
   }
@@ -52,11 +44,7 @@ export const getDataFromClueType = (
 };
 
 // probably the worst piece of code i've ever written, but it works
-export const getPossibleCountries = (
-  countries: CountryData,
-  characters: CharacterData,
-  clues: SelectedClue[]
-): string[] => {
+export const getPossibleCountries = (clues: SelectedClue[]): string[] => {
   if (clues.length === 0) {
     return Object.keys(countries).sort();
   }
@@ -112,29 +100,103 @@ export const getPossibleCountries = (
   return possibleCountries.sort();
 };
 
-export const getSearchItems = (
-  countries: CountryData,
-  characters: CharacterData,
-  clues: ClueData
-) => {
-  const items = [];
-  let i = 0;
+export const getRandomCountryCode = () => {
+  const countryCodes = Object.keys(countries);
+  return countryCodes[Math.floor(Math.random() * countryCodes.length)];
+};
 
-  const addClues = (clueType: ClueType) => {
-    getDataFromClueType(countries, characters, clueType).forEach((clue) => {
-      items.push({
-        id: i,
-        name: `${clues[clueType].clueName} ${clue}`,
-        clueType: clueType,
-        value: clue,
+export const getCluesForCountry = (countryCode: string) => {
+  const countryData = countries[countryCode];
+
+  const clues: SelectedClue[] = [];
+
+  const cluesToUse = [
+    "region",
+    "alphabet",
+    "driving",
+    "roadLine",
+    "flagColor",
+    "flagPattern",
+  ];
+
+  cluesToUse.forEach((key) => {
+    const values = countryData[key];
+    values.forEach((value) => {
+      clues.push({
+        type: key as ClueType,
+        value: value,
       });
-      i++;
     });
-  };
+  });
 
-  addClues(ClueType.Driving);
-  addClues(ClueType.FlagColor);
-  addClues(ClueType.Character);
+  const countryCharacters = Object.keys(characters).filter((character) =>
+    characters[character].includes(countryCode)
+  );
 
-  return items;
+  countryCharacters.forEach((character) => {
+    const clue = {
+      type: "characters" as ClueType,
+      value: character,
+    };
+    clues.push(clue);
+  });
+
+  // randomly shuffle the clues
+  for (let i = clues.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [clues[i], clues[j]] = [clues[j], clues[i]];
+  }
+  return clues;
+};
+
+export const getCountryName = (countryCode: string) => {
+  return countries[countryCode].name;
+};
+
+export const getCountry = (countryCode: string) => {
+  return countries[countryCode] as Country;
+};
+
+export const getCountryUniqueCharacters = (
+  firstCountry: string,
+  secondCountry: string
+) => {
+  const firstCountryCharacters = Object.keys(characters).filter((character) =>
+    characters[character].includes(firstCountry)
+  );
+  const secondCountryCharacters = Object.keys(characters).filter((character) =>
+    characters[character].includes(secondCountry)
+  );
+
+  const firstCountryUniqueCharacters = firstCountryCharacters?.filter(
+    (character) => !secondCountryCharacters.includes(character)
+  );
+  const secondCountryUniqueCharacters = secondCountryCharacters?.filter(
+    (character) => !firstCountryCharacters.includes(character)
+  );
+
+  return { firstCountryUniqueCharacters, secondCountryUniqueCharacters };
+};
+
+export const getCountryUniqueClue = (
+  firstCountry: string,
+  secondCountry: string,
+  clueType: ClueType
+) => {
+  const firstCountryValues = countries[firstCountry]?.[clueType];
+  const secondCountryValues = countries[secondCountry]?.clueType;
+
+  if (!firstCountryValues || !secondCountryValues) {
+    return {
+      firstCountryValues: [],
+      secondCountryValues: [],
+    };
+  }
+  const firstCountryUniqueValues = firstCountryValues?.filter(
+    (line) => !secondCountryValues.includes(line)
+  );
+  const secondCountryUniqueValues = secondCountryValues?.filter(
+    (line) => !firstCountryValues.includes(line)
+  );
+  return { firstCountryUniqueValues, secondCountryUniqueValues };
 };

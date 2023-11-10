@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { Colors } from "theme/theme";
+import styled from 'styled-components';
+import { Colors } from 'theme/theme';
 
 export const StyledColorSquare = styled.div<{ color: string }>`
   width: 8px;

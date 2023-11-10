@@ -1,9 +1,8 @@
-import { useContext } from "react";
-import ClueTile from "components/clue-tile";
-import { getDataFromClueType } from "data/dataHelper";
-import { ClueType } from "types/types";
-import styled from "styled-components";
-import { DataContext } from "context/data";
+import ClueTile from 'components/clue-tile';
+import clues from 'data/clues.json';
+import { getDataFromClueType } from 'data/dataHelper';
+import styled from 'styled-components';
+import { ClueType } from 'types/types';
 
 const StyledClueSection = styled.div`
   margin-top: 8px;
@@ -19,8 +18,7 @@ const StyledClueContainer = styled.div`
 `;
 
 const ClueSection = ({ clueType }: { clueType: ClueType }) => {
-  const { countries, characters, clues } = useContext(DataContext);
-  const data = getDataFromClueType(countries, characters, clueType);
+  const data = getDataFromClueType(clueType);
 
   return (
     <StyledClueSection>

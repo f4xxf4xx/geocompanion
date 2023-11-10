@@ -1,51 +1,51 @@
-import { useContext } from "react";
-import { getSearchItems } from "data/dataHelper";
-import { DataContext } from "context/data";
+import { ClueContext } from 'context/clue';
+import clues from 'data/clues.json';
+import { getDataFromClueType } from 'data/dataHelper';
+import { useContext } from 'react';
+import { ReactSearchAutocomplete } from 'react-search-autocomplete';
+import { Colors } from 'theme/theme';
+import { ClueType } from 'types/types';
 
-import { ReactSearchAutocomplete } from "react-search-autocomplete";
-import { ClueContext } from "context/clue";
-import { Colors } from "theme/theme";
+const getSearchItems = () => {
+  const items = [];
+  let i = 0;
+
+  const addClues = (clueType: ClueType) => {
+    getDataFromClueType(clueType).forEach((clue) => {
+      items.push({
+        id: i,
+        name: `${clues[clueType].clueName} ${clue}`,
+        clueType: clueType,
+        value: clue,
+      });
+      i++;
+    });
+  };
+
+  addClues(ClueType.Driving);
+  addClues(ClueType.FlagColor);
+  addClues(ClueType.Character);
+
+  return items;
+};
 
 function ClueSearchbar() {
-  const { countries, characters, clues } = useContext(DataContext);
   const { toggleClue } = useContext(ClueContext);
 
-  const items = getSearchItems(countries, characters, clues);
-
-  const handleOnSearch = (string, results) => {
-    // onSearch will have as the first callback parameter
-    // the string searched and for the second the results.
-    console.debug(string, results);
-  };
-
-  const handleOnHover = (result) => {
-    // the item hovered
-    console.debug(result);
-  };
+  const items = getSearchItems();
 
   const handleOnSelect = (item) => {
     toggleClue({ type: item.clueType, value: item.value });
   };
 
-  const handleOnFocus = () => {
-    //console.debug("Focused");
-  };
-
   const formatResult = (item) => {
-    return (
-      <span style={{ display: "block", textAlign: "left" }}>
-        name: {item.name}
-      </span>
-    );
+    return <span style={{ display: 'block', textAlign: 'left' }}>name: {item.name}</span>;
   };
 
   return (
     <ReactSearchAutocomplete
       items={items}
-      onSearch={handleOnSearch}
-      onHover={handleOnHover}
       onSelect={handleOnSelect}
-      onFocus={handleOnFocus}
       autoFocus
       formatResult={formatResult}
       styling={{
