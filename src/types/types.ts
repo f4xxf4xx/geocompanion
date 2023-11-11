@@ -39,14 +39,14 @@ export interface Country {
 }
 
 export enum ClueType {
-  Character = "character",
-  Region = "region",
-  Alphabet = "alphabet",
-  Scenery = "scenery",
-  Driving = "driving",
-  FlagColor = "flagColor",
-  FlagPattern = "flagPattern",
-  RoadLine = "roadLine",
-  Language = "language",
-  Coverage = "coverage",
+  Character = 'character',
+  Region = 'region',
+  Alphabet = 'alphabet',
+  Scenery = 'scenery',
+  Driving = 'driving',
+  FlagColor = 'flagColor',
+  FlagPattern = 'flagPattern',
+  RoadLine = 'roadLine',
+  Language = 'language',
+  Coverage = 'coverage',
 }
