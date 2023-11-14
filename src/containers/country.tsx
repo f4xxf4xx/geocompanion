@@ -25,10 +25,6 @@ const Country = () => {
         {country.alphabet?.map((alphabet) => (
           <div key={alphabet}>{alphabet}</div>
         ))}
-        <h4>Language(s)</h4>
-        {country.language?.map((language) => (
-          <div key={language}>{language}</div>
-        ))}
         <h4>Driving side</h4>
         {country.driving?.map((driving) => (
           <div key={driving}>{driving}</div>

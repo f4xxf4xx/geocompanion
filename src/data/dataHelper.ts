@@ -30,7 +30,6 @@ export const validateCountryData = () => {
 
 export const getDataFromClueType = (clueType: ClueType) => {
   const countries = getCountries();
-  console.debug('countries', countries);
 
   const characters = getCharacters();
   if (clueType === ClueType.Character) {
