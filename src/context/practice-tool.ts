@@ -1,25 +1,27 @@
 import { createContext } from 'react';
-import { State } from 'types/practice-tool';
-import { SelectedClue } from 'types/types';
+import { GameState, State } from 'types/practice-tool';
 
 interface PracticeToolContextType {
-  state: State;
+  gameState: GameState;
   startGame: () => void;
   resetGame: () => void;
-  clues: SelectedClue[];
-  cluesQuantity: number;
-  roundScore: number;
-  round: number;
-  gameScore: number;
 }
 
-export const PracticeToolContext = createContext<PracticeToolContextType>({
+export const STARTING_CLUE_COUNT = 5;
+
+export const initialState: GameState = {
   state: State.NOT_STARTED,
+  clues: [],
+  country: null,
+  cluesQuantity: STARTING_CLUE_COUNT,
+  guessedCountry: '',
+  round: 1,
+  roundScore: 5000,
+  gameScore: 0,
+};
+
+export const PracticeToolContext = createContext<PracticeToolContextType>({
+  gameState: initialState,
   startGame: () => {},
   resetGame: () => {},
-  clues: [],
-  cluesQuantity: 0,
-  roundScore: 5000,
-  round: 1,
-  gameScore: 0,
 });

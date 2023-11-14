@@ -20,7 +20,7 @@ const getCountrySearchableStrings = () => {
 
 function CountrySearchbar({ submitAnswer }) {
   const items = getCountrySearchableStrings();
-  const { state } = useContext(PracticeToolContext);
+  const { gameState } = useContext(PracticeToolContext);
 
   const handleOnSelect = (item) => {
     submitAnswer(item.value);
@@ -33,7 +33,7 @@ function CountrySearchbar({ submitAnswer }) {
     return <span style={{ display: 'block', textAlign: 'left' }}>{item.name}</span>;
   };
 
-  if (state === State.NOT_STARTED) return null;
+  if (gameState.state !== State.STARTED) return null;
 
   return (
     <StyledContainer>

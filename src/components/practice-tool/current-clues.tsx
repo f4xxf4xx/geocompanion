@@ -3,6 +3,7 @@ import { PracticeToolContext } from 'context/practice-tool';
 import { useContext } from 'react';
 import styled from 'styled-components';
 import { Colors } from 'theme/theme';
+import { State } from 'types/practice-tool';
 
 const StyledGivenClueWrapper = styled.div`
   display: flex;
@@ -24,10 +25,11 @@ const StyledGivenClue = styled.div`
 `;
 
 const CurrentClues = () => {
-  const { clues, cluesQuantity } = useContext(PracticeToolContext);
+  const { gameState } = useContext(PracticeToolContext);
 
-  if (!clues) return null;
-  const displayedClues = clues.slice(0, cluesQuantity);
+  if (!gameState.clues || gameState.state !== State.STARTED) return null;
+  const displayedClues = gameState.clues.slice(0, gameState.cluesQuantity);
+
   return (
     <StyledGivenClueWrapper>
       {displayedClues.map((clue) => {

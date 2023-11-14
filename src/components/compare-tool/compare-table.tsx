@@ -32,10 +32,10 @@ const CompareTable = ({ selectedCountries }: { selectedCountries: string[] }) =>
   return (
     <StyledContainer>
       <StyledCell>
-        <h4>{getCountryName(firstCountry)}</h4>
+        <h4>{firstCountry && getCountryName(firstCountry)}</h4>
       </StyledCell>
       <StyledCell>
-        <h4>{getCountryName(secondCountry)}</h4>
+        <h4>{secondCountry && getCountryName(secondCountry)}</h4>
       </StyledCell>
       <CompareCell
         title="Unique letters"

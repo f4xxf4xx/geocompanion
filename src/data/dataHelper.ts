@@ -1,9 +1,8 @@
-import characters from 'data/characters.json';
-import countries from 'data/countries.json';
-import { ClueType, Country, SelectedClue } from 'types/types';
+import { getCharacters, getCountries } from 'data';
+import { ClueType, Country, CountryData, SelectedClue } from 'types/types';
 
 export const validateCountryData = () => {
-  console.debug('countries', countries);
+  const countries = getCountries();
   const countryCodes = Object.keys(countries);
   const errors = [];
   const requiredFields = [
@@ -15,8 +14,7 @@ export const validateCountryData = () => {
     'flagColor',
     'flagPattern',
     'roadLine',
-    'language',
-    'coverage',
+    'cameraGen',
   ];
 
   countryCodes.forEach((countryCode) => {
@@ -31,12 +29,14 @@ export const validateCountryData = () => {
 };
 
 export const getDataFromClueType = (clueType: ClueType) => {
-  if (clueType === ClueType.Coverage) {
-    return;
-  }
+  const countries = getCountries();
+  console.debug('countries', countries);
+
+  const characters = getCharacters();
   if (clueType === ClueType.Character) {
     return Object.keys(characters);
   }
+
   return Object.keys(countries)
     .reduce((acc, country) => {
       return [...new Set([...acc, ...countries[country][clueType]])];
@@ -44,19 +44,36 @@ export const getDataFromClueType = (clueType: ClueType) => {
     .sort();
 };
 
+export const getCountriesWithCoverage = () => {
+  const countries = getCountries();
+  const countriesWithCoverage: CountryData = {};
+
+  Object.keys(countries).forEach((country) => {
+    const currentCountry = countries[country];
+    if (currentCountry.cameraGen?.length > 0) {
+      countriesWithCoverage[country] = currentCountry;
+    }
+  });
+
+  return countriesWithCoverage;
+};
+
 // probably the worst piece of code i've ever written, but it works
 export const getPossibleCountries = (clues: SelectedClue[]): string[] => {
+  const characters = getCharacters();
+  const countriesWithCoverage = getCountriesWithCoverage();
   if (clues.length === 0) {
-    return Object.keys(countries).sort();
+    return Object.keys(countriesWithCoverage).sort();
   }
+
   const regionClues = clues.filter((clue) => clue.type === ClueType.Region);
   const otherClues = clues.filter((clue) => clue.type !== ClueType.Region);
 
   const countriesThatMatchRegionClues = [
     ...new Set(
       regionClues.reduce((result, clue) => {
-        const matchingCountries = Object.keys(countries).filter((country) =>
-          countries[country].region.includes(clue.value),
+        const matchingCountries = Object.keys(countriesWithCoverage).filter((country) =>
+          countriesWithCoverage[country].region.includes(clue.value),
         );
         return [...result, ...matchingCountries];
       }, []),
@@ -66,16 +83,15 @@ export const getPossibleCountries = (clues: SelectedClue[]): string[] => {
   let possibleCountries = [];
   otherClues.forEach((clue, i) => {
     let matchingCountries = [];
-
     switch (clue.type) {
       case ClueType.Character:
         matchingCountries = characters[clue.value].filter((country) =>
-          Object.keys(countries).includes(country),
+          Object.keys(countriesWithCoverage).includes(country),
         );
         break;
       default:
-        matchingCountries = Object.keys(countries).filter((country) =>
-          countries[country][clue.type].includes(clue.value),
+        matchingCountries = Object.keys(countriesWithCoverage).filter((country) =>
+          countriesWithCoverage[country][clue.type].includes(clue.value),
         );
         break;
     }
@@ -102,11 +118,14 @@ export const getPossibleCountries = (clues: SelectedClue[]): string[] => {
 };
 
 export const getRandomCountryCode = () => {
+  const countries = getCountries();
   const countryCodes = Object.keys(countries);
   return countryCodes[Math.floor(Math.random() * countryCodes.length)];
 };
 
 export const getCluesForCountry = (countryCode: string) => {
+  const countries = getCountries();
+  const characters = getCharacters();
   const countryData = countries[countryCode];
 
   const clues: SelectedClue[] = [];
@@ -144,14 +163,17 @@ export const getCluesForCountry = (countryCode: string) => {
 };
 
 export const getCountryName = (countryCode: string) => {
+  const countries = getCountries();
   return countries[countryCode].name;
 };
 
 export const getCountry = (countryCode: string) => {
+  const countries = getCountries();
   return countries[countryCode] as Country;
 };
 
 export const getCountryUniqueCharacters = (firstCountry: string, secondCountry: string) => {
+  const characters = getCharacters();
   const firstCountryCharacters = Object.keys(characters).filter((character) =>
     characters[character].includes(firstCountry),
   );
@@ -174,8 +196,9 @@ export const getCountryUniqueClue = (
   secondCountry: string,
   clueType: ClueType,
 ) => {
+  const countries = getCountries();
   const firstCountryValues = countries[firstCountry]?.[clueType];
-  const secondCountryValues = countries[secondCountry]?.clueType;
+  const secondCountryValues = countries[secondCountry]?.[clueType];
 
   if (!firstCountryValues || !secondCountryValues) {
     return {

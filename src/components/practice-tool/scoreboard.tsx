@@ -3,15 +3,15 @@ import { useContext } from 'react';
 import { State } from 'types/practice-tool';
 
 const Scoreboard = () => {
-  const { roundScore, round, gameScore, state } = useContext(PracticeToolContext);
+  const { gameState } = useContext(PracticeToolContext);
 
-  if (state === State.NOT_STARTED) return null;
+  if (gameState.state === State.NOT_STARTED) return null;
 
   return (
     <div>
-      <div>Round: {round} / 5</div>
-      <div>Round score: {roundScore}</div>
-      <div>Game score: {gameScore}</div>
+      <div>Round: {gameState.round} / 5</div>
+      <div>Round score: {gameState.roundScore}</div>
+      <div>Game score: {gameState.gameScore}</div>
     </div>
   );
 };

@@ -4,8 +4,8 @@ import { getCountryName } from 'data/dataHelper';
 import { useContext, useState } from 'react';
 import styled from 'styled-components';
 
-import FlagCountry from './flag-country';
-import { StyledButton, StyledLink } from './layout/button';
+import FlagCountry from '../flag-country';
+import { StyledButton, StyledLink } from '../layout/button';
 
 const StyledItemContainer = styled.div`
   display: flex;

@@ -34,8 +34,7 @@ export interface Country {
   flagColor: string[];
   flagPattern: string[];
   roadLine: string[];
-  language: string[];
-  coverage: boolean;
+  cameraGen: number[];
 }
 
 export enum ClueType {
@@ -47,6 +46,5 @@ export enum ClueType {
   FlagColor = 'flagColor',
   FlagPattern = 'flagPattern',
   RoadLine = 'roadLine',
-  Language = 'language',
-  Coverage = 'coverage',
+  CameraGen = 'cameraGen',
 }

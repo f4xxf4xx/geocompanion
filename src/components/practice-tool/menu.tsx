@@ -10,12 +10,16 @@ const StyledButtonWrapper = styled.div`
 `;
 
 const PracticeToolMenu = () => {
-  const { state, startGame, resetGame } = useContext(PracticeToolContext);
+  const { gameState, startGame, resetGame } = useContext(PracticeToolContext);
 
   return (
     <StyledButtonWrapper>
-      {state === State.NOT_STARTED && <StyledButton onClick={startGame}>Start</StyledButton>}
-      {state === State.STARTED && <StyledButton onClick={resetGame}>Restart</StyledButton>}
+      {gameState.state === State.NOT_STARTED && (
+        <StyledButton onClick={startGame}>Start</StyledButton>
+      )}
+      {gameState.state !== State.NOT_STARTED && (
+        <StyledButton onClick={resetGame}>Restart</StyledButton>
+      )}
     </StyledButtonWrapper>
   );
 };
