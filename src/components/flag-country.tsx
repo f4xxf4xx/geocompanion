@@ -1,13 +1,25 @@
-import Flag from "./flag";
-import { Link } from "react-router-dom";
+import { ClueContext } from 'context/clue';
+import { useHover } from 'hooks';
+import { useContext, useEffect } from 'react';
 
-const FlagCountry = ({ countryCode }: { countryCode: string }) => {
-  //TODO add tooltip with country name
+import Flag from './flag';
+
+const FlagCountry = ({ countryCode, ...rest }: { countryCode: string }) => {
+  const { hovered, eventHandlers } = useHover();
+  const { setHoveredCountry } = useContext(ClueContext);
+
+  useEffect(() => {
+    if (hovered) {
+      setHoveredCountry(countryCode);
+    } else {
+      setHoveredCountry('');
+    }
+  }, [hovered, setHoveredCountry, countryCode]);
 
   return (
-    <Link to={`/${countryCode}`}>
+    <div {...rest} {...eventHandlers}>
       <Flag code={countryCode} />
-    </Link>
+    </div>
   );
 };
 

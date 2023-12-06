@@ -1,14 +1,12 @@
-import { useContext } from "react";
-import { useState } from "react";
-import { Link, useSearchParams } from "react-router-dom";
-import CompareTable from "components/compare-tool/compare-table";
-import Flag from "components/flag";
-import { DataContext } from "context/data";
+import CompareTable from 'components/compare-tool/compare-table';
+import Flag from 'components/flag';
+import { getCountryName } from 'data/dataHelper';
+import { useState } from 'react';
+import { Link, useSearchParams } from 'react-router-dom';
 
 const Comparator = () => {
-  let [searchParams] = useSearchParams();
-  const { countries } = useContext(DataContext);
-  const queryParamCountries = searchParams.get("countries")?.split(",");
+  const [searchParams] = useSearchParams();
+  const queryParamCountries = searchParams.get('countries')?.split(',');
   const [selectedCountries, setSelectedCountries] = useState([]);
 
   const onCheck = (e) => {
@@ -42,7 +40,7 @@ const Comparator = () => {
               />
               <label htmlFor={country}>
                 <Flag code={country} />
-                {countries[country]?.name}
+                {getCountryName(country)}
               </label>
             </div>
           ))}

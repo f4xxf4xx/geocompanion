@@ -1,11 +1,11 @@
-import { StyledColorSquare } from "components/colored-square";
-import styled from "styled-components";
+import { StyledColorSquare } from 'components/colored-square';
+import styled from 'styled-components';
 
 const roadLineColorMapping = {
-  "yellow-white": ["yellow", "white", "yellow"],
-  "white-white": ["white", "white", "white"],
-  "yellow-yellow": ["yellow", "yellow", "yellow"],
-  "white-yellow": ["white", "yellow", "white"],
+  'yellow-white': ['yellow', 'white', 'yellow'],
+  'white-white': ['white', 'white', 'white'],
+  'yellow-yellow': ['yellow', 'yellow', 'yellow'],
+  'white-yellow': ['white', 'yellow', 'white'],
 };
 
 const StyledRoadLineContaier = styled.div`

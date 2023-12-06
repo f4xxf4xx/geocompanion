@@ -1,21 +1,21 @@
 import {
-  faTree,
-  faSun,
-  faMountain,
-  faMinus,
-  faDroplet,
   faArrowLeft,
   faArrowRight,
   faCircle,
-  faStarAndCrescent,
+  faDroplet,
+  faGripLines,
+  faGripLinesVertical,
+  faMinus,
+  faMountain,
+  faPlay,
   faPlus,
   faStar,
-  faPlay,
-  faGripLinesVertical,
-  faGripLines,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { SelectedClue } from "types/types";
+  faStarAndCrescent,
+  faSun,
+  faTree,
+} from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { SelectedClue } from 'types/types';
 
 const iconMapping = {
   scenery: {
@@ -31,13 +31,13 @@ const iconMapping = {
   },
   flagPattern: {
     circle: faCircle,
-    "crescent-star": faStarAndCrescent,
+    'crescent-star': faStarAndCrescent,
     cross: faPlus,
     star: faStar,
     sun: faSun,
     triangle: faPlay, //triangle is pro
     stripes: faGripLines,
-    "vertical-stripes": faGripLinesVertical,
+    'vertical-stripes': faGripLinesVertical,
   },
 };
 

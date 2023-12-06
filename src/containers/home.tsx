@@ -1,15 +1,9 @@
-import "App.css";
-
-import Header from "components/layout/header";
-
-import { validateCountryData } from "data/dataHelper";
-import ClueFinder from "containers/clue-finder";
-import { useContext } from "react";
-import { DataContext } from "context/data";
+import Header from 'components/layout/header';
+import ClueFinder from 'containers/clue-finder';
+import { validateCountryData } from 'data/dataHelper';
 
 const Home = () => {
-  const { countries } = useContext(DataContext);
-  const validData = validateCountryData(countries);
+  const validData = validateCountryData();
 
   return (
     <div>

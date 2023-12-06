@@ -1,128 +1,259 @@
-import { describe, expect, test } from "vitest";
-import { getPossibleCountries, validateCountryData } from "./dataHelper";
-import { ClueType, Country, CountryData } from "types/types";
+import { ClueType } from 'types/types';
+import { describe, expect, test, vi } from 'vitest';
 
-const canadaData: Country = {
-  name: "Canada",
-  region: ["north america"],
-  alphabet: ["latin"],
-  scenery: ["mountains", "woods", "flat"],
-  driving: ["right"],
-  flagColor: ["red", "white"],
-  flagPattern: ["vertical-stripes"],
-  roadLine: ["white-yellow"],
-  language: ["english", "french"],
-  coverage: true,
-};
+import {
+  getCluesForCountry,
+  getCountriesWithCoverage,
+  getCountry,
+  getCountryName,
+  getCountryUniqueCharacters,
+  getCountryUniqueClue,
+  getDataFromClueType,
+  getPossibleCountries,
+  getRandomCountryCode,
+  validateCountryData,
+} from './dataHelper';
 
-const usData: Country = {
-  name: "United States",
-  region: ["north america"],
-  alphabet: ["latin"],
-  scenery: ["mountains", "woods", "flat", "desert"],
-  driving: ["right"],
-  flagColor: ["red", "white", "blue"],
-  flagPattern: ["stripes"],
-  roadLine: ["white-yellow"],
-  language: ["english"],
-  coverage: true,
-};
+const mocks = vi.hoisted(() => {
+  return {
+    getCountries: vi.fn(),
+    getCharacters: vi.fn(),
+    countries: {
+      ca: {
+        name: 'Canada',
+        region: ['north america'],
+        alphabet: ['latin'],
+        scenery: ['mountains', 'woods', 'flat'],
+        driving: ['right'],
+        flagColor: ['red', 'white'],
+        flagPattern: ['vertical-stripes'],
+        roadLine: ['white-yellow'],
+        cameraGen: [1, 2, 3, 4],
+      },
+      us: {
+        name: 'United States',
+        region: ['north america'],
+        alphabet: ['latin'],
+        scenery: ['mountains', 'woods', 'flat', 'desert'],
+        driving: ['right'],
+        flagColor: ['red', 'white', 'blue'],
+        flagPattern: ['stripes'],
+        roadLine: ['white-yellow'],
+        cameraGen: [1, 2, 3, 4],
+      },
+      fr: {
+        name: 'France',
+        region: ['europe'],
+        alphabet: ['latin'],
+        scenery: ['mountains', 'woods', 'flat'],
+        driving: ['right'],
+        flagColor: ['red', 'white', 'blue'],
+        flagPattern: ['vertical-stripes'],
+        roadLine: ['white-white'],
+        cameraGen: [1, 2, 3, 4],
+      },
+      jp: {
+        name: 'Japan',
+        region: ['asia'],
+        alphabet: ['japanese'],
+        scenery: ['mountains', 'woods', 'flat'],
+        driving: ['left'],
+        flagColor: ['red', 'white'],
+        flagPattern: ['circle'],
+        roadLine: ['white-white', 'white-yellow'],
+        cameraGen: [1, 2, 3, 4],
+      },
+    },
+    characters: {
+      Éé: ['fr', 'ca'],
+      の: ['jp'],
+    },
+  };
+});
 
-const franceData: Country = {
-  name: "France",
-  region: ["europe"],
-  alphabet: ["latin"],
-  scenery: ["mountains", "woods", "flat"],
-  driving: ["right"],
-  flagColor: ["red", "white", "blue"],
-  flagPattern: ["vertical-stripes"],
-  roadLine: ["white-white"],
-  language: ["french"],
-  coverage: true,
-};
+vi.mock('data/index', () => {
+  return {
+    getCountries: mocks.getCountries,
+    getCharacters: mocks.getCharacters,
+  };
+});
 
-const japanData: Country = {
-  name: "Japan",
-  region: ["asia"],
-  alphabet: ["japanese"],
-  scenery: ["mountains", "woods", "flat"],
-  driving: ["left"],
-  flagColor: ["red", "white"],
-  flagPattern: ["circle"],
-  roadLine: ["white-white", "white-yellow"],
-  language: ["japanese"],
-  coverage: false,
-};
-
-const countries: CountryData = {
-  ca: canadaData,
-  us: usData,
-  fr: franceData,
-  jp: japanData,
-};
-
-// TODO type
-const characters = {
-  Éé: ["fr", "ca"],
-};
-
-describe("validateData", () => {
-  test("with valid data", () => {
-    expect(validateCountryData({ ca: canadaData })).toStrictEqual([]);
+describe('validateData', () => {
+  test('with valid data', () => {
+    mocks.getCountries.mockReturnValueOnce(mocks.countries);
+    expect(validateCountryData()).toStrictEqual([]);
   });
-  test("with missing field", () => {
-    expect(
-      validateCountryData({ ca: { ...canadaData, name: undefined } })
-    ).toStrictEqual(["Missing name for ca"]);
+  test('with missing field', () => {
+    mocks.getCountries.mockReturnValueOnce({
+      ca: {
+        ...mocks.countries.ca,
+        name: undefined,
+      },
+    });
+    expect(validateCountryData()).toStrictEqual(['Missing name for ca']);
   });
 });
 
-describe("getPossibleCountries", () => {
-  test("with character clue", () => {
-    expect(
-      getPossibleCountries(countries, characters, [
-        { type: ClueType.Character, value: "Éé" },
-      ])
-    ).toStrictEqual(["ca", "fr"]);
+describe('getPossibleCountries', () => {
+  test('with character clue', () => {
+    mocks.getCountries.mockReturnValueOnce(mocks.countries);
+    mocks.getCharacters.mockReturnValueOnce(mocks.characters);
+    expect(getPossibleCountries([{ type: ClueType.Character, value: 'Éé' }])).toStrictEqual([
+      'ca',
+      'fr',
+    ]);
   });
-  test("with region clue union", () => {
+  test('with region clue union', () => {
+    mocks.getCountries.mockReturnValueOnce(mocks.countries);
     expect(
-      getPossibleCountries(countries, characters, [
-        { type: ClueType.Region, value: "north america" },
-        { type: ClueType.Region, value: "europe" },
-      ])
-    ).toStrictEqual(["ca", "fr", "us"]);
+      getPossibleCountries([
+        { type: ClueType.Region, value: 'north america' },
+        { type: ClueType.Region, value: 'europe' },
+      ]),
+    ).toStrictEqual(['ca', 'fr', 'us']);
   });
-  test("with one region clue and one other", () => {
+  test('with one region clue and one other', () => {
+    mocks.getCountries.mockReturnValueOnce(mocks.countries);
+    mocks.getCharacters.mockReturnValueOnce(mocks.characters);
     expect(
-      getPossibleCountries(countries, characters, [
-        { type: ClueType.Character, value: "Éé" },
-        { type: ClueType.Region, value: "north america" },
-      ])
-    ).toStrictEqual(["ca"]);
+      getPossibleCountries([
+        { type: ClueType.Character, value: 'Éé' },
+        { type: ClueType.Region, value: 'north america' },
+      ]),
+    ).toStrictEqual(['ca']);
   });
-  test("with two regions and one other clue", () => {
+  test('with two regions and one other clue', () => {
+    mocks.getCountries.mockReturnValueOnce(mocks.countries);
+    mocks.getCharacters.mockReturnValueOnce(mocks.characters);
     expect(
-      getPossibleCountries(countries, characters, [
-        { type: ClueType.Region, value: "north america" },
-        { type: ClueType.Region, value: "europe" },
-        { type: ClueType.Character, value: "Éé" },
-      ])
-    ).toStrictEqual(["ca", "fr"]);
+      getPossibleCountries([
+        { type: ClueType.Region, value: 'north america' },
+        { type: ClueType.Region, value: 'europe' },
+        { type: ClueType.Character, value: 'Éé' },
+      ]),
+    ).toStrictEqual(['ca', 'fr']);
   });
-  test("with flagColor clue", () => {
-    expect(
-      getPossibleCountries(countries, characters, [
-        { type: ClueType.FlagColor, value: "blue" },
-      ])
-    ).toStrictEqual(["fr", "us"]);
+  test('with flagColor clue', () => {
+    mocks.getCountries.mockReturnValueOnce(mocks.countries);
+    mocks.getCharacters.mockReturnValueOnce(mocks.characters);
+    expect(getPossibleCountries([{ type: ClueType.FlagColor, value: 'blue' }])).toStrictEqual([
+      'fr',
+      'us',
+    ]);
   });
-  test("with character and flagColor clue", () => {
+  test('with character and flagColor clue', () => {
+    mocks.getCountries.mockReturnValueOnce(mocks.countries);
+    mocks.getCharacters.mockReturnValueOnce(mocks.characters);
     expect(
-      getPossibleCountries(countries, characters, [
-        { type: ClueType.FlagColor, value: "blue" },
-        { type: ClueType.Character, value: "Éé" },
-      ])
-    ).toStrictEqual(["fr"]);
+      getPossibleCountries([
+        { type: ClueType.FlagColor, value: 'blue' },
+        { type: ClueType.Character, value: 'Éé' },
+      ]),
+    ).toStrictEqual(['fr']);
+  });
+});
+
+describe('getDataFromClueType', () => {
+  test('get characters', () => {
+    mocks.getCharacters.mockReturnValueOnce(mocks.characters);
+    expect(getDataFromClueType(ClueType.Character)).toStrictEqual(['Éé', 'の']);
+  });
+  test('get regions', () => {
+    mocks.getCountries.mockReturnValueOnce(mocks.countries);
+    expect(getDataFromClueType(ClueType.Region)).toStrictEqual(['asia', 'europe', 'north america']);
+  });
+});
+
+describe('getCountriesWithCoverage', () => {
+  test('with not covered japan', () => {
+    mocks.getCountries.mockReturnValueOnce({
+      ...mocks.countries,
+      jp: { ...mocks.countries.jp, cameraGen: [] },
+    });
+    expect(getCountriesWithCoverage()).toStrictEqual({
+      ca: mocks.countries.ca,
+      us: mocks.countries.us,
+      fr: mocks.countries.fr,
+    });
+  });
+});
+
+describe('getRandomCountryCode', () => {
+  test('random country code', () => {
+    mocks.getCountries.mockReturnValueOnce(mocks.countries);
+    expect(Object.keys(mocks.countries).includes(getRandomCountryCode()));
+  });
+});
+
+describe('getCluesForCountry', () => {
+  test('get all clues for country', () => {
+    mocks.getCountries.mockReturnValueOnce(mocks.countries);
+    mocks.getCharacters.mockReturnValueOnce(mocks.characters);
+    const clues = getCluesForCountry('ca');
+
+    const expectedClues = [
+      { type: 'region', value: 'north america' },
+      { type: 'flagColor', value: 'red' },
+      { type: 'flagColor', value: 'white' },
+      { type: 'characters', value: 'Éé' },
+      { type: 'flagPattern', value: 'vertical-stripes' },
+      { type: 'roadLine', value: 'white-yellow' },
+      { type: 'alphabet', value: 'latin' },
+      { type: 'driving', value: 'right' },
+    ];
+
+    clues.forEach((clue) => {
+      expect(
+        expectedClues.find((c) => c.type === clue.type && c.value === clue.value),
+      ).toBeTruthy();
+    });
+  });
+});
+
+describe('getCountryName', () => {
+  test('get country name', () => {
+    mocks.getCountries.mockReturnValueOnce(mocks.countries);
+    expect(getCountryName('ca')).toBe('Canada');
+  });
+});
+
+describe('getCountry', () => {
+  test('get country', () => {
+    mocks.getCountries.mockReturnValueOnce(mocks.countries);
+    expect(getCountry('ca')).toBe(mocks.countries.ca);
+  });
+});
+
+describe('getCountryUniqueCharacters', () => {
+  test('same characters', () => {
+    mocks.getCharacters.mockReturnValueOnce(mocks.characters);
+    expect(getCountryUniqueCharacters('ca', 'fr')).toStrictEqual({
+      firstCountryUniqueCharacters: [],
+      secondCountryUniqueCharacters: [],
+    });
+  });
+  test('different characters', () => {
+    mocks.getCharacters.mockReturnValueOnce(mocks.characters);
+    expect(getCountryUniqueCharacters('ca', 'jp')).toStrictEqual({
+      firstCountryUniqueCharacters: ['Éé'],
+      secondCountryUniqueCharacters: ['の'],
+    });
+  });
+});
+
+describe('getCountryUniqueClues', () => {
+  test('region', () => {
+    mocks.getCountries.mockReturnValueOnce(mocks.countries);
+    expect(getCountryUniqueClue('ca', 'fr', ClueType.Region)).toStrictEqual({
+      firstCountryUniqueValues: ['north america'],
+      secondCountryUniqueValues: ['europe'],
+    });
+  });
+  test('different clues', () => {
+    mocks.getCountries.mockReturnValueOnce(mocks.countries);
+    expect(getCountryUniqueClue('ca', 'jp', ClueType.FlagPattern)).toStrictEqual({
+      firstCountryUniqueValues: ['vertical-stripes'],
+      secondCountryUniqueValues: ['circle'],
+    });
   });
 });

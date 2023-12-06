@@ -1,153 +1,107 @@
-import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
-import { DataContext } from "context/data";
+import CountrySearchbar from 'components/practice-tool/country-searchbar';
+import CurrentClues from 'components/practice-tool/current-clues';
+import PracticeToolMenu from 'components/practice-tool/menu';
+import Scoreboard from 'components/practice-tool/scoreboard';
+import { PracticeToolContext, STARTING_CLUE_COUNT, initialState } from 'context/practice-tool';
+import { getCluesForCountry, getRandomCountryCode } from 'data/dataHelper';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
+import styled from 'styled-components';
+import { GameState, State } from 'types/practice-tool';
 
-const StyledButton = styled.button`
-  margin: 8px;
+const StyledContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
   padding: 8px;
-  border-radius: 4px;
-  background-color: lightblue;
-  cursor: pointer;
 `;
 
-const Comparator = () => {
-  const { countries, characters } = useContext(DataContext);
-  const [state, setState] = useState("NOT_STARTED");
-  const [clues, setClues] = useState([]);
-  const [, setCountry] = useState(null);
-  const [cluesQuantity, setCluesQuantity] = useState(3);
+const PracticeTool = () => {
+  const [gameState, setGameState] = useState<GameState>(initialState);
 
-  const [, setGuessedCountry] = useState("");
+  const resetGame = () => {
+    const randomCountry = getRandomCountryCode();
+    console.debug(randomCountry);
 
-  const reset = () => {
-    setState("NOT_STARTED");
-    setClues([]);
-    setCountry(null);
-    setCluesQuantity(3);
-    setGuessedCountry("");
-    start();
+    setGameState({
+      ...initialState,
+      state: State.STARTED,
+      country: randomCountry,
+      clues: getCluesForCountry(randomCountry),
+    });
   };
 
-  const generateClues = (randomCountry) => {
-    const countryData = countries[randomCountry];
-    const clues = [];
-
-    const keysToUse = [
-      "regions",
-      "alphabets",
-      "driving",
-      "lines",
-      "flag.colors",
-      "flag.patterns",
-    ];
-
-    keysToUse.forEach((key) => {
-      const values = key.split(".").reduce((o, i) => o[i], countryData);
-      values.forEach((value) => {
-        const clue = {
-          type: key,
-          value: value,
-        };
-        clues.push(clue);
+  const handleNextRound = (win) => {
+    if (gameState.round === 5) {
+      setGameState({
+        ...gameState,
+        state: State.FINISHED,
+        gameScore: win ? gameState.gameScore + gameState.roundScore : gameState.gameScore,
       });
-    });
-
-    const countryCharacters = Object.keys(characters).filter((character) =>
-      characters[character].includes(randomCountry)
-    );
-
-    countryCharacters.forEach((character) => {
-      const clue = {
-        type: "characters",
-        value: character,
-      };
-      clues.push(clue);
-    });
-
-    // randomly shuffle the clues
-    for (let i = clues.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [clues[i], clues[j]] = [clues[j], clues[i]];
+      return;
     }
 
-    setClues(clues);
-    console.log(clues);
+    const randomCountry = getRandomCountryCode();
+    console.debug(randomCountry);
+    const newClues = getCluesForCountry(randomCountry);
+
+    setGameState({
+      ...gameState,
+      round: gameState.round + 1,
+      gameScore: win ? gameState.gameScore + gameState.roundScore : gameState.gameScore,
+      roundScore: 5000,
+      cluesQuantity: STARTING_CLUE_COUNT,
+      country: randomCountry,
+      clues: newClues,
+    });
   };
 
-  const start = () => {
-    setState("STARTED");
+  const startGame = () => {
+    const randomCountry = getRandomCountryCode();
+    console.debug(randomCountry);
 
-    const randomCountry =
-      Object.keys(countries)[
-        Math.floor(Math.random() * Object.keys(countries).length)
-      ];
-
-    setCountry(randomCountry);
-    console.log(randomCountry);
-    generateClues(randomCountry);
+    setGameState({
+      ...gameState,
+      state: State.STARTED,
+      country: randomCountry,
+      clues: getCluesForCountry(randomCountry),
+    });
   };
 
-  const addClue = () => {
-    if (cluesQuantity === clues.length) return;
-    setCluesQuantity(cluesQuantity + 1);
-  };
-
-  const renderClues = () => {
-    if (!clues) return null;
-    const displayedClues = clues.slice(0, cluesQuantity);
-    return (
-      <div className="clues">
-        {displayedClues.map((clue) => {
-          return (
-            <div>
-              <h3>{clue.type}</h3>
-              {/* <SmallClueTile
-                value={clue.value}
-                type={clue.type}
-                name={clue.name}
-              /> */}
-            </div>
-          );
-        })}
-      </div>
-    );
-  };
-
-  /* const onChangeInput = (e) => {
-    setGuessedCountry(e.target.value);
-  };
-
-  const submitAnswer = () => {
-    if (
-      guessedCountry.toLowerCase() === country ||
-      guessedCountry.toLowerCase() === countries[country].name.toLowerCase()
-    ) {
-      alert("Correct!");
-      reset();
+  const submitAnswer = (guessedCountry) => {
+    if (guessedCountry === gameState.country) {
+      handleNextRound(true);
     } else {
-      alert("Incorrect!");
+      if (gameState.cluesQuantity === gameState.clues.length) {
+        handleNextRound(false);
+      } else {
+        setGameState({
+          ...gameState,
+          cluesQuantity: gameState.cluesQuantity + 1,
+          roundScore: gameState.roundScore - 200,
+        });
+      }
     }
-  }; */
+  };
 
   return (
-    <div>
-      <div className="comparatorHeader">
+    <PracticeToolContext.Provider
+      value={{
+        gameState,
+        startGame,
+        resetGame,
+      }}
+    >
+      <StyledContainer>
         <Link to="/">Back</Link>
         <h3>Practice Tool</h3>
-        {state === "NOT_STARTED" && (
-          <StyledButton onClick={start}>Start</StyledButton>
-        )}
-        {state === "STARTED" && (
-          <StyledButton onClick={reset}>Restart</StyledButton>
-        )}
-        {state === "STARTED" && (
-          <StyledButton onClick={addClue}>Add a clue</StyledButton>
-        )}
-        {renderClues()}
-      </div>
-    </div>
+        <PracticeToolMenu />
+        <Scoreboard />
+        <CountrySearchbar submitAnswer={submitAnswer} />
+        <CurrentClues />
+      </StyledContainer>
+    </PracticeToolContext.Provider>
   );
 };
 
-export default Comparator;
+export default PracticeTool;
