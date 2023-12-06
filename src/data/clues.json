@@ -20,15 +20,15 @@
     "clueName": "flag pattern"
   },
   "region": {
-    "displayName": "Region (union)",
+    "displayName": "Region (union) (proof of concept)",
     "clueName": "region"
   },
   "alphabet": {
-    "displayName": "Alphabet",
+    "displayName": "Alphabet (proof of concept)",
     "clueName": "alphabet"
   },
   "scenery": {
-    "displayName": "Scenery",
+    "displayName": "Scenery (proof of concept)",
     "clueName": "scenery"
   }
 }
