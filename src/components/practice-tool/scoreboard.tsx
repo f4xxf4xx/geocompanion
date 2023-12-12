@@ -1,9 +1,8 @@
-import { PracticeToolContext } from 'context/practice-tool';
-import { useContext } from 'react';
+import usePracticeTool from 'hooks/usePracticeTool';
 import { State } from 'types/practice-tool';
 
 const Scoreboard = () => {
-  const { gameState } = useContext(PracticeToolContext);
+  const { gameState } = usePracticeTool();
 
   if (gameState.state === State.NOT_STARTED) return null;
 

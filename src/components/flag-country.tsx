@@ -1,12 +1,12 @@
-import { ClueContext } from 'context/clue';
-import { useHover } from 'hooks';
-import { useContext, useEffect } from 'react';
+import useClues from 'hooks/useClues';
+import useHover from 'hooks/useHover';
+import { useEffect } from 'react';
 
 import Flag from './flag';
 
 const FlagCountry = ({ countryCode, ...rest }: { countryCode: string }) => {
   const { hovered, eventHandlers } = useHover();
-  const { setHoveredCountry } = useContext(ClueContext);
+  const { setHoveredCountry } = useClues();
 
   useEffect(() => {
     if (hovered) {

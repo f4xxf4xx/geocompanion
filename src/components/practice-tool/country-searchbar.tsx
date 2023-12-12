@@ -1,9 +1,8 @@
-import { PracticeToolContext } from 'context/practice-tool';
 import countries from 'data/countries.json';
-import { useContext } from 'react';
+import usePracticeTool from 'hooks/usePracticeTool';
+import { Colors } from 'lib/color';
 import { ReactSearchAutocomplete } from 'react-search-autocomplete';
 import styled from 'styled-components';
-import { Colors } from 'theme/theme';
 import { State } from 'types/practice-tool';
 
 const StyledContainer = styled.div`
@@ -18,9 +17,9 @@ const getCountrySearchableStrings = () => {
   }));
 };
 
-function CountrySearchbar({ submitAnswer }) {
+function CountrySearchbar() {
   const items = getCountrySearchableStrings();
-  const { gameState } = useContext(PracticeToolContext);
+  const { submitAnswer, gameState } = usePracticeTool();
 
   const handleOnSelect = (item) => {
     submitAnswer(item.value);

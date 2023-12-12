@@ -1,12 +1,12 @@
+import ClueFinder from 'components/clue-finder';
 import Header from 'components/layout/header';
-import ClueFinder from 'containers/clue-finder';
 import { validateCountryData } from 'data/dataHelper';
 
 const Home = () => {
   const validData = validateCountryData();
 
   return (
-    <div>
+    <div className="p-4">
       <Header />
       {validData ? <ClueFinder /> : <div>Invalid data</div>}
     </div>

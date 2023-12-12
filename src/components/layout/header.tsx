@@ -1,21 +1,19 @@
 import { Link } from 'react-router-dom';
-import styled from 'styled-components';
-
-const StyledHeader = styled.header`
-  padding: 8px;
-`;
-
-const StyledSpan = styled.span`
-  font-weight: normal;
-`;
 
 const Header = () => (
-  <StyledHeader>
-    <h1>
-      Geo<StyledSpan>Companion</StyledSpan>
+  <header className="flex items-center justify-between">
+    <h1 className="text-3xl">
+      <span className="font-bold">Geo</span>Companion
     </h1>
-    <Link to="/practice-tool">Practice Tool</Link>
-  </StyledHeader>
+    <div>
+      <Link
+        className="border-solid border p-2 rounded-lg shadow border-gray hover:bg-primary hover:text-secondary"
+        to="/practice-tool"
+      >
+        Practice Tool
+      </Link>
+    </div>
+  </header>
 );
 
 export default Header;

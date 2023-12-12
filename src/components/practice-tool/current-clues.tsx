@@ -1,8 +1,7 @@
 import ClueTile from 'components/clue-tile';
-import { PracticeToolContext } from 'context/practice-tool';
-import { useContext } from 'react';
+import usePracticeTool from 'hooks/usePracticeTool';
+import { Colors } from 'lib/color';
 import styled from 'styled-components';
-import { Colors } from 'theme/theme';
 import { State } from 'types/practice-tool';
 
 const StyledGivenClueWrapper = styled.div`
@@ -25,7 +24,7 @@ const StyledGivenClue = styled.div`
 `;
 
 const CurrentClues = () => {
-  const { gameState } = useContext(PracticeToolContext);
+  const { gameState } = usePracticeTool();
 
   if (!gameState.clues || gameState.state !== State.STARTED) return null;
   const displayedClues = gameState.clues.slice(0, gameState.cluesQuantity);

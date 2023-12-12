@@ -61,6 +61,7 @@ export const getCountriesWithCoverage = () => {
 export const getPossibleCountries = (clues: SelectedClue[]): string[] => {
   const characters = getCharacters();
   const countriesWithCoverage = getCountriesWithCoverage();
+
   if (clues.length === 0) {
     return Object.keys(countriesWithCoverage).sort();
   }

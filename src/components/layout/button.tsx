@@ -1,6 +1,6 @@
+import { Colors } from 'lib/color';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import { Colors } from 'theme/theme';
 
 export const StyledButton = styled.button<{ $isSelected?: boolean }>`
   display: flex;

@@ -1,7 +1,6 @@
-import { ClueContext } from 'context/clue';
-import { useContext } from 'react';
+import useClues from 'hooks/useClues';
+import { Colors } from 'lib/color';
 import styled from 'styled-components';
-import { Colors } from 'theme/theme';
 import { ClueType, SelectedClue } from 'types/types';
 
 import ClueIcon from './clues/clue-icon';
@@ -32,7 +31,7 @@ const ClueTile = ({
   clue: SelectedClue;
   onClick?: (clue: SelectedClue) => void;
 }) => {
-  const { selectedClues } = useContext(ClueContext);
+  const { selectedClues } = useClues();
   const isSelected = Boolean(
     selectedClues.find((selectedClue) => selectedClue.value === clue.value),
   );
@@ -47,7 +46,7 @@ const ClueTile = ({
       <StyledFlagColorButton
         color={clue.value}
         $isSelected={isSelected}
-        onClick={() => onClick(clue)}
+        onClick={onClick && (() => onClick(clue))}
       />
     );
   }

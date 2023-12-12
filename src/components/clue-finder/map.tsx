@@ -1,9 +1,8 @@
-import { ClueContext } from 'context/clue';
-import { DataContext } from 'context/data';
 import { getCountriesWithCoverage } from 'data/dataHelper';
-import { useCallback, useContext } from 'react';
+import useClues from 'hooks/useClues';
+import { Colors } from 'lib/color';
+import { useCallback } from 'react';
 import WorldMap, { CountryContext } from 'react-svg-worldmap';
-import { Colors } from 'theme/theme';
 
 const getCountriesMapData = (possibleCountries: string[]) => {
   return Object.keys(getCountriesWithCoverage()).map((key) => ({
@@ -13,8 +12,7 @@ const getCountriesMapData = (possibleCountries: string[]) => {
 };
 
 const Map = () => {
-  const { possibleCountries } = useContext(DataContext);
-  const { hoveredCountry } = useContext(ClueContext);
+  const { possibleCountries, hoveredCountry } = useClues();
 
   const getData = useCallback(() => {
     return getCountriesMapData(possibleCountries);

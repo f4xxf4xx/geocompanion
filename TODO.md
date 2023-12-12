@@ -22,3 +22,7 @@
 ## reddit priority tasks
 
 - add car plates
+
+## HCS explore
+
+- SEO for country page

@@ -1,6 +1,5 @@
 import { StyledButton } from 'components/layout/button';
-import { PracticeToolContext } from 'context/practice-tool';
-import { useContext } from 'react';
+import usePracticeTool from 'hooks/usePracticeTool';
 import styled from 'styled-components';
 import { State } from 'types/practice-tool';
 
@@ -10,7 +9,7 @@ const StyledButtonWrapper = styled.div`
 `;
 
 const PracticeToolMenu = () => {
-  const { gameState, startGame, resetGame } = useContext(PracticeToolContext);
+  const { gameState, startGame, resetGame } = usePracticeTool();
 
   return (
     <StyledButtonWrapper>

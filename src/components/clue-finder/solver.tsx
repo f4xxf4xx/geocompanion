@@ -1,7 +1,7 @@
 import { useWindowWidth } from '@react-hook/window-size';
-import { DataContext } from 'context/data';
 import { getCountryName } from 'data/dataHelper';
-import { useContext, useState } from 'react';
+import useClues from 'hooks/useClues';
+import { useState } from 'react';
 import styled from 'styled-components';
 
 import FlagCountry from '../flag-country';
@@ -27,7 +27,7 @@ const StyledShowAllButton = styled(StyledButton)`
 `;
 
 const Solver = () => {
-  const { possibleCountries } = useContext(DataContext);
+  const { possibleCountries } = useClues();
   const [showAll, setShowAll] = useState(false);
   const width = useWindowWidth();
 

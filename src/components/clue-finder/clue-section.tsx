@@ -1,8 +1,7 @@
 import ClueTile from 'components/clue-tile';
-import { ClueContext } from 'context/clue';
 import clues from 'data/clues.json';
 import { getDataFromClueType } from 'data/dataHelper';
-import { useContext } from 'react';
+import useClues from 'hooks/useClues';
 import styled from 'styled-components';
 import { ClueType } from 'types/types';
 
@@ -21,7 +20,7 @@ const StyledClueContainer = styled.div`
 
 const ClueSection = ({ clueType }: { clueType: ClueType }) => {
   const data = getDataFromClueType(clueType);
-  const { toggleClue } = useContext(ClueContext);
+  const { toggleClue } = useClues();
 
   return (
     <StyledClueSection>

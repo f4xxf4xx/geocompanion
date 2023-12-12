@@ -1,13 +1,19 @@
-import { ClueContext } from 'context/clue';
 import clues from 'data/clues.json';
 import { getDataFromClueType } from 'data/dataHelper';
-import { useContext } from 'react';
+import useClues from 'hooks/useClues';
+import { Colors } from 'lib/color';
 import { ReactSearchAutocomplete } from 'react-search-autocomplete';
-import { Colors } from 'theme/theme';
 import { ClueType } from 'types/types';
 
+interface Item {
+  id: number;
+  name: string;
+  clueType: ClueType;
+  value: string;
+}
+
 const getSearchItems = () => {
-  const items = [];
+  const items: Item[] = [];
   let i = 0;
 
   const addClues = (clueType: ClueType) => {
@@ -30,15 +36,15 @@ const getSearchItems = () => {
 };
 
 function ClueSearchbar() {
-  const { toggleClue } = useContext(ClueContext);
+  const { toggleClue } = useClues();
 
   const items = getSearchItems();
 
-  const handleOnSelect = (item) => {
+  const handleOnSelect = (item: Item) => {
     toggleClue({ type: item.clueType, value: item.value });
   };
 
-  const formatResult = (item) => {
+  const formatResult = (item: Item) => {
     return <span style={{ display: 'block', textAlign: 'left' }}>name: {item.name}</span>;
   };
 
