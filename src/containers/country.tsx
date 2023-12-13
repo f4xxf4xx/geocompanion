@@ -8,6 +8,7 @@ import { Link, useParams } from 'react-router-dom';
 
 const countryImageMapping: { [key: string]: string } = {
   ca: "bg-[url('./assets/ca.jpg')]",
+  us: "bg-[url('./assets/us.jpg')]",
 };
 
 const Country = () => {
@@ -34,7 +35,7 @@ const Country = () => {
           'before:h-full',
           'before:w-full',
           'before:bg-gray/30',
-          'before:backdrop-blur',
+          'before:backdrop-blur-sm',
           'shadow-xl',
           'rounded-3xl before:rounded-3xl',
         )}
