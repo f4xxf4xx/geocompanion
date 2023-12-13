@@ -8,7 +8,7 @@ interface ClueContextType {
   resetClues: () => void;
   hoveredCountry: string;
   setHoveredCountry: (country: string) => void;
-  possibleCountries: string[];
+  potentialCountries: string[];
 }
 
 export const ClueContext = createContext<ClueContextType>({
@@ -17,14 +17,14 @@ export const ClueContext = createContext<ClueContextType>({
   resetClues: () => {},
   hoveredCountry: '',
   setHoveredCountry: () => {},
-  possibleCountries: [],
+  potentialCountries: [],
 });
 
 export const ClueProvider = ({ children }: React.PropsWithChildren) => {
   const [selectedClues, setSelectedClues] = useState<SelectedClue[]>([]);
   const [hoveredCountry, setHoveredCountry] = useState<string>('');
 
-  const possibleCountries = useMemo(() => getPossibleCountries(selectedClues), [selectedClues]);
+  const potentialCountries = useMemo(() => getPossibleCountries(selectedClues), [selectedClues]);
 
   const toggleClue = (clue: SelectedClue) => {
     if (selectedClues.filter((c) => c.value === clue.value).length > 0) {
@@ -57,7 +57,7 @@ export const ClueProvider = ({ children }: React.PropsWithChildren) => {
         resetClues,
         hoveredCountry,
         setHoveredCountry,
-        possibleCountries,
+        potentialCountries,
       }}
     >
       {children}

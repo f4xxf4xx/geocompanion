@@ -80,7 +80,7 @@ export const getPossibleCountries = (clues: SelectedClue[]): string[] => {
     ),
   ];
 
-  let possibleCountries = [];
+  let potentialCountries = [];
   otherClues.forEach((clue, i) => {
     let matchingCountries = [];
     switch (clue.type) {
@@ -97,24 +97,24 @@ export const getPossibleCountries = (clues: SelectedClue[]): string[] => {
     }
 
     if (i === 0) {
-      possibleCountries.push(...matchingCountries);
+      potentialCountries.push(...matchingCountries);
     } else {
-      possibleCountries = possibleCountries.filter((country) =>
+      potentialCountries = potentialCountries.filter((country) =>
         matchingCountries.includes(country),
       );
     }
   });
 
   if (regionClues.length > 0) {
-    possibleCountries = possibleCountries.filter((country) =>
+    potentialCountries = potentialCountries.filter((country) =>
       countriesThatMatchRegionClues.includes(country),
     );
   }
   if (otherClues.length === 0) {
-    possibleCountries = countriesThatMatchRegionClues;
+    potentialCountries = countriesThatMatchRegionClues;
   }
 
-  return possibleCountries.sort();
+  return potentialCountries.sort();
 };
 
 export const getRandomCountryCode = () => {

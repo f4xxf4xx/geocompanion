@@ -4,10 +4,10 @@ import { getCountryName } from 'data/dataHelper';
 import useClues from 'hooks/useClues';
 import { useState } from 'react';
 
-import FlagCountry from '../flag-country';
+import PotientialCountry from '../potential-country';
 
 const Solver = () => {
-  const { possibleCountries } = useClues();
+  const { potentialCountries } = useClues();
   const [showAll, setShowAll] = useState(false);
   const width = useWindowWidth();
 
@@ -18,21 +18,21 @@ const Solver = () => {
   const bigScreen = width > 900;
 
   const displayedCountries =
-    showAll || bigScreen ? possibleCountries : possibleCountries.slice(0, 30);
+    showAll || bigScreen ? potentialCountries : potentialCountries.slice(0, 30);
 
   return (
     <div className="flex flex-col gap-3">
-      <h3 className="text-lg">Possible countries ({possibleCountries.length}):</h3>
+      <h3 className="text-lg">Potential countries ({potentialCountries.length}):</h3>
       <div className="flex flex-wrap gap-2">
         {displayedCountries?.map((countryCode) => (
-          <FlagCountry
+          <PotientialCountry
             key={countryCode}
             data-tooltip-id="tooltip-country"
             data-tooltip-content={getCountryName(countryCode)}
             countryCode={countryCode}
           />
         ))}
-        {!showAll && !bigScreen && possibleCountries.length > 30 && (
+        {!showAll && !bigScreen && potentialCountries.length > 30 && (
           <>
             <p>...</p>
             <Button onClick={handleShowAll}>Show all</Button>
@@ -40,7 +40,7 @@ const Solver = () => {
         )}
       </div>
       <div>
-        <Link to={`/compare?countries=${possibleCountries.join(',')}`}>Compare</Link>
+        <Link to={`/compare?countries=${potentialCountries.join(',')}`}>Compare</Link>
       </div>
     </div>
   );

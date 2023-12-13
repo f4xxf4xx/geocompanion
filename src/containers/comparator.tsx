@@ -7,9 +7,9 @@ import { Link, useSearchParams } from 'react-router-dom';
 const Comparator = () => {
   const [searchParams] = useSearchParams();
   const queryParamCountries = searchParams.get('countries')?.split(',');
-  const [selectedCountries, setSelectedCountries] = useState([]);
+  const [selectedCountries, setSelectedCountries] = useState<string[]>([]);
 
-  const onCheck = (e) => {
+  const onCheck = (e: React.ChangeEvent<HTMLInputElement>) => {
     const country = e.target.value;
     const countryIsChecked = selectedCountries.includes(country);
 

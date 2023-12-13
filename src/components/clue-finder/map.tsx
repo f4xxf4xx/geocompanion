@@ -2,21 +2,23 @@ import { getCountriesWithCoverage } from 'data/dataHelper';
 import useClues from 'hooks/useClues';
 import { Colors } from 'lib/color';
 import { useCallback } from 'react';
+import { useNavigate } from 'react-router-dom';
 import WorldMap, { CountryContext } from 'react-svg-worldmap';
 
-const getCountriesMapData = (possibleCountries: string[]) => {
+const getCountriesMapData = (potentialCountries: string[]) => {
   return Object.keys(getCountriesWithCoverage()).map((key) => ({
     country: key,
-    value: possibleCountries.includes(key) ? 1 : 0,
+    value: potentialCountries.includes(key) ? 1 : 0,
   }));
 };
 
 const Map = () => {
-  const { possibleCountries, hoveredCountry } = useClues();
+  const { potentialCountries, hoveredCountry } = useClues();
+  const navigate = useNavigate();
 
   const getData = useCallback(() => {
-    return getCountriesMapData(possibleCountries);
-  }, [possibleCountries]);
+    return getCountriesMapData(potentialCountries);
+  }, [potentialCountries]);
 
   const stylingFunction = useCallback(
     ({ countryValue, color, countryCode }: CountryContext) => {
@@ -28,10 +30,16 @@ const Map = () => {
         stroke: 'grey',
         strokeWidth: 1,
         strokeOpacity: 0.5,
+        cursor: countryValue === 1 ? 'pointer' : 'default',
       };
     },
     [hoveredCountry],
   );
+
+  const clickAction = useCallback(({ countryCode, countryValue }: CountryContext) => {
+    if (countryValue === 0) return;
+    navigate(`/${countryCode.toLowerCase()}`);
+  }, []);
 
   return (
     <WorldMap
@@ -41,6 +49,7 @@ const Map = () => {
       styleFunction={stylingFunction}
       tooltipTextFunction={({ countryName }) => countryName}
       backgroundColor={Colors.secondary}
+      onClickFunction={clickAction}
     />
   );
 };

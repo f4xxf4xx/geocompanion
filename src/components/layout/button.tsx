@@ -20,19 +20,18 @@ export function Link({ children, ...props }: LinkProps) {
 }
 
 type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & { isSelected?: boolean };
-
 export function Button({ isSelected, children, ...props }: ButtonProps) {
   return (
     <button
       className={cx(
         'min-w-[50px] h-10',
         'flex gap-1 items-center',
-        'text-primary bg-secondary',
         'items-center justify-center',
         'border border-gray rounded-md',
         'capitalize shadow',
         'p-1',
-        isSelected && 'text-secondary bg-primary drop-shadow-xl',
+        'hover:animate-pulse',
+        isSelected ? 'text-secondary bg-primary drop-shadow-xl' : 'text-primary bg-secondary',
       )}
       {...props}
     >
@@ -47,14 +46,14 @@ type FlagButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
 };
 
 const colors: { [key: string]: string } = {
-  white: 'white',
-  yellow: 'yellow-300',
-  red: 'red-500',
-  maroon: 'rose-900',
-  blue: 'blue-500',
-  green: 'green-500',
-  black: 'black',
-  orange: 'orange-500',
+  white: 'bg-white',
+  yellow: 'bg-yellow-300',
+  red: 'bg-red-500',
+  maroon: 'bg-rose-900',
+  blue: 'bg-blue-500',
+  green: 'bg-green-500',
+  black: 'bg-black',
+  orange: 'bg-orange-500',
 };
 
 export function FlagButton({ isSelected, color, children, ...props }: FlagButtonProps) {
@@ -63,7 +62,7 @@ export function FlagButton({ isSelected, color, children, ...props }: FlagButton
     <button
       className={cx(
         'flex min-w-[50px] h-10',
-        `bg-${colorString}`,
+        `${colorString}`,
         'items-center justify-center',
         'border border-gray rounded-md',
         'capitalize shadow',

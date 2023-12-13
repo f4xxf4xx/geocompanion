@@ -1,10 +1,12 @@
+import cx from 'classnames';
 import useClues from 'hooks/useClues';
 import useHover from 'hooks/useHover';
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 import Flag from './flag';
 
-const FlagCountry = ({ countryCode, ...rest }: { countryCode: string }) => {
+const PotentialCountry = ({ countryCode, ...rest }: { countryCode: string }) => {
   const { hovered, eventHandlers } = useHover();
   const { setHoveredCountry } = useClues();
 
@@ -17,10 +19,10 @@ const FlagCountry = ({ countryCode, ...rest }: { countryCode: string }) => {
   }, [hovered, setHoveredCountry, countryCode]);
 
   return (
-    <div {...rest} {...eventHandlers}>
-      <Flag code={countryCode} />
-    </div>
+    <Link to={`/${countryCode}`} {...rest} {...eventHandlers}>
+      <Flag className={cx('w-8 rounded border border-primary shadow-md')} code={countryCode} />
+    </Link>
   );
 };
 
-export default FlagCountry;
+export default PotentialCountry;
