@@ -6,6 +6,10 @@ import Flag from 'components/flag';
 import { getCountry } from 'data/dataHelper';
 import { Link, useParams } from 'react-router-dom';
 
+const countryImageMapping: { [key: string]: string } = {
+  ca: "bg-[url('./assets/ca.jpg')]",
+};
+
 const Country = () => {
   const { countryCode } = useParams();
   const country = countryCode && getCountry(countryCode);
@@ -13,13 +17,15 @@ const Country = () => {
   if (!country) {
     return null;
   }
+  const bgImage = countryImageMapping[countryCode];
 
   return (
     <div className="p-4">
       <div
-        style={{ backgroundImage: `url('src/assets/${countryCode}.jpg')` }}
+        //style={{ backgroundImage: `url('src/assets/${countryCode}.jpg')` }}
         className={cx(
           'relative bg-cover h-[33vh]',
+          `${bgImage}`,
           'flex items-center justify-center',
           'before:content-[""]',
           'before:absolute',
