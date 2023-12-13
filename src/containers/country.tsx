@@ -4,6 +4,7 @@ import cx from 'classnames';
 import { Card, Item } from 'components/country/card';
 import Flag from 'components/flag';
 import { getCountry } from 'data/dataHelper';
+import useCountryData from 'hooks/useCountryData';
 import { Link, useParams } from 'react-router-dom';
 
 const countryImageMapping: { [key: string]: string } = {
@@ -14,6 +15,7 @@ const countryImageMapping: { [key: string]: string } = {
 const Country = () => {
   const { countryCode } = useParams();
   const country = countryCode && getCountry(countryCode);
+  const countryData = useCountryData(countryCode);
 
   if (!country) {
     return null;
@@ -51,17 +53,30 @@ const Country = () => {
           <h1 className="text-6xl text-white font-extrabold drop-shadow-xl">{country.name}</h1>
         </div>
       </div>
+      <div className="my-2">
+        <Card title="At a glance" variant="secondary">
+          <Item title="Capital" value={countryData?.capital} />
+          <Item title="Region" value={countryData?.region} />
+        </Card>
+      </div>
       <div className="my-2 gap-2 flex flex-wrap">
         <Card title="Demography">
-          <Item title="Population" rank={38} value={38781291} />
-          <Item title="Density" rank={228} value={4.04} />
-          <Item title="Median age" rank={36} value={41.4} />
-          <Item title="Growth" rank={157} value={0.89} />
+          <Item title="Population" value={countryData?.population} />
+          <Item title="Population growth" value={countryData?.popGrowth} />
+          <Item title="Population density" value={countryData?.popDensity} />
+          <Item title="Fertility" value={countryData?.fertility} />
+          <Item title="Infant mortality" value={countryData?.infantMortality} />
+          <Item title="Sex ratio" value={countryData?.sexRatio} />
         </Card>
         <Card title="Economy">
-          <Item title="GDP" rank={9} value={1988336} />
-          <Item title="GDP per capita" rank={16} value={52112} />
-          <Item title="GDP growth" rank={10} value={2.3} />
+          <Item title="Currency" value={countryData?.currency.code} />
+          <Item title="GDP" value={countryData?.gdp} />
+          <Item title="GDP per capita" value={countryData?.gdpPerCapita} />
+          <Item title="GDP growth" value={countryData?.gdpGrowth} />
+          <Item title="Unemployment" value={countryData?.unemployment} />
+          <Item title="Imports" value={countryData?.imports} />
+          <Item title="Exports" value={countryData?.exports} />
+          <Item title="Tourist spending" value={countryData?.tourists} />
         </Card>
       </div>
     </div>
