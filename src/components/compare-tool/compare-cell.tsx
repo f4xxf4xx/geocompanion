@@ -14,7 +14,7 @@ const CompareCell = ({
     if (clueType === ClueType.RoadLine) {
       return (
         <div className="flex items-center gap-2">
-          <ColoredRoadLine value={item} />
+          <ColoredRoadLine value={item as any} />
         </div>
       );
     }

@@ -19,10 +19,6 @@
 - add scenery data
 - add missing alphabet data
 
-## reddit priority tasks
+## code
 
-- add car plates
-
-## HCS explore
-
-- SEO for country page
+- clean `any`

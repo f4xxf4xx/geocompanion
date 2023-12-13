@@ -42,11 +42,12 @@ const iconMapping = {
 };
 
 const ClueIcon = ({ clue }: { clue: SelectedClue }) => {
-  const matchingIcon = iconMapping?.[clue.type]?.[clue.value];
+  const iconCategory = iconMapping[clue.type as keyof typeof iconMapping];
+  const matchingIcon = iconCategory?.[clue.value as keyof typeof iconCategory];
   if (!matchingIcon) {
     return null;
   }
-  return <FontAwesomeIcon icon={iconMapping[clue.type][clue.value]} />;
+  return <FontAwesomeIcon icon={matchingIcon} />;
 };
 
 export default ClueIcon;

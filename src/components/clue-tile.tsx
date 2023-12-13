@@ -38,7 +38,7 @@ const ClueTile = ({
       onClick={onClick ? () => onClick(clue) : undefined}
       isSelected={isSelected}
     >
-      {clue.type === ClueType.RoadLine && <ColoredRoadLine value={clue.value} />}
+      {clue.type === ClueType.RoadLine && <ColoredRoadLine value={clue.value as any} />}
       <ClueIcon clue={clue} />
       {displayedName}
     </Button>
