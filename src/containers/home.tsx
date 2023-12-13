@@ -20,10 +20,12 @@ const Home = () => {
               <Map />
               <Solver />
             </div>
-            <div>
-              <h2>Filters</h2>
-              <p>Press 1 to reset clues</p>
-              <ClueSearchbar />
+            <div className="">
+              <div className="flex flex-col gap-4">
+                <h2 className="text-2xl font-bold">Filters</h2>
+                <p>Press 1 to reset clues</p>
+                <ClueSearchbar />
+              </div>
               <ClueSection clueType={ClueType.Character} />
               <ClueSection clueType={ClueType.Driving} />
               <ClueSection clueType={ClueType.RoadLine} />

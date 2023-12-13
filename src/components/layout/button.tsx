@@ -29,7 +29,7 @@ export function Button({ isSelected, children, ...props }: ButtonProps) {
         'items-center justify-center',
         'border border-gray rounded-md',
         'capitalize shadow',
-        'p-1',
+        'p-1 font-bold',
         'hover:animate-pulse',
         isSelected ? 'text-secondary bg-primary drop-shadow-xl' : 'text-primary bg-secondary',
       )}
