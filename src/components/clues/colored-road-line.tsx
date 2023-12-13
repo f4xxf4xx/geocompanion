@@ -1,25 +1,24 @@
-import { StyledColorSquare } from 'components/colored-square';
-import styled from 'styled-components';
+import cx from 'classnames';
 
-const roadLineColorMapping = {
+export const roadLineColorMapping = {
   'yellow-white': ['yellow', 'white', 'yellow'],
   'white-white': ['white', 'white', 'white'],
   'yellow-yellow': ['yellow', 'yellow', 'yellow'],
   'white-yellow': ['white', 'yellow', 'white'],
 };
 
-const StyledRoadLineContaier = styled.div`
-  display: flex;
-  gap: 4px;
-`;
+const colors: { [key: string]: string } = {
+  white: 'white',
+  yellow: 'yellow-300',
+};
 
-const ColoredRoadLine = ({ value }: { value: string }) => {
+const ColoredRoadLine = ({ value }: { value: keyof typeof roadLineColorMapping }) => {
   return (
-    <StyledRoadLineContaier>
+    <div className="flex gap-1">
       {roadLineColorMapping[value]?.map((color, index) => (
-        <StyledColorSquare key={index} color={color} />
+        <div key={index} className={cx('w-2 h-2 border-gray border', `bg-${colors[color]}`)} />
       ))}
-    </StyledRoadLineContaier>
+    </div>
   );
 };
 

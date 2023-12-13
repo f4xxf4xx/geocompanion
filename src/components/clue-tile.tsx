@@ -1,28 +1,9 @@
 import useClues from 'hooks/useClues';
-import { Colors } from 'lib/color';
-import styled from 'styled-components';
 import { ClueType, SelectedClue } from 'types/types';
 
 import ClueIcon from './clues/clue-icon';
 import ColoredRoadLine from './clues/colored-road-line';
-import { StyledButton } from './layout/button';
-
-const StyledFlagColorButton = styled(StyledButton)<{
-  color: string;
-  $isSelected: boolean;
-  onClick?: (clue: SelectedClue) => void;
-}>`
-  background-color: ${({ color }) => color};
-  border: ${({ $isSelected }) => ($isSelected ? '4px' : '1px')} solid
-    ${({ $isSelected }) => ($isSelected ? Colors.primary : Colors.gray)};
-  cursor: ${({ onClick }) => (onClick ? 'pointer' : 'default')};
-`;
-
-const StyledTitle = styled.h3`
-  align-items: center;
-  display: flex;
-  gap: 4px;
-`;
+import { Button, FlagButton } from './layout/button';
 
 const ClueTile = ({
   clue,
@@ -43,26 +24,24 @@ const ClueTile = ({
 
   if (clue.type === ClueType.FlagColor) {
     return (
-      <StyledFlagColorButton
+      <FlagButton
         color={clue.value}
-        $isSelected={isSelected}
+        isSelected={isSelected}
         onClick={onClick && (() => onClick(clue))}
       />
     );
   }
 
   return (
-    <StyledButton
+    <Button
       key={clue.value}
       onClick={onClick ? () => onClick(clue) : undefined}
-      $isSelected={isSelected}
+      isSelected={isSelected}
     >
-      <StyledTitle>
-        {clue.type === ClueType.RoadLine && <ColoredRoadLine value={clue.value} />}
-        <ClueIcon clue={clue} />
-        {displayedName}
-      </StyledTitle>
-    </StyledButton>
+      {clue.type === ClueType.RoadLine && <ColoredRoadLine value={clue.value} />}
+      <ClueIcon clue={clue} />
+      {displayedName}
+    </Button>
   );
 };
 

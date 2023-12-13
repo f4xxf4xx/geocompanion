@@ -2,12 +2,7 @@ import countries from 'data/countries.json';
 import usePracticeTool from 'hooks/usePracticeTool';
 import { Colors } from 'lib/color';
 import { ReactSearchAutocomplete } from 'react-search-autocomplete';
-import styled from 'styled-components';
 import { State } from 'types/practice-tool';
-
-const StyledContainer = styled.div`
-  width: 300px;
-`;
 
 const getCountrySearchableStrings = () => {
   return Object.keys(countries).map((country, index) => ({
@@ -35,7 +30,7 @@ function CountrySearchbar() {
   if (gameState.state !== State.STARTED) return null;
 
   return (
-    <StyledContainer>
+    <div className="w-max">
       <ReactSearchAutocomplete
         items={items}
         onSelect={handleOnSelect}
@@ -46,7 +41,7 @@ function CountrySearchbar() {
           color: Colors.primary,
         }}
       />
-    </StyledContainer>
+    </div>
   );
 }
 

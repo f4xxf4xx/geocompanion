@@ -1,30 +1,10 @@
 import { useWindowWidth } from '@react-hook/window-size';
+import { Button, Link } from 'components/layout/button';
 import { getCountryName } from 'data/dataHelper';
 import useClues from 'hooks/useClues';
 import { useState } from 'react';
-import styled from 'styled-components';
 
 import FlagCountry from '../flag-country';
-import { StyledButton, StyledLink } from '../layout/button';
-
-const StyledItemContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  gap: 8px;
-`;
-
-const StyledHeader = styled.h3`
-  margin-bottom: 8px;
-`;
-
-const StyledText = styled.p`
-  margin: 0;
-`;
-
-const StyledShowAllButton = styled(StyledButton)`
-  height: 30px;
-`;
 
 const Solver = () => {
   const { possibleCountries } = useClues();
@@ -38,12 +18,12 @@ const Solver = () => {
   const bigScreen = width > 900;
 
   const displayedCountries =
-    showAll || bigScreen ? possibleCountries : possibleCountries.slice(0, 27);
+    showAll || bigScreen ? possibleCountries : possibleCountries.slice(0, 30);
 
   return (
-    <div>
-      <StyledHeader>Possible countries ({possibleCountries.length}):</StyledHeader>
-      <StyledItemContainer>
+    <div className="flex flex-col gap-3">
+      <h3 className="text-lg">Possible countries ({possibleCountries.length}):</h3>
+      <div className="flex flex-wrap gap-2">
         {displayedCountries?.map((countryCode) => (
           <FlagCountry
             key={countryCode}
@@ -54,12 +34,14 @@ const Solver = () => {
         ))}
         {!showAll && !bigScreen && possibleCountries.length > 30 && (
           <>
-            <StyledText>...</StyledText>
-            <StyledShowAllButton onClick={handleShowAll}>Show all</StyledShowAllButton>
+            <p>...</p>
+            <Button onClick={handleShowAll}>Show all</Button>
           </>
         )}
-      </StyledItemContainer>
-      <StyledLink to={`/compare?countries=${possibleCountries.join(',')}`}>Compare</StyledLink>
+      </div>
+      <div>
+        <Link to={`/compare?countries=${possibleCountries.join(',')}`}>Compare</Link>
+      </div>
     </div>
   );
 };

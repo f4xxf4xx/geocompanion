@@ -1,35 +1,78 @@
-import { Colors } from 'lib/color';
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import cx from 'classnames';
+import { ButtonHTMLAttributes } from 'react';
+import { LinkProps, Link as RouterLink } from 'react-router-dom';
 
-export const StyledButton = styled.button<{ $isSelected?: boolean }>`
-  display: flex;
-  min-width: 50px;
-  height: 40px;
-  color: ${({ $isSelected }) => ($isSelected ? Colors.secondary : Colors.primary)};
-  background-color: ${({ $isSelected }) => ($isSelected ? Colors.primary : Colors.secondary)};
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
-  border: 1px solid ${Colors.gray};
-  cursor: ${(props) => (props.onClick ? 'pointer' : 'default')};
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
-  text-transform: capitalize;
-`;
+export function Link({ children, ...props }: LinkProps) {
+  return (
+    <RouterLink
+      className={cx(
+        'text-primary bg-secondary',
+        'items-center justify-center',
+        'border border-gray rounded-md',
+        'capitalize shadow',
+        'p-2',
+      )}
+      {...props}
+    >
+      {children}
+    </RouterLink>
+  );
+}
 
-export const StyledLink = styled(Link)<{ $isSelected?: boolean }>`
-  display: flex;
-  width: fit-content;
-  height: 40px;
-  padding: 0 8px;
-  color: ${({ $isSelected }) => ($isSelected ? Colors.secondary : Colors.primary)};
-  background-color: ${({ $isSelected }) => ($isSelected ? Colors.primary : Colors.secondary)};
-  align-items: center;
-  justify-content: center;
-  border-radius: 8px;
-  border: 1px solid ${Colors.gray};
-  cursor: pointer;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.08);
-  text-transform: capitalize;
-  text-decoration: none;
-`;
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & { isSelected?: boolean };
+
+export function Button({ isSelected, children, ...props }: ButtonProps) {
+  return (
+    <button
+      className={cx(
+        'min-w-[50px] h-10',
+        'flex gap-1 items-center',
+        'text-primary bg-secondary',
+        'items-center justify-center',
+        'border border-gray rounded-md',
+        'capitalize shadow',
+        'p-1',
+        isSelected && 'text-secondary bg-primary drop-shadow-xl',
+      )}
+      {...props}
+    >
+      {children}
+    </button>
+  );
+}
+
+type FlagButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+  isSelected?: boolean;
+  color: string;
+};
+
+const colors: { [key: string]: string } = {
+  white: 'white',
+  yellow: 'yellow-300',
+  red: 'red-500',
+  maroon: 'rose-900',
+  blue: 'blue-500',
+  green: 'green-500',
+  black: 'black',
+  orange: 'orange-500',
+};
+
+export function FlagButton({ isSelected, color, children, ...props }: FlagButtonProps) {
+  const colorString = colors[color];
+  return (
+    <button
+      className={cx(
+        'flex min-w-[50px] h-10',
+        `bg-${colorString}`,
+        'items-center justify-center',
+        'border border-gray rounded-md',
+        'capitalize shadow',
+        'p-1',
+        isSelected && `border-2 border-primary shadow-xl`,
+      )}
+      {...props}
+    >
+      {children}
+    </button>
+  );
+}

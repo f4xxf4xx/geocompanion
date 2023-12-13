@@ -1,21 +1,7 @@
 import { getCountryName, getCountryUniqueCharacters, getCountryUniqueClue } from 'data/dataHelper';
-import styled from 'styled-components';
 import { ClueType } from 'types/types';
 
 import CompareCell from './compare-cell';
-
-const StyledContainer = styled.div`
-  margin: 8px;
-  display: grid;
-  grid-template-columns: repeat(2, 200px);
-  gap: 4px;
-`;
-
-const StyledCell = styled.div`
-  background-color: linen;
-  margin: 0px;
-  padding: 8px;
-`;
 
 const CompareTable = ({ selectedCountries }: { selectedCountries: string[] }) => {
   const firstCountry = selectedCountries[0];
@@ -30,13 +16,13 @@ const CompareTable = ({ selectedCountries }: { selectedCountries: string[] }) =>
   } = getCountryUniqueClue(firstCountry, secondCountry, ClueType.RoadLine);
 
   return (
-    <StyledContainer>
-      <StyledCell>
+    <div className="m-1 grid grid-cols-2 gap-2">
+      <div className="bg-secondary p-1">
         <h4>{firstCountry && getCountryName(firstCountry)}</h4>
-      </StyledCell>
-      <StyledCell>
+      </div>
+      <div className="bg-secondary p-1">
         <h4>{secondCountry && getCountryName(secondCountry)}</h4>
-      </StyledCell>
+      </div>
       <CompareCell
         title="Unique letters"
         items={firstCountryUniqueCharacters}
@@ -57,7 +43,7 @@ const CompareTable = ({ selectedCountries }: { selectedCountries: string[] }) =>
         items={secondCountryUniqueRoadlines}
         clueType={ClueType.RoadLine}
       />
-    </StyledContainer>
+    </div>
   );
 };
 

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link } from 'components/layout/button';
 
 const Header = () => (
   <header className="flex items-center justify-between">
@@ -6,12 +6,7 @@ const Header = () => (
       <span className="font-bold">Geo</span>Companion
     </h1>
     <div>
-      <Link
-        className="border-solid border p-2 rounded-lg shadow border-gray hover:bg-primary hover:text-secondary"
-        to="/practice-tool"
-      >
-        Practice Tool
-      </Link>
+      <Link to="/practice-tool">Practice Tool</Link>
     </div>
   </header>
 );

@@ -4,7 +4,7 @@ import { ClueType, Country, CountryData, SelectedClue } from 'types/types';
 export const validateCountryData = () => {
   const countries = getCountries();
   const countryCodes = Object.keys(countries);
-  const errors = [];
+  const errors: string[] = [];
   const requiredFields = [
     'name',
     'region',
@@ -37,7 +37,7 @@ export const getDataFromClueType = (clueType: ClueType) => {
   }
 
   return Object.keys(countries)
-    .reduce((acc, country) => {
+    .reduce<string[]>((acc, country) => {
       return [...new Set([...acc, ...countries[country][clueType]])];
     }, [])
     .sort();
