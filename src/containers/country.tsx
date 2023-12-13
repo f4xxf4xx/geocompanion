@@ -2,8 +2,6 @@ import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import cx from 'classnames';
 import { Card, Item } from 'components/country/card';
-import DemographyInfoCard from 'components/country/demography';
-import EconomyInfoCard from 'components/country/economy';
 import Flag from 'components/flag';
 import { getCountry } from 'data/dataHelper';
 import { Link, useParams } from 'react-router-dom';
