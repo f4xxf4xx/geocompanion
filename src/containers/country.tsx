@@ -1,10 +1,11 @@
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
+import { faMagnifyingGlass, faSackDollar, faUsers } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import cx from 'classnames';
-import { Card, Item } from 'components/country/card';
+import { Card, Item, SecondaryCard } from 'components/country/card';
 import Flag from 'components/flag';
-import { getCountry } from 'data/dataHelper';
-import useCountryData from 'hooks/useCountryData';
+import { getCountries } from 'data';
+import { useMemo } from 'react';
 import { Link, useParams } from 'react-router-dom';
 
 const countryImageMapping: { [key: string]: string } = {
@@ -14,10 +15,13 @@ const countryImageMapping: { [key: string]: string } = {
 
 const Country = () => {
   const { countryCode } = useParams();
-  const country = countryCode && getCountry(countryCode);
-  const countryData = useCountryData(countryCode);
 
-  if (!country) {
+  const country = useMemo(
+    () => (countryCode ? getCountries()[countryCode.toUpperCase()] : null),
+    [countryCode],
+  );
+
+  if (!country || !countryCode) {
     return null;
   }
   const bgImage = countryImageMapping[countryCode];
@@ -49,34 +53,32 @@ const Country = () => {
           <FontAwesomeIcon icon={faArrowLeft} />
         </Link>
         <div className="relative flex items-center gap-4">
-          <Flag className={cx('w-24 rounded-xl drop-shadow-xl')} code={countryCode} />
-          <h1 className="text-6xl text-white font-extrabold drop-shadow-xl">{country.name}</h1>
+          <Flag className="w-24 rounded-xl drop-shadow-xl" code={countryCode} />
+          <h1 className="text-6xl text-white font-extrabold drop-shadow-xl">{country?.name}</h1>
         </div>
       </div>
-      <div className="my-2">
-        <Card title="At a glance" variant="secondary">
-          <Item title="Capital" value={countryData?.capital} />
-          <Item title="Region" value={countryData?.region} />
-        </Card>
-      </div>
       <div className="my-2 gap-2 flex flex-wrap">
-        <Card title="Demography">
-          <Item title="Population" value={countryData?.population} />
-          <Item title="Population growth" value={countryData?.popGrowth} />
-          <Item title="Population density" value={countryData?.popDensity} />
-          <Item title="Fertility" value={countryData?.fertility} />
-          <Item title="Infant mortality" value={countryData?.infantMortality} />
-          <Item title="Sex ratio" value={countryData?.sexRatio} />
+        <SecondaryCard title="At a glance" icon={faMagnifyingGlass}>
+          <Item title="Capital" country={country} attribute="capital" />
+          <Item title="Region" country={country} attribute="region" />
+          <Item title="Area" country={country} attribute="surface_area" showRank />
+        </SecondaryCard>
+        <Card title="Demography" icon={faUsers}>
+          <Item title="Population" country={country} attribute="population" showRank />
+          <Item title="Population growth" country={country} attribute="pop_growth" showRank />
+          <Item title="Population density" country={country} attribute="pop_density" showRank />
+          <Item title="Fertility" country={country} attribute="fertility" showRank />
+          <Item title="Infant mortality" country={country} attribute="infant_mortality" showRank />
+          <Item title="Sex ratio" country={country} attribute="sex_ratio" />
         </Card>
-        <Card title="Economy">
-          <Item title="Currency" value={countryData?.currency.code} />
-          <Item title="GDP" value={countryData?.gdp} />
-          <Item title="GDP per capita" value={countryData?.gdpPerCapita} />
-          <Item title="GDP growth" value={countryData?.gdpGrowth} />
-          <Item title="Unemployment" value={countryData?.unemployment} />
-          <Item title="Imports" value={countryData?.imports} />
-          <Item title="Exports" value={countryData?.exports} />
-          <Item title="Tourist spending" value={countryData?.tourists} />
+        <Card title="Economy" icon={faSackDollar}>
+          {/* <Item title="Currency" value={`${country?.currencyCode} ${country?.currencyName}`} />
+          <Item title="GDP" attribute="gdp} />
+          <Item title="GDP per capita" attribute="gdpPerCapita} />
+          <Item title="GDP growth" attribute="gdpGrowth} />
+          <Item title="Unemployment" attribute="unemployment} />
+          <Item title="Imports" attribute="imports} />
+          <Item title="Exports" attribute="exports} /> */}
         </Card>
       </div>
     </div>

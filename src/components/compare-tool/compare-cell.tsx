@@ -1,5 +1,5 @@
 import ColoredRoadLine from 'components/clues/colored-road-line';
-import { ClueType } from 'types/types';
+import { ClueType } from 'types/clue';
 
 const CompareCell = ({
   title,

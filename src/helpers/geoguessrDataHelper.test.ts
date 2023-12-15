@@ -1,4 +1,4 @@
-import { ClueType } from 'types/types';
+import { ClueType } from 'types/clue';
 import { describe, expect, test, vi } from 'vitest';
 
 import {
@@ -11,12 +11,12 @@ import {
   getDataFromClueType,
   getPossibleCountries,
   getRandomCountryCode,
-  validateCountryData,
-} from './dataHelper';
+  validateClueData,
+} from './geoguessrDataHelper';
 
 const mocks = vi.hoisted(() => {
   return {
-    getCountries: vi.fn(),
+    getClues: vi.fn(),
     getCharacters: vi.fn(),
     countries: {
       ca: {
@@ -73,30 +73,30 @@ const mocks = vi.hoisted(() => {
 
 vi.mock('data/index', () => {
   return {
-    getCountries: mocks.getCountries,
+    getClues: mocks.getClues,
     getCharacters: mocks.getCharacters,
   };
 });
 
-describe('validateData', () => {
+describe('validateClueData', () => {
   test('with valid data', () => {
-    mocks.getCountries.mockReturnValueOnce(mocks.countries);
-    expect(validateCountryData()).toStrictEqual([]);
+    mocks.getClues.mockReturnValueOnce(mocks.countries);
+    expect(validateClueData()).toStrictEqual([]);
   });
   test('with missing field', () => {
-    mocks.getCountries.mockReturnValueOnce({
+    mocks.getClues.mockReturnValueOnce({
       ca: {
         ...mocks.countries.ca,
         name: undefined,
       },
     });
-    expect(validateCountryData()).toStrictEqual(['Missing name for ca']);
+    expect(validateClueData()).toStrictEqual(['Missing name for ca']);
   });
 });
 
 describe('getPossibleCountries', () => {
   test('with character clue', () => {
-    mocks.getCountries.mockReturnValueOnce(mocks.countries);
+    mocks.getClues.mockReturnValueOnce(mocks.countries);
     mocks.getCharacters.mockReturnValueOnce(mocks.characters);
     expect(getPossibleCountries([{ type: ClueType.Character, value: 'Éé' }])).toStrictEqual([
       'ca',
@@ -104,7 +104,7 @@ describe('getPossibleCountries', () => {
     ]);
   });
   test('with region clue union', () => {
-    mocks.getCountries.mockReturnValueOnce(mocks.countries);
+    mocks.getClues.mockReturnValueOnce(mocks.countries);
     expect(
       getPossibleCountries([
         { type: ClueType.Region, value: 'north america' },
@@ -113,7 +113,7 @@ describe('getPossibleCountries', () => {
     ).toStrictEqual(['ca', 'fr', 'us']);
   });
   test('with one region clue and one other', () => {
-    mocks.getCountries.mockReturnValueOnce(mocks.countries);
+    mocks.getClues.mockReturnValueOnce(mocks.countries);
     mocks.getCharacters.mockReturnValueOnce(mocks.characters);
     expect(
       getPossibleCountries([
@@ -123,7 +123,7 @@ describe('getPossibleCountries', () => {
     ).toStrictEqual(['ca']);
   });
   test('with two regions and one other clue', () => {
-    mocks.getCountries.mockReturnValueOnce(mocks.countries);
+    mocks.getClues.mockReturnValueOnce(mocks.countries);
     mocks.getCharacters.mockReturnValueOnce(mocks.characters);
     expect(
       getPossibleCountries([
@@ -134,7 +134,7 @@ describe('getPossibleCountries', () => {
     ).toStrictEqual(['ca', 'fr']);
   });
   test('with flagColor clue', () => {
-    mocks.getCountries.mockReturnValueOnce(mocks.countries);
+    mocks.getClues.mockReturnValueOnce(mocks.countries);
     mocks.getCharacters.mockReturnValueOnce(mocks.characters);
     expect(getPossibleCountries([{ type: ClueType.FlagColor, value: 'blue' }])).toStrictEqual([
       'fr',
@@ -142,7 +142,7 @@ describe('getPossibleCountries', () => {
     ]);
   });
   test('with character and flagColor clue', () => {
-    mocks.getCountries.mockReturnValueOnce(mocks.countries);
+    mocks.getClues.mockReturnValueOnce(mocks.countries);
     mocks.getCharacters.mockReturnValueOnce(mocks.characters);
     expect(
       getPossibleCountries([
@@ -159,14 +159,14 @@ describe('getDataFromClueType', () => {
     expect(getDataFromClueType(ClueType.Character)).toStrictEqual(['Éé', 'の']);
   });
   test('get regions', () => {
-    mocks.getCountries.mockReturnValueOnce(mocks.countries);
+    mocks.getClues.mockReturnValueOnce(mocks.countries);
     expect(getDataFromClueType(ClueType.Region)).toStrictEqual(['asia', 'europe', 'north america']);
   });
 });
 
 describe('getCountriesWithCoverage', () => {
   test('with not covered japan', () => {
-    mocks.getCountries.mockReturnValueOnce({
+    mocks.getClues.mockReturnValueOnce({
       ...mocks.countries,
       jp: { ...mocks.countries.jp, cameraGen: [] },
     });
@@ -180,14 +180,14 @@ describe('getCountriesWithCoverage', () => {
 
 describe('getRandomCountryCode', () => {
   test('random country code', () => {
-    mocks.getCountries.mockReturnValueOnce(mocks.countries);
+    mocks.getClues.mockReturnValueOnce(mocks.countries);
     expect(Object.keys(mocks.countries).includes(getRandomCountryCode()));
   });
 });
 
 describe('getCluesForCountry', () => {
   test('get all clues for country', () => {
-    mocks.getCountries.mockReturnValueOnce(mocks.countries);
+    mocks.getClues.mockReturnValueOnce(mocks.countries);
     mocks.getCharacters.mockReturnValueOnce(mocks.characters);
     const clues = getCluesForCountry('ca');
 
@@ -212,14 +212,14 @@ describe('getCluesForCountry', () => {
 
 describe('getCountryName', () => {
   test('get country name', () => {
-    mocks.getCountries.mockReturnValueOnce(mocks.countries);
+    mocks.getClues.mockReturnValueOnce(mocks.countries);
     expect(getCountryName('ca')).toBe('Canada');
   });
 });
 
 describe('getCountry', () => {
   test('get country', () => {
-    mocks.getCountries.mockReturnValueOnce(mocks.countries);
+    mocks.getClues.mockReturnValueOnce(mocks.countries);
     expect(getCountry('ca')).toBe(mocks.countries.ca);
   });
 });
@@ -243,14 +243,14 @@ describe('getCountryUniqueCharacters', () => {
 
 describe('getCountryUniqueClues', () => {
   test('region', () => {
-    mocks.getCountries.mockReturnValueOnce(mocks.countries);
+    mocks.getClues.mockReturnValueOnce(mocks.countries);
     expect(getCountryUniqueClue('ca', 'fr', ClueType.Region)).toStrictEqual({
       firstCountryUniqueValues: ['north america'],
       secondCountryUniqueValues: ['europe'],
     });
   });
   test('different clues', () => {
-    mocks.getCountries.mockReturnValueOnce(mocks.countries);
+    mocks.getClues.mockReturnValueOnce(mocks.countries);
     expect(getCountryUniqueClue('ca', 'jp', ClueType.FlagPattern)).toStrictEqual({
       firstCountryUniqueValues: ['vertical-stripes'],
       secondCountryUniqueValues: ['circle'],

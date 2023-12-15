@@ -1,6 +1,6 @@
 import CompareTable from 'components/compare-tool/compare-table';
 import Flag from 'components/flag';
-import { getCountryName } from 'data/dataHelper';
+import { getCountryName } from 'helpers/geoguessrDataHelper';
 import { useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 

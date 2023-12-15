@@ -1,5 +1,5 @@
 import useClues from 'hooks/useClues';
-import { ClueType, SelectedClue } from 'types/types';
+import { ClueType, SelectedClue } from 'types/clue';
 
 import ClueIcon from './clues/clue-icon';
 import ColoredRoadLine from './clues/colored-road-line';

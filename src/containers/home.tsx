@@ -3,12 +3,12 @@ import ClueSection from 'components/clue-finder/clue-section';
 import Map from 'components/clue-finder/map';
 import Solver from 'components/clue-finder/solver';
 import Header from 'components/layout/header';
-import { validateCountryData } from 'data/dataHelper';
+import { validateClueData } from 'helpers/geoguessrDataHelper';
 import { ClueProvider } from 'hooks/useClues';
-import { ClueType } from 'types/types';
+import { ClueType } from 'types/clue';
 
 const Home = () => {
-  const validData = validateCountryData();
+  const validData = validateClueData();
 
   return (
     <div className="p-4">

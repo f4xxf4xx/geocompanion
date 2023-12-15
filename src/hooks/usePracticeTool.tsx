@@ -1,4 +1,4 @@
-import { getCluesForCountry, getRandomCountryCode } from 'data/dataHelper';
+import { getCluesForCountry, getRandomCountryCode } from 'helpers/geoguessrDataHelper';
 import { createContext, useContext, useState } from 'react';
 import { GameState, State } from 'types/practice-tool';
 

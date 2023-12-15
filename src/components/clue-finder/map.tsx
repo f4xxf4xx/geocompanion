@@ -1,4 +1,4 @@
-import { getCountriesWithCoverage } from 'data/dataHelper';
+import { getCountriesWithCoverage } from 'helpers/geoguessrDataHelper';
 import useClues from 'hooks/useClues';
 import { Colors } from 'lib/color';
 import { useCallback } from 'react';
@@ -22,7 +22,7 @@ const Map = () => {
 
   const stylingFunction = useCallback(
     ({ countryValue, color, countryCode }: CountryContext) => {
-      const opacityLevel = countryValue == undefined ? 0 : countryValue === 1 ? 0.8 : 0.2;
+      const opacityLevel = countryValue == undefined ? 0 : countryValue === 1 ? 1 : 0.2;
 
       return {
         fill: hoveredCountry === countryCode.toLowerCase() ? Colors.warning : color,
@@ -30,16 +30,17 @@ const Map = () => {
         stroke: 'grey',
         strokeWidth: 1,
         strokeOpacity: 0.5,
-        cursor: countryValue === 1 ? 'pointer' : 'default',
       };
     },
     [hoveredCountry],
   );
 
-  const clickAction = useCallback(({ countryCode, countryValue }: CountryContext) => {
-    if (countryValue === 0) return;
-    navigate(`/${countryCode.toLowerCase()}`);
-  }, []);
+  const clickAction = useCallback(
+    ({ countryCode }: CountryContext) => {
+      navigate(`/${countryCode.toLowerCase()}`);
+    },
+    [navigate],
+  );
 
   return (
     <WorldMap

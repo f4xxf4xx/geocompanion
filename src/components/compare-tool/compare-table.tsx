@@ -1,5 +1,9 @@
-import { getCountryName, getCountryUniqueCharacters, getCountryUniqueClue } from 'data/dataHelper';
-import { ClueType } from 'types/types';
+import {
+  getCountryName,
+  getCountryUniqueCharacters,
+  getCountryUniqueClue,
+} from 'helpers/geoguessrDataHelper';
+import { ClueType } from 'types/clue';
 
 import CompareCell from './compare-cell';
 

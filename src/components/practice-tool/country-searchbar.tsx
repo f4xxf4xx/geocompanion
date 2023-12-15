@@ -1,4 +1,4 @@
-import countries from 'data/countries.json';
+import { getClues } from 'data';
 import usePracticeTool from 'hooks/usePracticeTool';
 import { Colors } from 'lib/color';
 import { ReactSearchAutocomplete } from 'react-search-autocomplete';
@@ -11,6 +11,7 @@ interface Item {
 }
 
 const getCountrySearchableStrings = () => {
+  const countries = getClues();
   return Object.keys(countries).map((country, index) => ({
     id: index,
     name: `${country} ${countries[country as keyof typeof countries].name}`,

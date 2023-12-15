@@ -1,6 +1,6 @@
-import { getPossibleCountries } from 'data/dataHelper';
+import { getPossibleCountries } from 'helpers/geoguessrDataHelper';
 import { createContext, useContext, useEffect, useMemo, useState } from 'react';
-import { SelectedClue } from 'types/types';
+import { SelectedClue } from 'types/clue';
 
 interface ClueContextType {
   selectedClues: SelectedClue[];

@@ -1,31 +1,8 @@
-export interface SelectedClue {
-  type: ClueType;
-  value: string;
-}
-
-export interface CountryData {
-  [key: string]: Country;
-}
-
-export interface CharacterData {
-  [key: string]: string[];
-}
-
-interface ClueNameMapping {
-  [key: string]: string;
-}
-
-export interface Clue {
-  displayName: string;
-  clueName: string;
-  values?: ClueNameMapping;
-}
-
 export interface ClueData {
-  [key: string]: Clue;
+  [key: string]: CountryClues;
 }
 
-export interface Country {
+export interface CountryClues {
   name: string;
   region: string[];
   alphabet: string[];
@@ -35,6 +12,11 @@ export interface Country {
   flagPattern: string[];
   roadLine: string[];
   cameraGen: string[];
+}
+
+export interface SelectedClue {
+  type: ClueType;
+  value: string;
 }
 
 export enum ClueType {
@@ -47,4 +29,14 @@ export enum ClueType {
   FlagPattern = 'flagPattern',
   RoadLine = 'roadLine',
   CameraGen = 'cameraGen',
+}
+
+interface ClueNameMapping {
+  [key: string]: string;
+}
+
+export interface Clue {
+  displayName: string;
+  clueName: string;
+  values?: ClueNameMapping;
 }

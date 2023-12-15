@@ -22,3 +22,4 @@
 ## code
 
 - clean `any`
+- remove name from clues

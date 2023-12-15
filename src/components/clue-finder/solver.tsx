@@ -1,6 +1,6 @@
 import { useWindowWidth } from '@react-hook/window-size';
 import { Button, Link } from 'components/layout/button';
-import { getCountryName } from 'data/dataHelper';
+import { getCountryName } from 'helpers/geoguessrDataHelper';
 import useClues from 'hooks/useClues';
 import { useState } from 'react';
 

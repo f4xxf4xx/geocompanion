@@ -1,9 +1,9 @@
-import clues from 'data/clues.json';
-import { getDataFromClueType } from 'data/dataHelper';
+import { getClueLabels } from 'data';
+import { getDataFromClueType } from 'helpers/geoguessrDataHelper';
 import useClues from 'hooks/useClues';
 import { Colors } from 'lib/color';
 import { ReactSearchAutocomplete } from 'react-search-autocomplete';
-import { ClueType } from 'types/types';
+import { ClueType } from 'types/clue';
 
 interface Item {
   id: number;
@@ -13,6 +13,7 @@ interface Item {
 }
 
 const getSearchItems = () => {
+  const clueLabels = getClueLabels();
   const items: Item[] = [];
   let i = 0;
 
@@ -20,7 +21,7 @@ const getSearchItems = () => {
     getDataFromClueType(clueType).forEach((clue) => {
       items.push({
         id: i,
-        name: `${clues[clueType].clueName} ${clue}`,
+        name: `${clueLabels[clueType].clueName} ${clue}`,
         clueType: clueType,
         value: clue,
       });
