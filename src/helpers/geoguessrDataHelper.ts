@@ -131,15 +131,15 @@ export const getRandomCountryCode = () => {
 export const getCluesForCountry = (countryCode: string) => {
   const countryClues = getClues();
   const characters = getCharacters();
-  const countryData: any = countryClues[countryCode];
+  const countryData = countryClues[countryCode];
 
   const clues: SelectedClue[] = [];
 
   const cluesToUse = ['region', 'alphabet', 'driving', 'roadLine', 'flagColor', 'flagPattern'];
 
   cluesToUse.forEach((key) => {
-    const values = countryData[key];
-    values.forEach((value: any) => {
+    const values = countryData[key as keyof Omit<CountryClues, 'name'>];
+    values.forEach((value) => {
       clues.push({
         type: key as ClueType,
         value: value,
@@ -153,7 +153,7 @@ export const getCluesForCountry = (countryCode: string) => {
 
   countryCharacters.forEach((character) => {
     const clue = {
-      type: 'characters' as ClueType,
+      type: 'character' as ClueType,
       value: character,
     };
     clues.push(clue);
@@ -199,13 +199,13 @@ export const getCountryUniqueCharacters = (firstCountry: string, secondCountry: 
 export const getCountryUniqueClue = (
   firstCountry: string,
   secondCountry: string,
-  clueType: ClueType,
+  clueType: Omit<ClueType, 'character'>,
 ) => {
   const countryClues = getClues();
-  const firstCountryData: any = countryClues[firstCountry];
-  const secondCountryData: any = countryClues[secondCountry];
-  const firstCountryValues = firstCountryData?.[clueType];
-  const secondCountryValues = secondCountryData?.[clueType];
+  const firstCountryData = countryClues[firstCountry];
+  const secondCountryData = countryClues[secondCountry];
+  const firstCountryValues = firstCountryData?.[clueType as keyof Omit<CountryClues, 'name'>];
+  const secondCountryValues = secondCountryData?.[clueType as keyof Omit<CountryClues, 'name'>];
 
   if (!firstCountryValues || !secondCountryValues) {
     return {
@@ -214,10 +214,10 @@ export const getCountryUniqueClue = (
     };
   }
   const firstCountryUniqueValues = firstCountryValues?.filter(
-    (line: any) => !secondCountryValues.includes(line),
+    (line) => !secondCountryValues.includes(line),
   );
   const secondCountryUniqueValues = secondCountryValues?.filter(
-    (line: any) => !firstCountryValues.includes(line),
+    (line) => !firstCountryValues.includes(line),
   );
   return { firstCountryUniqueValues, secondCountryUniqueValues };
 };

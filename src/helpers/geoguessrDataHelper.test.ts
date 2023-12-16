@@ -195,7 +195,7 @@ describe('getCluesForCountry', () => {
       { type: 'region', value: 'north america' },
       { type: 'flagColor', value: 'red' },
       { type: 'flagColor', value: 'white' },
-      { type: 'characters', value: 'Éé' },
+      { type: 'character', value: 'Éé' },
       { type: 'flagPattern', value: 'vertical-stripes' },
       { type: 'roadLine', value: 'white-yellow' },
       { type: 'alphabet', value: 'latin' },

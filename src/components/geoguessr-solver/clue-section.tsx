@@ -1,4 +1,4 @@
-import ClueTile from 'components/clue-tile';
+import ClueTile from 'components/geoguessr-solver/clue-tile';
 import { getClueLabels } from 'data';
 import { getDataFromClueType } from 'helpers/geoguessrDataHelper';
 import useClues from 'hooks/useClues';

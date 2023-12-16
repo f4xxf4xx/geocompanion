@@ -1,11 +1,7 @@
-import {
-  getCountryName,
-  getCountryUniqueCharacters,
-  getCountryUniqueClue,
-} from 'helpers/geoguessrDataHelper';
+import { getCountryName, getCountryUniqueCharacters } from 'helpers/geoguessrDataHelper';
 import { ClueType } from 'types/clue';
 
-import CompareCell from './compare-cell';
+import CompareCell from './cell';
 
 const CompareTable = ({ selectedCountries }: { selectedCountries: string[] }) => {
   const firstCountry = selectedCountries[0];
@@ -14,10 +10,10 @@ const CompareTable = ({ selectedCountries }: { selectedCountries: string[] }) =>
   const { firstCountryUniqueCharacters, secondCountryUniqueCharacters } =
     getCountryUniqueCharacters(firstCountry, secondCountry);
 
-  const {
+  /* const {
     firstCountryUniqueValues: firstCountryUniqueRoadlines,
     secondCountryUniqueValues: secondCountryUniqueRoadlines,
-  } = getCountryUniqueClue(firstCountry, secondCountry, ClueType.RoadLine);
+  } = getCountryUniqueClue(firstCountry, secondCountry, ClueType.RoadLine); */
 
   return (
     <div className="m-1 grid grid-cols-2 gap-2">
@@ -37,7 +33,7 @@ const CompareTable = ({ selectedCountries }: { selectedCountries: string[] }) =>
         items={secondCountryUniqueCharacters}
         clueType={ClueType.Character}
       />
-      <CompareCell
+      {/* <CompareCell
         title="Unique road lines"
         items={firstCountryUniqueRoadlines}
         clueType={ClueType.RoadLine}
@@ -46,7 +42,7 @@ const CompareTable = ({ selectedCountries }: { selectedCountries: string[] }) =>
         title="Unique road lines"
         items={secondCountryUniqueRoadlines}
         clueType={ClueType.RoadLine}
-      />
+      /> */}
     </div>
   );
 };

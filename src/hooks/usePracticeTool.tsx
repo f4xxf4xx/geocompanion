@@ -29,8 +29,9 @@ export const PracticeToolContext = createContext<PracticeToolContextType>({
   submitAnswer: () => {},
 });
 
-export const PracticeToolProvider = ({ children }: React.PropsWithChildren<{}>) => {
+export const PracticeToolProvider = ({ children }: React.PropsWithChildren) => {
   const [gameState, setGameState] = useState<GameState>(initialState);
+  console.debug(gameState);
   const resetGame = () => {
     const randomCountry = getRandomCountryCode();
     console.debug(randomCountry);
@@ -69,6 +70,7 @@ export const PracticeToolProvider = ({ children }: React.PropsWithChildren<{}>) 
   };
 
   const startGame = () => {
+    console.debug('start game');
     const randomCountry = getRandomCountryCode();
     console.debug(randomCountry);
 

@@ -1,4 +1,4 @@
-import ColoredRoadLine from 'components/clues/colored-road-line';
+import ColoredRoadLine from 'components/geoguessr-solver/colored-road-line';
 import { ClueType } from 'types/clue';
 
 const CompareCell = ({

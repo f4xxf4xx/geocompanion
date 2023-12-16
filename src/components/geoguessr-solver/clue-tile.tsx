@@ -1,9 +1,9 @@
 import useClues from 'hooks/useClues';
 import { ClueType, SelectedClue } from 'types/clue';
 
-import ClueIcon from './clues/clue-icon';
-import ColoredRoadLine from './clues/colored-road-line';
-import { Button, FlagButton } from './layout/button';
+import { Button, FlagButton } from '../layout/button';
+import ClueIcon from './clue-icon';
+import ColoredRoadLine, { roadLineColorMapping } from './colored-road-line';
 
 const ClueTile = ({
   clue,
@@ -38,7 +38,9 @@ const ClueTile = ({
       onClick={onClick ? () => onClick(clue) : undefined}
       isSelected={isSelected}
     >
-      {clue.type === ClueType.RoadLine && <ColoredRoadLine value={clue.value as any} />}
+      {clue.type === ClueType.RoadLine && (
+        <ColoredRoadLine value={clue.value as keyof typeof roadLineColorMapping} />
+      )}
       <ClueIcon clue={clue} />
       {displayedName}
     </Button>

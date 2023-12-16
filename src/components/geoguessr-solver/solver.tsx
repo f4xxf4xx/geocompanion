@@ -4,7 +4,7 @@ import { getCountryName } from 'helpers/geoguessrDataHelper';
 import useClues from 'hooks/useClues';
 import { useState } from 'react';
 
-import PotientialCountry from '../potential-country';
+import PotientialCountry from './potential-country';
 
 const Solver = () => {
   const { potentialCountries } = useClues();

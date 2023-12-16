@@ -28,8 +28,8 @@ const USDollar = new Intl.NumberFormat('en-US', {
 });
 
 export function getCountryDisplayValue(country: Country, attribute: keyof Country) {
-  const value = country[attribute];
-  if (value === undefined) return 'N/A';
+  const value = country?.[attribute];
+  if (!value) return 'N/A';
   if (typeof value === 'string') return value;
 
   if (dollarAttributes.includes(attribute)) {
@@ -74,12 +74,19 @@ function isStringField(country: Country, field: keyof Country): field is keyof C
   return typeof country[field] === 'string';
 }
 
+const reversedAttributes = ['infant_mortality', 'unemployment', 'homicide_rate'];
+
 export const getCountryAttributeRank = (
   country: Country,
   attribute: keyof Country,
-  reversed?: boolean,
-): number | null => {
+): {
+  maxRange: number;
+  index: number;
+} | null => {
   const countries = getCountries();
+  if (!country?.[attribute]) {
+    return null;
+  }
 
   if (isStringField(country, attribute)) {
     return null;
@@ -93,5 +100,8 @@ export const getCountryAttributeRank = (
   });
 
   const index = filteredAttributes.indexOf(country[attribute]);
-  return reversed ? filteredAttributes.length - index : index + 1;
+  return {
+    maxRange: filteredAttributes.length,
+    index: reversedAttributes.includes(attribute) ? filteredAttributes.length - index : index + 1,
+  };
 };

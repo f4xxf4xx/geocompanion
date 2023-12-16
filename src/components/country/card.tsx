@@ -30,15 +30,13 @@ export function Item({
   country,
   attribute,
   showRank,
-  reversed,
 }: {
   title: string;
   country: Country;
   attribute: keyof Country;
   showRank?: boolean;
-  reversed?: boolean;
 }) {
-  const rank = getCountryAttributeRank(country, attribute, reversed);
+  const rank = getCountryAttributeRank(country, attribute);
 
   const displayValue = getCountryDisplayValue(country, attribute);
 
@@ -51,10 +49,10 @@ export function Item({
             <span
               className={cx(
                 'px-2 py-1 rounded-lg text-sm bg-slate-100',
-                rank && getBgColorFromRank(rank),
+                rank && getBgColorFromRank(rank.index),
               )}
             >
-              {rank}
+              {rank?.index}
             </span>
           )}
         </div>

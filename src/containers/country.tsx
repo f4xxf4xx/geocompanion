@@ -9,7 +9,8 @@ import {
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import cx from 'classnames';
 import { Card, Item, SecondaryCard } from 'components/country/card';
-import Flag from 'components/flag';
+import Flag from 'components/layout/flag';
+import Header from 'components/layout/header';
 import { getCountries } from 'data';
 import { useMemo } from 'react';
 import { Link, useParams } from 'react-router-dom';
@@ -33,9 +34,9 @@ const Country = () => {
   const bgImage = countryImageMapping[countryCode];
 
   return (
-    <div className="p-4">
+    <div>
+      <Header />
       <div
-        //style={{ backgroundImage: `url('src/assets/${countryCode}.jpg')` }}
         className={cx(
           'relative bg-cover h-[33vh]',
           `${bgImage}`,
@@ -77,13 +78,7 @@ const Country = () => {
           <Item title="Population" country={country} attribute="population" showRank />
           <Item title="Population growth" country={country} attribute="pop_growth" showRank />
           <Item title="Population density" country={country} attribute="pop_density" showRank />
-          <Item
-            title="Infant mortality"
-            country={country}
-            attribute="infant_mortality"
-            showRank
-            reversed
-          />
+          <Item title="Infant mortality" country={country} attribute="infant_mortality" showRank />
           <Item
             title="Life expectancy (male)"
             country={country}
@@ -103,18 +98,12 @@ const Country = () => {
           <Item title="GDP" country={country} attribute="gdp" showRank />
           <Item title="GDP per capita" country={country} attribute="gdp_per_capita" showRank />
           <Item title="GDP growth" country={country} attribute="gdp_growth" showRank />
-          <Item title="Unemployment" country={country} attribute="unemployment" showRank reversed />
+          <Item title="Unemployment" country={country} attribute="unemployment" showRank />
           <Item title="Imports" country={country} attribute="imports" showRank />
           <Item title="Exports" country={country} attribute="exports" showRank />
         </Card>
         <Card title="Crime" icon={faGun}>
-          <Item
-            title="Homicide rate"
-            country={country}
-            attribute="homicide_rate"
-            showRank
-            reversed
-          />
+          <Item title="Homicide rate" country={country} attribute="homicide_rate" showRank />
         </Card>
       </div>
     </div>

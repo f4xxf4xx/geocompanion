@@ -4,7 +4,7 @@ import useHover from 'hooks/useHover';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import Flag from './flag';
+import Flag from '../layout/flag';
 
 const PotentialCountry = ({ countryCode, ...rest }: { countryCode: string }) => {
   const { hovered, eventHandlers } = useHover();

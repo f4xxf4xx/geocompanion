@@ -3,6 +3,7 @@
 ## features
 
 - practice tool "select clues" to practice a specific clue
+- practice tool add "all clues" or "geoguessr only clues"
 
 ## clues
 
@@ -23,3 +24,6 @@
 
 - clean `any`
 - remove name from clues
+- add tests for countryHelper
+- use Record
+- update map

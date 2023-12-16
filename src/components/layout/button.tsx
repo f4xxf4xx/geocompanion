@@ -8,8 +8,7 @@ export function Link({ children, ...props }: LinkProps) {
       className={cx(
         'text-primary bg-secondary',
         'items-center justify-center',
-        'border border-gray rounded-md',
-        'capitalize shadow',
+        'capitalize',
         'p-2',
       )}
       {...props}
@@ -19,7 +18,9 @@ export function Link({ children, ...props }: LinkProps) {
   );
 }
 
-type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & { isSelected?: boolean };
+type ButtonProps = ButtonHTMLAttributes<HTMLButtonElement> & {
+  isSelected?: boolean;
+};
 export function Button({ isSelected, children, ...props }: ButtonProps) {
   return (
     <button

@@ -1,6 +1,7 @@
 import App from 'App';
-import Comparator from 'containers/comparator';
+import Comparator from 'containers/compare-tool';
 import Country from 'containers/country';
+import GeoguessrSolver from 'containers/geoguessr-solver';
 import Home from 'containers/home';
 import PracticeTool from 'containers/practice-tool';
 import React from 'react';
@@ -11,6 +12,10 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <Home />,
+  },
+  {
+    path: '/geoguessr',
+    element: <GeoguessrSolver />,
   },
   {
     path: '/compare',

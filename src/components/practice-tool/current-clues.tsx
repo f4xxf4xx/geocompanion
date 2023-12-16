@@ -1,9 +1,11 @@
-import ClueTile from 'components/clue-tile';
+import ClueTile from 'components/geoguessr-solver/clue-tile';
+import { getClueLabels } from 'data';
 import usePracticeTool from 'hooks/usePracticeTool';
 import { State } from 'types/practice-tool';
 
 const CurrentClues = () => {
   const { gameState } = usePracticeTool();
+  const clueLabels = getClueLabels();
 
   if (!gameState.clues || gameState.state !== State.STARTED) return null;
   const displayedClues = gameState.clues.slice(0, gameState.cluesQuantity);
@@ -13,10 +15,10 @@ const CurrentClues = () => {
       {displayedClues.map((clue) => {
         return (
           <div
-            className="flex flex-col gap-2 width-100 rounded p-4 border border-primary items-center"
+            className="flex flex-col gap-2 width-100 font-bold rounded p-4 border border-primary items-center"
             key={clue.value}
           >
-            <h3>{clue.type}</h3>
+            <h3>{clueLabels[clue.type].displayName}</h3>
             <ClueTile clue={clue} />
           </div>
         );
