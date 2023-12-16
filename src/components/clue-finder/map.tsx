@@ -30,6 +30,7 @@ const Map = () => {
         stroke: 'grey',
         strokeWidth: 1,
         strokeOpacity: 0.5,
+        cursor: 'pointer',
       };
     },
     [hoveredCountry],

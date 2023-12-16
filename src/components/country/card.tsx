@@ -1,7 +1,7 @@
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import cx from 'classnames';
-import { getCountryAttributeRank } from 'helpers/countryHelper';
+import { getCountryAttributeRank, getCountryDisplayValue } from 'helpers/countryHelper';
 import { Country } from 'types/country';
 
 export function Header({ title, icon }: { title: string; icon?: IconDefinition }) {
@@ -15,12 +15,14 @@ export function Header({ title, icon }: { title: string; icon?: IconDefinition }
 
 function getBgColorFromRank(rank: number) {
   return rank < 10
+    ? 'text-green-600'
+    : rank < 30
     ? 'text-green-500'
     : rank < 60
     ? 'text-yellow-500'
     : rank < 100
-    ? 'text-red-500'
-    : 'text-red-300';
+    ? 'text-red-300'
+    : 'text-red-500';
 }
 
 export function Item({
@@ -28,13 +30,18 @@ export function Item({
   country,
   attribute,
   showRank,
+  reversed,
 }: {
   title: string;
   country: Country;
   attribute: keyof Country;
   showRank?: boolean;
+  reversed?: boolean;
 }) {
-  const rank = getCountryAttributeRank(country, attribute);
+  const rank = getCountryAttributeRank(country, attribute, reversed);
+
+  const displayValue = getCountryDisplayValue(country, attribute);
+
   return (
     <div className="flex items-center py-3">
       <div className="flex-1">
@@ -51,7 +58,7 @@ export function Item({
             </span>
           )}
         </div>
-        <p className="">{country[attribute]}</p>
+        <p className="">{displayValue}</p>
       </div>
     </div>
   );

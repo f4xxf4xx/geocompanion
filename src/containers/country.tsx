@@ -1,5 +1,11 @@
 import { faArrowLeft } from '@fortawesome/free-solid-svg-icons';
-import { faMagnifyingGlass, faSackDollar, faUsers } from '@fortawesome/free-solid-svg-icons';
+import {
+  faGun,
+  faMagnifyingGlass,
+  faMountain,
+  faSackDollar,
+  faUsers,
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import cx from 'classnames';
 import { Card, Item, SecondaryCard } from 'components/country/card';
@@ -61,24 +67,54 @@ const Country = () => {
         <SecondaryCard title="At a glance" icon={faMagnifyingGlass}>
           <Item title="Capital" country={country} attribute="capital" />
           <Item title="Region" country={country} attribute="region" />
-          <Item title="Area" country={country} attribute="surface_area" showRank />
         </SecondaryCard>
+        <Card title="Geography" icon={faMountain}>
+          <Item title="Area" country={country} attribute="surface_area" showRank />
+          <Item title="Forested area" country={country} attribute="forested_area" showRank />
+        </Card>
+
         <Card title="Demography" icon={faUsers}>
           <Item title="Population" country={country} attribute="population" showRank />
           <Item title="Population growth" country={country} attribute="pop_growth" showRank />
           <Item title="Population density" country={country} attribute="pop_density" showRank />
-          <Item title="Fertility" country={country} attribute="fertility" showRank />
-          <Item title="Infant mortality" country={country} attribute="infant_mortality" showRank />
+          <Item
+            title="Infant mortality"
+            country={country}
+            attribute="infant_mortality"
+            showRank
+            reversed
+          />
+          <Item
+            title="Life expectancy (male)"
+            country={country}
+            attribute="life_expectancy_male"
+            showRank
+          />
+          <Item
+            title="Life expectancy (female)"
+            country={country}
+            attribute="life_expectancy_female"
+            showRank
+          />
           <Item title="Sex ratio" country={country} attribute="sex_ratio" />
         </Card>
         <Card title="Economy" icon={faSackDollar}>
-          {/* <Item title="Currency" value={`${country?.currencyCode} ${country?.currencyName}`} />
-          <Item title="GDP" attribute="gdp} />
-          <Item title="GDP per capita" attribute="gdpPerCapita} />
-          <Item title="GDP growth" attribute="gdpGrowth} />
-          <Item title="Unemployment" attribute="unemployment} />
-          <Item title="Imports" attribute="imports} />
-          <Item title="Exports" attribute="exports} /> */}
+          <Item title="Currency" country={country} attribute="currencyName" />
+          <Item title="GDP" country={country} attribute="gdp" showRank />
+          <Item title="GDP per capita" country={country} attribute="gdp_per_capita" showRank />
+          <Item title="GDP growth" country={country} attribute="gdp_growth" showRank />
+          <Item title="Unemployment" country={country} attribute="unemployment" showRank reversed />
+          <Item title="Imports" country={country} attribute="imports" showRank />
+          <Item title="Exports" country={country} attribute="exports" showRank />
+        </Card>
+        <Card title="Crime" icon={faGun}>
+          <Item
+            title="Homicide rate"
+            country={country}
+            attribute="homicide_rate"
+            showRank
+            reversed
+          />
         </Card>
       </div>
     </div>

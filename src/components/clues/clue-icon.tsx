@@ -15,7 +15,7 @@ import {
   faTree,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { SelectedClue } from 'types/types';
+import { SelectedClue } from 'types/clue';
 
 const iconMapping = {
   scenery: {

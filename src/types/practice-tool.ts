@@ -1,4 +1,4 @@
-import { SelectedClue } from './types';
+import { SelectedClue } from './clue';
 
 export enum State {
   NOT_STARTED = 'NOT_STARTED',
