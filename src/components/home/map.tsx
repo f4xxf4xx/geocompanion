@@ -20,7 +20,7 @@ const CountryMap = ({ geo }: { geo: Geo }) => {
   }, [selectedAttribute, country]);
 
   const fillColor = useMemo(() => {
-    if (!selectedAttribute) return '#868686';
+    if (!selectedAttribute) return '#1a247f';
     if (!rank) return '#868686';
 
     // @ts-ignore
@@ -50,7 +50,7 @@ const CountryMap = ({ geo }: { geo: Geo }) => {
 
 const Map = () => {
   return (
-    <ComposableMap className="flex-1">
+    <ComposableMap>
       <Geographies geography={'/map.json'}>
         {({ geographies }) =>
           geographies.map((geo: Geo) => <CountryMap key={geo.rsmKey} geo={geo} />)

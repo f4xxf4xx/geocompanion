@@ -7,9 +7,11 @@ const Home = () => {
   return (
     <CountryProvider>
       <Header />
-      <div className="flex">
+      <div className="flex flex-wrap">
         <MetricList />
-        <Map />
+        <div className="flex-1 mt-[-100px]">
+          <Map />
+        </div>
       </div>
     </CountryProvider>
   );
