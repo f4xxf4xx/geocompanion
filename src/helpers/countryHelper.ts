@@ -113,11 +113,13 @@ export const getCountryAttributeRank = (
 
   const indexColorScale = scaleLinear()
     .domain([1, filteredAttributes.length])
+    // @ts-ignore
     .range(reversed ? [Red, Green] : [Green, Red]);
 
   const index = filteredAttributes.indexOf(value) + 1;
   const minValue = filteredAttributes[filteredAttributes.length - 1];
   const maxValue = filteredAttributes[0];
+  // @ts-ignore
   const valueColorScale = scaleLinear().domain([minValue, maxValue]).range([White, Primary]);
 
   return {

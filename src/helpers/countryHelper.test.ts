@@ -130,11 +130,11 @@ describe('getCountryAttributeRank', () => {
 
     const rank = getCountryAttributeRank('US', 'gdp');
     expect(rank?.index).toEqual(1);
-    expect(rank?.indexColor).toEqual('rgb(0, 255, 255)');
+    expect(rank?.indexColor).toEqual('rgb(0, 255, 0)');
     expect(rank?.value).toEqual(300);
     expect(rank?.valueColor).toEqual('rgb(26, 36, 127)');
   });
-  test.only('last rank', () => {
+  test('last rank', () => {
     mocks.getCountries.mockReturnValueOnce(mocks.countries);
 
     const rank = getCountryAttributeRank('MX', 'gdp');
