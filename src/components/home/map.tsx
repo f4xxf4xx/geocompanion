@@ -1,5 +1,4 @@
 import getCountryISO2 from 'country-iso-3-to-2';
-import { scaleLinear } from 'd3-scale';
 import { getCountries } from 'data';
 import { getCountryAttributeRank, getCountryDisplayValue } from 'helpers/countryHelper';
 import useCountries from 'hooks/useCountry';
@@ -8,24 +7,25 @@ import { useNavigate } from 'react-router-dom';
 import { ComposableMap, Geographies, Geography } from 'react-simple-maps';
 import { Geo } from 'types/map';
 
+const reversedAttributes = ['infant_mortality', 'homicide_rate'];
 const CountryMap = ({ geo }: { geo: Geo }) => {
   const navigate = useNavigate();
   const countries = getCountries();
   const { selectedAttribute } = useCountries();
-  const countryCode = getCountryISO2(geo.id);
+  const countryCode = String(getCountryISO2(geo.id));
   const country = countries[countryCode];
 
   const rank = useMemo(() => {
-    return selectedAttribute && getCountryAttributeRank(country, selectedAttribute);
-  }, [selectedAttribute, country]);
+    if (!selectedAttribute) return null;
+    const reversed = reversedAttributes.includes(selectedAttribute);
+    return getCountryAttributeRank(countryCode, selectedAttribute, reversed);
+  }, [selectedAttribute, countryCode]);
 
   const fillColor = useMemo(() => {
     if (!selectedAttribute) return '#1a247f';
     if (!rank) return '#868686';
 
-    // @ts-ignore
-    const colorScale = scaleLinear().domain([0, rank.maxRange]).range(['#1a247f', '#ffffff']);
-    return String(colorScale(rank.index));
+    return rank.indexColor;
   }, [selectedAttribute, rank]);
 
   const tooltipContent = useMemo(() => {

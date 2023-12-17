@@ -1,15 +1,18 @@
+import { scaleLinear } from 'd3-scale';
 import { getCountries } from 'data';
 import { Country } from 'types/country';
 
 const dollarAttributes = ['gdp', 'imports', 'exports'];
 const adjustedNumberAttributes = ['population'];
+const squaredAreaAttributes = ['pop_density'];
 const areaAttributes = ['surface_area'];
+const ratePer100kAttributes = ['homicide_rate'];
+const ratePer10kAttributes = ['infant_mortality'];
 const percentAttributes = [
   'pop_growth',
   'gdp_growth',
   'fertility',
   'unemployment',
-  'infant_mortality',
   'sex_ratio',
   'forested_area',
 ];
@@ -40,7 +43,7 @@ export function getCountryDisplayValue(country: Country, attribute: keyof Countr
     return `${value}%`;
   }
 
-  if (attribute === ('pop_density' as keyof Country)) {
+  if (squaredAreaAttributes.includes(attribute)) {
     return `${NumberFormat.format(value)} / km²`;
   }
 
@@ -63,27 +66,34 @@ export function getCountryDisplayValue(country: Country, attribute: keyof Countr
     return `${value} years`;
   }
 
-  if (attribute === ('homicide_rate' as keyof Country)) {
+  if (ratePer100kAttributes.includes(attribute)) {
     return `${NumberFormat.format(value)} per 100,000`;
   }
 
-  if (attribute) return NumberFormat.format(value);
+  if (ratePer10kAttributes.includes(attribute)) {
+    return `${NumberFormat.format(value)} per 10,000`;
+  }
+
+  return NumberFormat.format(value);
 }
 
 function isStringField(country: Country, field: keyof Country): field is keyof Country & string {
   return typeof country[field] === 'string';
 }
 
-const reversedAttributes = ['infant_mortality', 'unemployment', 'homicide_rate'];
+// todo move
+const Primary = '#1a247f';
+const Red = '#ff0000';
+const Green = '#00ff00';
+const White = '#ffffff';
 
 export const getCountryAttributeRank = (
-  country: Country,
+  countryCode: string,
   attribute: keyof Country,
-): {
-  maxRange: number;
-  index: number;
-} | null => {
+  reversed?: boolean,
+) => {
   const countries = getCountries();
+  const country = countries[countryCode.toUpperCase()];
   if (!country?.[attribute]) {
     return null;
   }
@@ -99,9 +109,21 @@ export const getCountryAttributeRank = (
     return b - a;
   });
 
-  const index = filteredAttributes.indexOf(country[attribute]);
+  const value = country[attribute];
+
+  const indexColorScale = scaleLinear()
+    .domain([1, filteredAttributes.length])
+    .range(reversed ? [Red, Green] : [Green, Red]);
+
+  const index = filteredAttributes.indexOf(value) + 1;
+  const minValue = filteredAttributes[filteredAttributes.length - 1];
+  const maxValue = filteredAttributes[0];
+  const valueColorScale = scaleLinear().domain([minValue, maxValue]).range([White, Primary]);
+
   return {
-    maxRange: filteredAttributes.length,
-    index: reversedAttributes.includes(attribute) ? filteredAttributes.length - index : index + 1,
+    value,
+    index: reversed ? filteredAttributes.length - index + 1 : index,
+    indexColor: String(indexColorScale(index)),
+    valueColor: String(valueColorScale(value)),
   };
 };

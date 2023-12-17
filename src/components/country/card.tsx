@@ -1,6 +1,7 @@
 import { IconDefinition } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import cx from 'classnames';
+import { getCountries } from 'data';
 import { getCountryAttributeRank, getCountryDisplayValue } from 'helpers/countryHelper';
 import { Country } from 'types/country';
 
@@ -13,31 +14,16 @@ export function Header({ title, icon }: { title: string; icon?: IconDefinition }
   );
 }
 
-function getBgColorFromRank(rank: number) {
-  return rank < 10
-    ? 'text-green-600'
-    : rank < 30
-    ? 'text-green-500'
-    : rank < 60
-    ? 'text-yellow-500'
-    : rank < 100
-    ? 'text-red-300'
-    : 'text-red-500';
-}
-
-export function Item({
-  title,
-  country,
-  attribute,
-  showRank,
-}: {
+interface ItemProps {
   title: string;
-  country: Country;
+  countryCode: string;
   attribute: keyof Country;
   showRank?: boolean;
-}) {
-  const rank = getCountryAttributeRank(country, attribute);
-
+  reversed?: boolean;
+}
+export function Item({ title, countryCode, attribute, showRank, reversed }: ItemProps) {
+  const rank = getCountryAttributeRank(countryCode, attribute, reversed);
+  const country = getCountries()[countryCode.toUpperCase()];
   const displayValue = getCountryDisplayValue(country, attribute);
 
   return (
@@ -45,14 +31,14 @@ export function Item({
       <div className="flex-1">
         <div className="flex items-center">
           <h4 className="font-bold text-sm mr-auto text-gray-700 flex items-center">{title}</h4>
-          {showRank && (
+          {rank && showRank && (
             <span
-              className={cx(
-                'px-2 py-1 rounded-lg text-sm bg-slate-100',
-                rank && getBgColorFromRank(rank.index),
-              )}
+              style={{
+                color: rank.indexColor,
+              }}
+              className={cx('px-2 py-1 rounded-lg text-sm bg-slate-100')}
             >
-              {rank?.index}
+              {rank.index}
             </span>
           )}
         </div>

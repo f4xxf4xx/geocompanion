@@ -4,15 +4,15 @@ import clues from 'data/clues.json';
 import countries from 'data/countries.json';
 import { CharacterData } from 'types/character';
 import { ClueData } from 'types/clue';
-import { CountryData, CountryRaw } from 'types/country';
+import { Country, CountryData, CountryRaw } from 'types/country';
 
 // Split the currency property into currencyCode and currencyName
-const formattedCountries: CountryData = {};
+const formattedCountries = {} as Record<keyof typeof countries, Country>;
 Object.keys(countries).forEach((key) => {
   const country = countries[key as keyof typeof countries] as CountryRaw;
   if (!country) return;
 
-  formattedCountries[key] = {
+  formattedCountries[key as keyof typeof countries] = {
     ...country,
     currencyCode: country?.currency?.code,
     currencyName: country?.currency?.name,

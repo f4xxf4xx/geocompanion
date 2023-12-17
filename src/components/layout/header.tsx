@@ -1,7 +1,10 @@
 import { Link } from 'components/layout/button';
 
 const Header = () => (
-  <header className="p-4 flex items-center justify-between">
+  <header
+    className="relative p-4 flex items-center justify-between z-40
+  "
+  >
     <Link to="/">
       <h1 className="text-3xl">
         <span className="font-bold">Geo</span>Companion

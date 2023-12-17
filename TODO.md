@@ -22,8 +22,6 @@
 
 ## code
 
-- clean `any`
 - remove name from clues
-- add tests for countryHelper
+- add tests for countryHelpesr
 - use Record
-- update map
