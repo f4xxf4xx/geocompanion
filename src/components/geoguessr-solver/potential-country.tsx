@@ -1,4 +1,3 @@
-import cx from 'classnames';
 import useClues from 'hooks/useClues';
 import useHover from 'hooks/useHover';
 import { useEffect } from 'react';
@@ -20,7 +19,7 @@ const PotentialCountry = ({ countryCode, ...rest }: { countryCode: string }) => 
 
   return (
     <Link to={`/${countryCode}`} {...rest} {...eventHandlers}>
-      <Flag className={cx('w-8 rounded border border-primary shadow-md')} code={countryCode} />
+      <Flag className="w-8 rounded border border-primary shadow-md" code={countryCode} />
     </Link>
   );
 };

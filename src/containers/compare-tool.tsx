@@ -25,12 +25,12 @@ const Comparator = () => {
 
   return (
     <div>
-      <div>
-        <Link to="/">Back</Link>
+      <div className="flex flex-col gap-2">
+        <Link to="/geoguessr">Back</Link>
         <h3>Comparing countries: </h3>
-        <div>
+        <div className="flex flex-col gap-2">
           {queryParamCountries?.map((country) => (
-            <div>
+            <div className="flex flex-row gap-2">
               <input
                 id={country}
                 type="checkbox"
@@ -38,9 +38,9 @@ const Comparator = () => {
                 checked={selectedCountries.includes(country)}
                 onChange={onCheck}
               />
-              <label htmlFor={country}>
-                <Flag code={country} />
-                {getCountryName(country)}
+              <label htmlFor={country} className="flex flex-row gap-2">
+                <Flag className="w-8 rounded border border-primary shadow-md" code={country} />
+                <p>{getCountryName(country)}</p>
               </label>
             </div>
           ))}
