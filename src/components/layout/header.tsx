@@ -11,7 +11,7 @@ const Header = () => (
       </h1>
     </Link>
     <div className="flex gap-2">
-      <Link to="/geoguessr">Geoguessr Solver</Link>
+      {/* <Link to="/geoguessr">Geoguessr Solver</Link> */}
       <Link to="/practice-tool">Geoguessr Practice Tool</Link>
     </div>
   </header>
