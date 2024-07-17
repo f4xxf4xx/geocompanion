@@ -1,29 +1,28 @@
-import { useWindowWidth } from '@react-hook/window-size';
-import { Button, Link } from 'components/layout/button';
+import { Link } from 'components/layout/button';
 import { getCountryName } from 'helpers/geoguessrDataHelper';
 import useClues from 'hooks/useClues';
 import { useState } from 'react';
 
 import PotientialCountry from './potential-country';
 
+const MAX_COUNTRIES = 12;
+
 const Solver = () => {
   const { potentialCountries } = useClues();
   const [showAll, setShowAll] = useState(false);
-  const width = useWindowWidth();
 
   const handleShowAll = () => {
     setShowAll(true);
   };
 
-  const bigScreen = width > 900;
-
-  const displayedCountries =
-    showAll || bigScreen ? potentialCountries : potentialCountries.slice(0, 30);
+  const displayedCountries = showAll
+    ? potentialCountries
+    : potentialCountries.slice(0, MAX_COUNTRIES);
 
   return (
-    <div className="flex flex-col gap-3">
+    <div className="flex flex-col gap-3 max-w-6xl">
       <h3 className="text-lg">Potential countries ({potentialCountries.length}):</h3>
-      <div className="flex flex-wrap gap-2">
+      <div className="flex flex-wrap gap-2 min-h-[24px]">
         {displayedCountries?.map((countryCode) => (
           <PotientialCountry
             key={countryCode}
@@ -32,10 +31,15 @@ const Solver = () => {
             countryCode={countryCode}
           />
         ))}
-        {!showAll && !bigScreen && potentialCountries.length > 30 && (
+        {!showAll && potentialCountries.length > MAX_COUNTRIES && (
           <>
             <p>...</p>
-            <Button onClick={handleShowAll}>Show all</Button>
+            <button
+              className="min-w-[50px] h-6 flex gap-1 items-center justify-center border border-gray rounded-md capitalize shadow p-1 font-bold hover:animate-pulse text-primary bg-secondary"
+              onClick={handleShowAll}
+            >
+              Show all
+            </button>
           </>
         )}
       </div>

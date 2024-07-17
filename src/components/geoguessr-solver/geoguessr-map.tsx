@@ -27,7 +27,7 @@ const CountryMap = ({ geo }: { geo: Geo }) => {
 
 const Map = () => {
   return (
-    <ComposableMap className="h-screen">
+    <ComposableMap className="h-[calc(100vh-160px)]">
       <Geographies geography={'/map.json'}>
         {({ geographies }) =>
           geographies.map((geo: Geo) => <CountryMap key={geo.rsmKey} geo={geo} />)

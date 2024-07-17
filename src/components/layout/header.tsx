@@ -2,7 +2,7 @@ import { Link } from 'components/layout/button';
 
 const Header = () => (
   <header
-    className="relative p-4 flex items-center justify-between z-40
+    className="relative flex items-center justify-between z-40
   "
   >
     <Link to="/">
